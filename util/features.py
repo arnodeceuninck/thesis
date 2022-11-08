@@ -65,7 +65,8 @@ def onehot_encode(df, test=False):
 def get_length(sequence):
     if not isinstance(sequence, str):
         # It's probably NaN
-        return 0
+        # return 0
+        return np.nan
     else:
         return parser.length(sequence)
 
@@ -85,7 +86,8 @@ def get_amino_acid_composition(sequence):
 
 def aa_occurances(df):
     composition = [get_amino_acid_composition(sequence) for sequence in df['CDR3']]
-    aa_alfa_counts = pd.DataFrame.from_records(composition).fillna(0)
+    # aa_alfa_counts = pd.DataFrame.from_records(composition).fillna(0)
+    aa_alfa_counts = pd.DataFrame.from_records(composition)
     aa_alfa_counts.columns = [f'{column}_count' for column in aa_alfa_counts.columns]
     return aa_alfa_counts
 
@@ -93,7 +95,8 @@ def aa_occurances(df):
 def get_property(sequence, prop_lookup):
     if not isinstance(sequence, str):
         # It's probably NaN
-        return 0
+        # return 0
+        return np.nan
     else:
         return np.mean(list(prop_lookup[aa] for aa in sequence))
 
@@ -108,7 +111,8 @@ def physchem_properties(df):
 def get_mass(sequence):
     if not isinstance(sequence, str):
         # It's probably NaN
-        return 0
+        # return 0
+        return np.nan
     else:
         return mass.fast_mass(sequence)
 
@@ -119,7 +123,8 @@ def peptide_mass(df):
 
 def get_pi(sequence):
     if not isinstance(sequence, str):
-        return 0
+        # return 0
+        return np.nan
     else:
         return electrochem.pI(sequence)
 
@@ -134,6 +139,15 @@ def pos_features(df):
 
     for sequence in df['CDR3']:
         if not isinstance(sequence, str):
+            # It's probably NaN, can't just continue, since we'll have less rows then
+            # nan_value = 0
+            nan_value = np.nan
+            pos_aa.append({f'pos_0_A': nan_value})
+            pos_basicity.append({f'pos_0_basicity': nan_value})
+            pos_hydro.append({f'pos_0_hydrophobicity': nan_value})
+            pos_helicity.append({f'pos_0_helicity': nan_value})
+            pos_mutation.append({f'pos_0_mutation_stability': nan_value})
+            pos_pI.append({f'pos_0_pi': nan_value})
             continue
 
         length = get_length(sequence)
@@ -157,12 +171,12 @@ def pos_features(df):
 
         pos_pI.append({f'pos_{pos}_pI': electrochem.pI(aa) for pos, aa in zip(pos_range, sequence)})
 
-    features_list.append(pd.DataFrame.from_records(pos_aa).fillna(0))
-    features_list.append(pd.DataFrame.from_records(pos_basicity).fillna(0))
-    features_list.append(pd.DataFrame.from_records(pos_hydro).fillna(0))
-    features_list.append(pd.DataFrame.from_records(pos_helicity).fillna(0))
-    features_list.append(pd.DataFrame.from_records(pos_mutation).fillna(0))
-    features_list.append(pd.DataFrame.from_records(pos_pI).fillna(0))
+    features_list.append(pd.DataFrame.from_records(pos_aa))
+    features_list.append(pd.DataFrame.from_records(pos_basicity))
+    features_list.append(pd.DataFrame.from_records(pos_hydro))
+    features_list.append(pd.DataFrame.from_records(pos_helicity))
+    features_list.append(pd.DataFrame.from_records(pos_mutation))
+    features_list.append(pd.DataFrame.from_records(pos_pI))
 
     return pd.concat(features_list, axis=1)
 
@@ -180,15 +194,33 @@ def get_baseline_feature_functions(test):
 def get_baseline_sequence_features(df, test):
     features_list = []
     for feature_function in get_baseline_feature_functions(test):
-        features_list.append(feature_function(df))
-    return pd.concat(features_list, axis=1)
+        features = feature_function(df)
+        assert features.shape[0] == df.shape[0], f'Feature function {feature_function} returned {features.shape[0]} rows, expected {df.shape[0]}'
+        features_list.append(feature_function(df).reset_index(drop=True))
+
+    # Create one large dataframe, consisting of all the features (number of rows remains the same)
+    features_in_one_df = pd.concat(features_list, axis=1)
+    assert features_in_one_df.shape[0] == df.shape[0], f'Feature functions returned {features_in_one_df.shape[0]} rows, expected {df.shape[0]}'
+    return features_in_one_df
 
 
 def get_features(df, test=False):
+    df_num_rows = df.shape[0]
+
     beta_renamed = df[['CDR3_beta', 'TRBV', 'TRBJ']].rename(columns={'CDR3_beta': 'CDR3', 'TRBV': 'V', 'TRBJ': 'J'})
     beta_features = get_baseline_sequence_features(beta_renamed, test).add_prefix('beta_')
 
+    beta_features_num_rows = beta_features.shape[0]
+
+    if beta_features_num_rows != df_num_rows:
+        raise ValueError(f'Number of rows in beta_features ({beta_features_num_rows}, {beta_features.shape[1]}) does not match number of rows in '
+                         f'df ({df_num_rows}, {df.shape[1]})')
+
     alpha_renamed = df[['CDR3_alfa', 'TRAV', 'TRAJ']].rename(columns={'CDR3_alfa': 'CDR3', 'TRAV': 'V', 'TRAJ': 'J'})
     alpha_features = get_baseline_sequence_features(alpha_renamed, test).add_prefix('alfa_')
+
+    alpha_features_num_rows = alpha_features.shape[0]
+
+    assert df_num_rows == beta_features_num_rows == alpha_features_num_rows, 'Number of rows in dataframes do not match'
 
     return pd.concat([beta_features, alpha_features], axis=1)
