@@ -32,3 +32,10 @@ def fix_test(x_test, train_columns):
     # remove all columns from x_test that are not in x
     x_test = x_test[train_columns]
     return x_test
+
+def calculate_auc_and_plot(y_test, y_pred):
+
+    fpr, tpr, thresholds = metrics.roc_curve(y_test, y_pred, pos_label=1)
+    roc_auc = metrics.auc(fpr, tpr)
+
+    plot_roc_curve(fpr, tpr, label=f'ROC curve (area = {roc_auc:.3f})', title='ROC curve')
