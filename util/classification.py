@@ -2,6 +2,7 @@
 from sklearn.model_selection import cross_val_predict
 from sklearn import metrics
 import matplotlib.pyplot as plt
+import numpy as np
 
 def plot_roc_curve(fpr, tpr, label, title):
     plt.figure()
@@ -28,7 +29,9 @@ def fix_test(x_test, train_columns):
     # x_test.fillna(0, inplace=True)
     for col in train_columns:
         if col not in x_test.columns:
-            x_test[col] = 0
+            # only columns starting with pos_0 are allowed to be missing, the rest should already exist (be sure you use the test version of the onehot encoder if this isn't the case)
+            assert col.startswith('pos_0')
+            x_test[col] = np.nan # TODO: NaN geven
     # remove all columns from x_test that are not in x
     x_test = x_test[train_columns]
     return x_test
