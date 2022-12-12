@@ -41,7 +41,8 @@ def get_mutation_stability(amino_acid):
     return mutation_stability[amino_acid]
 
 
-ONEHOT_ENCODER = None
+ONEHOT_ENCODER = {"alpha": None, "beta": None}
+ALPHA_OR_BETA = None # Should be set to "alpha" or "beta"
 
 
 def onehot_encode_test(df):
@@ -49,16 +50,29 @@ def onehot_encode_test(df):
 
 
 def onehot_encode(df, test=False):
-    global ONEHOT_ENCODER
+    global ONEHOT_ENCODER, ALPHA_OR_BETA
+    assert ALPHA_OR_BETA in ["alpha", "beta"], "ALPHA_OR_BETA must be set to 'alpha' or 'beta'"
+
     # One hot encode the columns (creates a new column per unique value here and fills it with 1 or 0)
     onehot_cols = ['V', 'J']
     if not test:
-        ONEHOT_ENCODER = feature_extraction.DictVectorizer(sparse=False)
-        encodings = ONEHOT_ENCODER.fit_transform(df[onehot_cols].to_dict(orient='records'))
+        ONEHOT_ENCODER[ALPHA_OR_BETA] = feature_extraction.DictVectorizer(sparse=False)
+        encodings = ONEHOT_ENCODER[ALPHA_OR_BETA].fit_transform(df[onehot_cols].to_dict(orient='records'))
+        # print(f"encoder {ALPHA_OR_BETA} fitted")
     else:
-        assert ONEHOT_ENCODER is not None
-        encodings = ONEHOT_ENCODER.transform(df[onehot_cols].to_dict(orient='records'))
-    onehot_df = pd.DataFrame(encodings, columns=ONEHOT_ENCODER.get_feature_names_out())
+        assert ONEHOT_ENCODER[ALPHA_OR_BETA] is not None
+        encodings = ONEHOT_ENCODER[ALPHA_OR_BETA].transform(df[onehot_cols].to_dict(orient='records'))
+        # print(f"only transformed {ALPHA_OR_BETA}")
+
+    # Get the columns of the onehot encoder
+    columns = ONEHOT_ENCODER[ALPHA_OR_BETA].get_feature_names_out()
+    # print(columns)
+
+    onehot_df = pd.DataFrame(encodings, columns=ONEHOT_ENCODER[ALPHA_OR_BETA].get_feature_names_out())
+
+    for col in columns:
+        assert col in onehot_df.columns, f'Column {col} not in dataframe'
+
     return onehot_df
 
 
@@ -196,7 +210,7 @@ def get_baseline_sequence_features(df, test):
     for feature_function in get_baseline_feature_functions(test):
         features = feature_function(df)
         assert features.shape[0] == df.shape[0], f'Feature function {feature_function} returned {features.shape[0]} rows, expected {df.shape[0]}'
-        features_list.append(feature_function(df).reset_index(drop=True))
+        features_list.append(features.reset_index(drop=True))
 
     # Create one large dataframe, consisting of all the features (number of rows remains the same)
     features_in_one_df = pd.concat(features_list, axis=1)
@@ -207,6 +221,9 @@ def get_baseline_sequence_features(df, test):
 def get_features(df, test=False):
     df_num_rows = df.shape[0]
 
+    global ALPHA_OR_BETA
+
+    ALPHA_OR_BETA = 'beta'
     beta_renamed = df[['CDR3_beta', 'TRBV', 'TRBJ']].rename(columns={'CDR3_beta': 'CDR3', 'TRBV': 'V', 'TRBJ': 'J'})
     beta_features = get_baseline_sequence_features(beta_renamed, test).add_prefix('beta_')
 
@@ -216,11 +233,14 @@ def get_features(df, test=False):
         raise ValueError(f'Number of rows in beta_features ({beta_features_num_rows}, {beta_features.shape[1]}) does not match number of rows in '
                          f'df ({df_num_rows}, {df.shape[1]})')
 
+    ALPHA_OR_BETA = 'alpha'
     alpha_renamed = df[['CDR3_alfa', 'TRAV', 'TRAJ']].rename(columns={'CDR3_alfa': 'CDR3', 'TRAV': 'V', 'TRAJ': 'J'})
     alpha_features = get_baseline_sequence_features(alpha_renamed, test).add_prefix('alfa_')
 
     alpha_features_num_rows = alpha_features.shape[0]
 
     assert df_num_rows == beta_features_num_rows == alpha_features_num_rows, 'Number of rows in dataframes do not match'
+
+    ALPHA_OR_BETA = None
 
     return pd.concat([beta_features, alpha_features], axis=1)
