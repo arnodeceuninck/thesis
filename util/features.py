@@ -244,3 +244,6 @@ def get_features(df, test=False):
     ALPHA_OR_BETA = None
 
     return pd.concat([beta_features, alpha_features], axis=1)
+
+def get_columns_starting_with(df, prefix):
+    return df[df.columns[df.columns.str.startswith(prefix)]]

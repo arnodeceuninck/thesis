@@ -1,5 +1,5 @@
 # This cell contains code form earlier notebooks, should be placed in util
-from sklearn.model_selection import cross_val_predict
+from sklearn.model_selection import cross_val_predict, KFold, cross_val_score
 from sklearn import metrics
 import matplotlib.pyplot as plt
 import numpy as np
@@ -47,3 +47,9 @@ def calculate_auc_and_plot(y_test, y_pred):
 
     plot_roc_curve(fpr, tpr, label=f'ROC curve (area = {roc_auc:.3f})', title='ROC curve')
     return roc_auc
+
+def evaluate(clf, x, y):
+    kf = KFold(n_splits=5, shuffle=True, random_state=42)
+    scores = cross_val_score(clf, x, y, cv=kf, scoring='roc_auc')
+    print(scores)
+    print(f"ROC: {scores.mean():.3f} (+/- {scores.std() * 2:.3f})")
