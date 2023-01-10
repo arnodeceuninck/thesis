@@ -32,7 +32,8 @@ def fix_test(x_test, train_columns):
     for col in train_columns:
         if col not in x_test.columns:
             # only columns starting with pos_0 are allowed to be missing, the rest should already exist (be sure you use the test version of the onehot encoder if this isn't the case)
-            assert col.startswith('alfa_pos_') or col.startswith('beta_pos_') or col.endswith('_count'), f'Column {col} not in test set'
+            assert col.startswith('alfa_pos_') or col.startswith('beta_pos_') or col.endswith(
+                '_count'), f'Column {col} not in test set'
 
             x_test[col] = np.nan  # TODO: NaN geven
             # print(f'Column {col} not in test set, added with NaN values')
@@ -48,8 +49,44 @@ def calculate_auc_and_plot(y_test, y_pred):
     plot_roc_curve(fpr, tpr, label=f'ROC curve (area = {roc_auc:.3f})', title='ROC curve')
     return roc_auc
 
+
 def evaluate(clf, x, y):
     kf = KFold(n_splits=5, shuffle=True, random_state=42)
     scores = cross_val_score(clf, x, y, cv=kf, scoring='roc_auc')
     print(scores)
     print(f"ROC: {scores.mean():.3f} (+/- {scores.std() * 2:.3f})")
+
+
+def evaluate_no_cv(clf, x, y, x_test, y_test):
+    clf.fit(x, y)
+    y_pred = clf.predict_proba(x_test)[:, 1]
+    fpr, tpr, thresholds = metrics.roc_curve(y_test, y_pred, pos_label=1)
+    roc_auc = metrics.auc(fpr, tpr)
+    print(f"ROC AUC: {roc_auc:.3f}")
+
+# Not working
+# class NoNanInTestKFold():
+#     def __init__(self, df_original, n_splits=5, shuffle=False, random_state=None):
+#         self.n_splits = n_splits
+#         self.shuffle = shuffle
+#         self.random_state = random_state
+#         self.df_original = df_original # The original dataframe the x features are generated from, without everything changed to feature (since features contain a lot of NaNs)
+#
+#     def split(self, X, y=None, groups=None):
+#         kf = KFold(n_splits=self.n_splits, shuffle=self.shuffle, random_state=self.random_state)
+#         for train_index, test_index in kf.split(X, y, groups):
+#             # remove all rows from test_index that have any NaN values in X
+#             test_index_new = test_index[~np.isnan(self.df_original.iloc[test_index]).any(axis=1)]
+#             yield train_index, test_index_new
+#
+#
+#     def get_n_splits(self, X, y, groups=None):
+#         return self.n_splits
+#
+#
+# def evaluate_no_nan_test(clf, x, y, df_original):
+#     # Doesn't work because of inputations
+#     kf = NoNanInTestKFold(df_original=df_original, n_splits=5, shuffle=True, random_state=42)
+#     scores = cross_val_score(clf, x, y, cv=kf, scoring='roc_auc')
+#     print(scores)
+#     print(f"ROC: {scores.mean():.3f} (+/- {scores.std() * 2:.3f})")
