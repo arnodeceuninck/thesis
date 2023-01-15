@@ -33,9 +33,9 @@ def fix_test(x_test, train_columns):
         if col not in x_test.columns:
             # only columns starting with pos_0 are allowed to be missing, the rest should already exist (be sure you use the test version of the onehot encoder if this isn't the case)
             assert col.startswith('alfa_pos_') or col.startswith('beta_pos_') or col.endswith(
-                '_count'), f'Column {col} not in test set'
+                '_count') or col in ['beta_J', 'beta_V', 'alfa_J','alfa_V'], f'Column {col} not in test set' # Don't know whether col in ['beta_J', 'beta_V', 'alfa_J','alfa_V'] should be aloowed, was required for alpha beta knn
 
-            x_test[col] = np.nan  # TODO: NaN geven
+            x_test[col] = 0 #np.nan  # TODO: NaN of 0? currently kept it at 0 to make clear it's not because the chain was missing
             # print(f'Column {col} not in test set, added with NaN values')
     # remove all columns from x_test that are not in x
     x_test = x_test[train_columns]
@@ -63,6 +63,7 @@ def evaluate_no_cv(clf, x, y, x_test, y_test):
     fpr, tpr, thresholds = metrics.roc_curve(y_test, y_pred, pos_label=1)
     roc_auc = metrics.auc(fpr, tpr)
     print(f"ROC AUC: {roc_auc:.3f}")
+    return roc_auc
 
 # Not working
 # class NoNanInTestKFold():

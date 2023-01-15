@@ -41,8 +41,8 @@ def get_mutation_stability(amino_acid):
     return mutation_stability[amino_acid]
 
 
-ONEHOT_ENCODER = {"alpha": None, "beta": None}
-ALPHA_OR_BETA = None # Should be set to "alpha" or "beta"
+ONEHOT_ENCODER = {"alfa": None, "beta": None}
+ALPHA_OR_BETA = None  # Should be set to "alpha" or "beta"
 
 
 def onehot_encode_test(df):
@@ -51,7 +51,8 @@ def onehot_encode_test(df):
 
 def onehot_encode(df, test=False):
     global ONEHOT_ENCODER, ALPHA_OR_BETA
-    assert ALPHA_OR_BETA in ["alpha", "beta"], "ALPHA_OR_BETA must be set to 'alpha' or 'beta'"
+    assert ALPHA_OR_BETA in ["alfa",
+                             "beta"], f"ALPHA_OR_BETA must be set to 'alfa' or 'beta', is currently set to {ALPHA_OR_BETA}"
 
     # One hot encode the columns (creates a new column per unique value here and fills it with 1 or 0)
     onehot_cols = ['V', 'J']
@@ -101,7 +102,7 @@ def get_amino_acid_composition(sequence):
 def aa_occurances(df):
     composition = [get_amino_acid_composition(sequence) for sequence in df['CDR3']]
     # aa_alfa_counts = pd.DataFrame.from_records(composition).fillna(0)
-    aa_alfa_counts = pd.DataFrame.from_records(composition)
+    aa_alfa_counts = pd.DataFrame.from_records(composition).fillna(0) # Filling na with 0, since they weren't counted
     aa_alfa_counts.columns = [f'{column}_count' for column in aa_alfa_counts.columns]
     return aa_alfa_counts
 
@@ -192,7 +193,7 @@ def pos_features(df):
     features_list.append(pd.DataFrame.from_records(pos_mutation))
     features_list.append(pd.DataFrame.from_records(pos_pI))
 
-    return pd.concat(features_list, axis=1)
+    return pd.concat(features_list, axis=1).fillna(0)
 
 
 def get_baseline_feature_functions(test):
@@ -200,7 +201,8 @@ def get_baseline_feature_functions(test):
         feature_functions = [onehot_encode, cdr3_length, aa_occurances, physchem_properties, peptide_mass, pi_feature,
                              pos_features]
     else:
-        feature_functions = [onehot_encode_test, cdr3_length, aa_occurances, physchem_properties, peptide_mass, pi_feature,
+        feature_functions = [onehot_encode_test, cdr3_length, aa_occurances, physchem_properties, peptide_mass,
+                             pi_feature,
                              pos_features]
     return feature_functions
 
@@ -209,13 +211,29 @@ def get_baseline_sequence_features(df, test):
     features_list = []
     for feature_function in get_baseline_feature_functions(test):
         features = feature_function(df)
-        assert features.shape[0] == df.shape[0], f'Feature function {feature_function} returned {features.shape[0]} rows, expected {df.shape[0]}'
+        if features.shape[0] == 0:
+            # No features extracted (e.g. in the case of aa_occurances of all NaN)
+            # Should I just skip it, or set this feature to 0? the fix_test function solves this, so we can just skip
+            continue
+        assert features.shape[0] == df.shape[
+            0], f'Feature function {feature_function} returned {features.shape[0]} rows, expected {df.shape[0]}'
         features_list.append(features.reset_index(drop=True))
 
     # Create one large dataframe, consisting of all the features (number of rows remains the same)
     features_in_one_df = pd.concat(features_list, axis=1)
-    assert features_in_one_df.shape[0] == df.shape[0], f'Feature functions returned {features_in_one_df.shape[0]} rows, expected {df.shape[0]}'
+    assert features_in_one_df.shape[0] == df.shape[
+        0], f'Feature functions returned {features_in_one_df.shape[0]} rows, expected {df.shape[0]}'
     return features_in_one_df
+
+
+def update_alpha_or_beta(new_value):
+    """
+    A seperate function for updating the ALPHA_OR_BETA variable, since global variables act different in notebooks
+    :param new_value:
+    :return:
+    """
+    global ALPHA_OR_BETA
+    ALPHA_OR_BETA = new_value
 
 
 def get_features(df, test=False):
@@ -230,10 +248,11 @@ def get_features(df, test=False):
     beta_features_num_rows = beta_features.shape[0]
 
     if beta_features_num_rows != df_num_rows:
-        raise ValueError(f'Number of rows in beta_features ({beta_features_num_rows}, {beta_features.shape[1]}) does not match number of rows in '
-                         f'df ({df_num_rows}, {df.shape[1]})')
+        raise ValueError(
+            f'Number of rows in beta_features ({beta_features_num_rows}, {beta_features.shape[1]}) does not match number of rows in '
+            f'df ({df_num_rows}, {df.shape[1]})')
 
-    ALPHA_OR_BETA = 'alpha'
+    ALPHA_OR_BETA = 'alfa'
     alpha_renamed = df[['CDR3_alfa', 'TRAV', 'TRAJ']].rename(columns={'CDR3_alfa': 'CDR3', 'TRAV': 'V', 'TRAJ': 'J'})
     alpha_features = get_baseline_sequence_features(alpha_renamed, test).add_prefix('alfa_')
 
@@ -244,6 +263,7 @@ def get_features(df, test=False):
     ALPHA_OR_BETA = None
 
     return pd.concat([beta_features, alpha_features], axis=1)
+
 
 def get_columns_starting_with(df, prefix):
     return df[df.columns[df.columns.str.startswith(prefix)]]
