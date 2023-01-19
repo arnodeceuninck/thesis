@@ -3,6 +3,7 @@ from sklearn.model_selection import cross_val_predict, KFold, cross_val_score
 from sklearn import metrics
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
 
 def plot_roc_curve(fpr, tpr, label, title):
@@ -29,14 +30,26 @@ def get_training_data_roc_cv(clf, x, y):
 
 def fix_test(x_test, train_columns):
     # x_test.fillna(0, inplace=True)
+    cols_to_add = []
     for col in train_columns:
         if col not in x_test.columns:
             # only columns starting with pos_0 are allowed to be missing, the rest should already exist (be sure you use the test version of the onehot encoder if this isn't the case)
             assert col.startswith('alfa_pos_') or col.startswith('beta_pos_') or col.endswith(
                 '_count') or col in ['beta_J', 'beta_V', 'alfa_J','alfa_V'], f'Column {col} not in test set' # Don't know whether col in ['beta_J', 'beta_V', 'alfa_J','alfa_V'] should be aloowed, was required for alpha beta knn
+            cols_to_add.append(col)
 
-            x_test[col] = 0 #np.nan  # TODO: NaN of 0? currently kept it at 0 to make clear it's not because the chain was missing
+            # line below raises performance error, which is why I add them all at once using cols to add
+            # https://stackoverflow.com/questions/68292862/performancewarning-dataframe-is-highly-fragmented-this-is-usually-the-result-o
+            # x_test[col] = 0 #np.nan  # TODO: NaN of 0? currently kept it at 0 to make clear it's not because the chain was missing
+
             # print(f'Column {col} not in test set, added with NaN values')
+    # x_test = x_test.copy()
+    # create a dataframe with all columns to add, set to 0
+    df = pd.DataFrame(np.zeros((x_test.shape[0], len(cols_to_add))), columns=cols_to_add)
+    # add the new columns to the test set
+    x_test = pd.concat([x_test, df], axis=1)
+    # x_test[cols_to_add] = 0
+
     # remove all columns from x_test that are not in x
     x_test = x_test[train_columns]
     return x_test
