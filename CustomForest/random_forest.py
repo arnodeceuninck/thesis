@@ -6,6 +6,7 @@ import progressbar
 # Import helper functions
 from .utils import divide_on_feature, train_test_split, get_random_subsets, normalize, bar_widgets
 from .decision_tree import ClassificationTree
+from .weighted_decision_tree import WeightedClassificationTree
 
 
 class RandomForest():
@@ -27,7 +28,7 @@ class RandomForest():
     """
 
     def __init__(self, n_estimators=100, max_features=None, min_samples_split=2,
-                 min_gain=0, max_depth=float("inf")):
+                 min_gain=0, max_depth=float("inf"), weighted=False):
         self.n_estimators = n_estimators  # Number of trees
         self.max_features = max_features  # Maxmimum number of features per tree
         self.min_samples_split = min_samples_split
@@ -38,11 +39,18 @@ class RandomForest():
         # Initialize decision trees
         self.trees = []
         for _ in range(n_estimators):
-            self.trees.append(
-                ClassificationTree(
-                    min_samples_split=self.min_samples_split,
-                    min_impurity=min_gain,
-                    max_depth=self.max_depth))
+            if not weighted:
+                self.trees.append(
+                    ClassificationTree(
+                        min_samples_split=self.min_samples_split,
+                        min_impurity=min_gain,
+                        max_depth=self.max_depth))
+            else:
+                self.trees.append(
+                    WeightedClassificationTree(
+                        min_samples_split=self.min_samples_split,
+                        min_impurity=min_gain,
+                        max_depth=self.max_depth))
 
     def fit(self, X, y):
         # if X or y is a DataFrame or Series, convert to numpy array
