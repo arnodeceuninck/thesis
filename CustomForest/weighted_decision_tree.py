@@ -32,6 +32,22 @@ class WeightedDecisionNode():
         self.false_branch = false_branch  # 'Right' subtree
 
 
+def divide_on_feature_nan_to_both(X, feature_i, threshold):
+    """ Divide dataset based on if sample value on feature index is larger than
+        the given threshold """
+    split_func = None
+    if isinstance(threshold, int) or isinstance(threshold, float):
+        split_func = lambda sample: sample[feature_i] >= threshold
+    else:
+        split_func = lambda sample: sample[feature_i] == threshold
+
+    # check if split func or nan
+    X_1 = np.array([sample for sample in X if (np.isnan(sample[feature_i]) or split_func(sample))])
+    X_2 = np.array([sample for sample in X if (np.isnan(sample[feature_i]) or not split_func(sample))])
+
+    return np.array([X_1, X_2], dtype=object)
+
+
 # Super class of RegressionTree and ClassificationTree
 class WeightedDecisionTree(object):
     """Super class of RegressionTree and ClassificationTree.
@@ -82,24 +98,14 @@ class WeightedDecisionTree(object):
         if weights is None:
             assert current_depth == 0
             weights = np.ones(len(y))
+            weights = np.expand_dims(weights, axis=1)
 
         # Check if expansion of y is needed
         if len(np.shape(y)) == 1:
             y = np.expand_dims(y, axis=1)
 
-        if len(np.shape(weights)) == 1:
-            # reshape
-            weights = np.expand_dims(weights, axis=1) # TODO; check better when i need expand dims
-
-        try:
-            # Add y as last column of X
-            Xyw = np.concatenate((X, y, weights), axis=1)
-        except ValueError as e:
-            print(e)
-            print("X:", X)
-            print("y:", y)
-            print("weights:", weights)
-            raise
+        # Add y as last column of X
+        Xyw = np.concatenate((X, y, weights), axis=1)
 
         n_samples, n_features = np.shape(X)
 
@@ -108,13 +114,23 @@ class WeightedDecisionTree(object):
             for feature_i in range(n_features):
                 # All values of feature_i
                 feature_values = np.expand_dims(X[:, feature_i], axis=1)
-                unique_values = np.unique(feature_values)  # TODO: Filter np.nan values
+                unique_values = np.unique(feature_values)
+                try:
+                    unique_values = unique_values[~np.isnan(unique_values)]  # Filter np.nan values
+                except TypeError: # as e:
+                    # print(e)
+                    # print(unique_values)
+                    # raise e
+                    unique_values = unique_values[~np.isnan(unique_values.astype(float))]  # Filter np.nan values
 
                 # half the weight if feature_i is None for given sample
-                current_weights = Xyw[:, -1]
-                current_weights[np.isnan(feature_values.flatten())] /= 2
+                current_weights = Xyw[:, -1:]
+                try:
+                    current_weights[np.isnan(feature_values.flatten())] /= 2
+                except TypeError:
+                    current_weights[np.isnan(feature_values.flatten().astype(float))] /= 2
                 # reshape
-                current_weights = np.expand_dims(current_weights, axis=1)
+                # current_weights = np.expand_dims(current_weights, axis=1)
 
                 # create a copy of Xyw with the current weights
                 Xyw_copy = np.concatenate((Xyw[:, :-1], current_weights), axis=1)
@@ -124,15 +140,15 @@ class WeightedDecisionTree(object):
                 for threshold in unique_values:
                     # Divide X and y depending on if the feature value of X at index feature_i
                     # meets the threshold
-                    Xyw1, Xyw2 = divide_on_feature(Xyw_copy, feature_i, threshold)
+                    Xyw1, Xyw2 = divide_on_feature_nan_to_both(Xyw_copy, feature_i, threshold)
 
                     if len(Xyw1) > 0 and len(Xyw2) > 0:
                         # Select the y-values of the two sets
                         y1 = Xyw1[:, n_features:-1]
                         y2 = Xyw2[:, n_features:-1]
 
-                        y1_weights = Xyw1[:, -1]
-                        y2_weights = Xyw2[:, -1]
+                        y1_weights = Xyw1[:, -1:]
+                        y2_weights = Xyw2[:, -1:]
 
                         # Calculate impurity
                         impurity = self._impurity_calculation(y, y1, y2, current_weights, y1_weights, y2_weights)
@@ -143,19 +159,25 @@ class WeightedDecisionTree(object):
                         if impurity > largest_impurity:
                             largest_impurity = impurity
                             best_criteria = {"feature_i": feature_i, "threshold": threshold}
+                            # print("best_criteria:", best_criteria)
+                            x1 = Xyw1[:, :n_features]
+                            x2 = Xyw2[:, :n_features]
                             best_sets = {
-                                "leftX": Xyw1[:, :n_features],  # X of left subtree
-                                "lefty": Xyw1[:, n_features:],  # y of left subtree
+                                "leftX": x1,  # X of left subtree
+                                "lefty": y1,  # y of left subtree
                                 "left_weights": y1_weights,
-                                "rightX": Xyw2[:, :n_features],  # X of right subtree
-                                "righty": Xyw2[:, n_features:],  # y of right subtree
+                                "rightX": x2,  # X of right subtree
+                                "righty": y2,  # y of right subtree
                                 "right_weights": y2_weights
                             }
 
         if largest_impurity > self.min_impurity:
+            assert best_criteria["feature_i"] is not None
             # Build subtrees for the right and left branches
-            true_branch = self._build_tree(best_sets["leftX"], best_sets["lefty"], weights=best_sets["left_weights"], current_depth=current_depth + 1)
-            false_branch = self._build_tree(best_sets["rightX"], best_sets["righty"], weights=best_sets["right_weights"], current_depth=current_depth + 1)
+            true_branch = self._build_tree(best_sets["leftX"], best_sets["lefty"], weights=best_sets["left_weights"],
+                                           current_depth=current_depth + 1)
+            false_branch = self._build_tree(best_sets["rightX"], best_sets["righty"],
+                                            weights=best_sets["right_weights"], current_depth=current_depth + 1)
             return WeightedDecisionNode(feature_i=best_criteria["feature_i"], threshold=best_criteria[
                 "threshold"], true_branch=true_branch, false_branch=false_branch)
 
@@ -180,11 +202,16 @@ class WeightedDecisionTree(object):
 
         # Determine if we will follow left or right branch
         branch = tree.false_branch
-        if isinstance(feature_value, int) or isinstance(feature_value, float):
-            if feature_value >= tree.threshold:
+        try:
+            if isinstance(feature_value, int) or isinstance(feature_value, float):
+                if feature_value >= tree.threshold:
+                    branch = tree.true_branch
+            elif feature_value == tree.threshold:
                 branch = tree.true_branch
-        elif feature_value == tree.threshold:
-            branch = tree.true_branch
+        except ValueError as e:
+            print("feature_value:", feature_value)
+            print("tree.threshold:", tree.threshold)
+            raise e
 
         # Test subtree
         return self.predict_value(x, branch)
@@ -285,51 +312,19 @@ class RegressionTree(WeightedDecisionTree):
 
 def calculate_weighted_entropy(y, weights):
     """ Calculate the weighted entropy of label array y """
+    assert len(y) == len(weights)
+    # Counts diff from normal frequency in most occuring class
     log2 = lambda x: math.log(x) / math.log(2)
     unique_labels = np.unique(y)
-    weighted_sum = np.sum(weights)
-    most_common_label = unique_labels[np.argmax([len(y[y == label]) for label in unique_labels])]
+    normalized_weights = weights / np.sum(weights)
     entropy = 0
-    entropy_text_formula = ""
     for label in unique_labels:
-        try:
-            label_weights = weights[(y == label).flatten()]
-        except IndexError as e:
-            print("Error: ", e)
-            print("y: ", y)
-            print("weights: ", weights)
-            print("label: ", label)
-            raise e
-
-        label_count = len(label_weights)
-
-        p = label_count / len(y)
-
-        if label == most_common_label:
-            weighted_count = sum(label_weights)
-            p_weighted = weighted_count / weighted_sum
-            diff = p_weighted - p
-            print(f"Diff: {diff}")
-            print(f"Using weighted p ({p_weighted}) instead of p ({p})")
-            p = p_weighted
-
-        label_weight = np.prod(label_weights)
+        p = np.sum(normalized_weights[y == label])
         entropy += -p * log2(p)
-        entropy_text_formula += f"-{p} * log2({p}) (for label {label}) + "
-    print(entropy_text_formula)
     return entropy
 
 
 class WeightedClassificationTree(WeightedDecisionTree):
-    def _calculate_information_gain(self, y, y1, y2):
-        # Calculate information gain
-        p = len(y1) / len(y)
-        entropy = calculate_entropy(y)
-        info_gain = entropy - p * \
-                    calculate_entropy(y1) - (1 - p) * \
-                    calculate_entropy(y2)
-
-        return info_gain
 
     def _calculate_information_gain_weighted(self, y, y1, y2, y_weights, y1_weights, y2_weights):
         # Calculate information gain

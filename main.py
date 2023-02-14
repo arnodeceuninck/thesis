@@ -1,2 +1,20 @@
-col = "beta_pos_3"
-assert col.startswith('alfa_pos_') or col.startswith('beta_pos_'), f'Column {col} not in test set'
+import pandas as pd
+
+scores = pd.DataFrame()
+
+for i, seed in enumerate(range(5)):
+    seed_nr = 8
+    value = 4
+    combo = 8+4
+
+    index  =len(scores)
+    scores.loc[index, 'seed'] = seed
+
+    if i % 2 == 0:
+        scores.loc[index, 'seed_nr'] = seed_nr
+
+    scores.loc[index, 'value'] = value
+    scores.loc[index, 'combo'] = combo
+
+print(scores)
+

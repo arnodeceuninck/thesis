@@ -21,7 +21,7 @@ def divide_on_feature(X, feature_i, threshold):
     X_1 = np.array([sample for sample in X if split_func(sample)])
     X_2 = np.array([sample for sample in X if not split_func(sample)])
 
-    return np.array([X_1, X_2])
+    return np.array([X_1, X_2], dtype=object)
 
 
 def train_test_split(X, y, test_size=0.5, shuffle=True, seed=None):

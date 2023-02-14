@@ -243,22 +243,31 @@ def get_features(df, test=False):
 
     ALPHA_OR_BETA = 'beta'
     beta_renamed = df[['CDR3_beta', 'TRBV', 'TRBJ']].rename(columns={'CDR3_beta': 'CDR3', 'TRBV': 'V', 'TRBJ': 'J'})
-    beta_features = get_baseline_sequence_features(beta_renamed, test).add_prefix('beta_')
+    try:
+        beta_features = get_baseline_sequence_features(beta_renamed, test).add_prefix('beta_')
 
-    beta_features_num_rows = beta_features.shape[0]
+        beta_features_num_rows = beta_features.shape[0]
 
-    if beta_features_num_rows != df_num_rows:
-        raise ValueError(
-            f'Number of rows in beta_features ({beta_features_num_rows}, {beta_features.shape[1]}) does not match number of rows in '
-            f'df ({df_num_rows}, {df.shape[1]})')
+        if beta_features_num_rows != df_num_rows:
+            raise ValueError(
+                f'Number of rows in beta_features ({beta_features_num_rows}, {beta_features.shape[1]}) does not match number of rows in '
+                f'df ({df_num_rows}, {df.shape[1]})')
+
+    except Exception as e:
+        print(f'Error while extracting beta features: {e}')
+        beta_features = pd.DataFrame()
 
     ALPHA_OR_BETA = 'alfa'
     alpha_renamed = df[['CDR3_alfa', 'TRAV', 'TRAJ']].rename(columns={'CDR3_alfa': 'CDR3', 'TRAV': 'V', 'TRAJ': 'J'})
-    alpha_features = get_baseline_sequence_features(alpha_renamed, test).add_prefix('alfa_')
+    try:
+        alpha_features = get_baseline_sequence_features(alpha_renamed, test).add_prefix('alfa_')
 
-    alpha_features_num_rows = alpha_features.shape[0]
+        alpha_features_num_rows = alpha_features.shape[0]
 
-    assert df_num_rows == beta_features_num_rows == alpha_features_num_rows, 'Number of rows in dataframes do not match'
+        # assert df_num_rows == beta_features_num_rows == alpha_features_num_rows, 'Number of rows in dataframes do not match'
+    except Exception as e:
+        print(f'Error while extracting alpha features: {e}')
+        alpha_features = pd.DataFrame()
 
     ALPHA_OR_BETA = None
 

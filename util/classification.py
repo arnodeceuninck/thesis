@@ -1,9 +1,11 @@
 # This cell contains code form earlier notebooks, should be placed in util
-from sklearn.model_selection import cross_val_predict, KFold, cross_val_score
+from sklearn.model_selection import cross_val_predict, KFold, cross_val_score, train_test_split
 from sklearn import metrics
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+
+from util import get_features, get_columns_starting_with
 
 
 def plot_roc_curve(fpr, tpr, label, title):
@@ -35,7 +37,8 @@ def fix_test(x_test, train_columns):
         if col not in x_test.columns:
             # only columns starting with pos_0 are allowed to be missing, the rest should already exist (be sure you use the test version of the onehot encoder if this isn't the case)
             assert col.startswith('alfa_pos_') or col.startswith('beta_pos_') or col.endswith(
-                '_count') or col in ['beta_J', 'beta_V', 'alfa_J','alfa_V'], f'Column {col} not in test set' # Don't know whether col in ['beta_J', 'beta_V', 'alfa_J','alfa_V'] should be aloowed, was required for alpha beta knn
+                '_count') or col in ['beta_J', 'beta_V', 'alfa_J',
+                                     'alfa_V'], f'Column {col} not in test set'  # Don't know whether col in ['beta_J', 'beta_V', 'alfa_J','alfa_V'] should be aloowed, was required for alpha beta knn
             cols_to_add.append(col)
 
             # line below raises performance error, which is why I add them all at once using cols to add
@@ -77,6 +80,84 @@ def evaluate_no_cv(clf, x, y, x_test, y_test):
     roc_auc = metrics.auc(fpr, tpr)
     print(f"ROC AUC: {roc_auc:.3f}")
     return roc_auc
+
+
+def get_train_test(df, seed, drop_train_na=False):
+    train, test = train_test_split(df, test_size=0.2, random_state=seed)
+
+    test.dropna(inplace=True)
+    if drop_train_na:
+        train.dropna(inplace=True)
+
+    x = get_features(train)
+    y = train['reaction']
+
+    x_test = get_features(test, test=True)
+    x_test = fix_test(x_test, x.columns)
+    y_test = test['reaction']
+
+    return x, y, x_test, y_test
+
+
+def evaluate_cv_no_nan_test(models_to_evaluate, df, folds=5):
+    scores = pd.DataFrame()
+
+    for i, seed in enumerate(range(folds)):
+        print(f'Fold {i + 1}/{folds}')
+
+        for j, model in enumerate(models_to_evaluate):
+            try:
+                print(f"Running {model['name']} ({j + 1}/{len(models_to_evaluate)})")
+
+                drop_train_na = model.get('drop_train_na', False)
+
+
+                if not model.get('seperate_chains',False):
+
+                    x, y, x_test, y_test = get_train_test(df, seed, drop_train_na=drop_train_na)
+
+                    if 'imputer' in model:
+                        x = model['imputer'].fit_transform(x)
+
+                    auc = evaluate_no_cv(model['model'], x, y, x_test, y_test)
+                else:
+                    raise NotImplementedError('seperate chains not implemented yet (gave errors, evaluat function needs df)')
+                    auc = evaluate_seperate_chains(model['model_alpha'], model['model_beta'], x, y, x_test, y_test)
+
+                index = len(scores)
+                scores.loc[index, 'model'] = model['name']
+                scores.loc[index, 'auc'] = auc
+                scores.loc[index, 'drop_train_na'] = drop_train_na
+            except Exception as e:
+                print(f"Error: {e}")
+                continue
+
+    return scores
+
+
+def evaluate_seperate_chains(clf1, clf2, x, y, x_test, y_test):
+    # Keep only the columns starting with 'alfa_'
+    x_alpha = get_columns_starting_with(x, 'alfa_')
+    x_beta = get_columns_starting_with(x, 'beta_')
+
+    clf1.fit(x_alpha, y)
+    clf2.fit(x_beta, y)
+
+    x_test_alpha = get_columns_starting_with(x_test, 'alfa_')
+    x_test_beta = get_columns_starting_with(x_test, 'beta_')
+
+    x_test_alpha = fix_test(x_test_alpha, x_alpha.columns)
+    x_test_beta = fix_test(x_test_beta, x_beta.columns)
+
+    y_pred1 = clf1.predict_proba(x_test_alpha)[:, 1]
+    y_pred2 = clf2.predict_proba(x_test_beta)[:, 1]
+
+    y_pred = (y_pred1 + y_pred2) / 2
+    auc = calculate_auc_and_plot(y_test, y_pred)
+
+    print(f"ROC AUC: {auc:.3f}")
+
+    return auc
 
 # Not working
 # class NoNanInTestKFold():

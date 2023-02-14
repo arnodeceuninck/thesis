@@ -2,6 +2,7 @@ from __future__ import division, print_function
 import numpy as np
 import math
 import progressbar
+from tqdm import tqdm
 
 # Import helper functions
 from .utils import divide_on_feature, train_test_split, get_random_subsets, normalize, bar_widgets
@@ -34,7 +35,7 @@ class RandomForest():
         self.min_samples_split = min_samples_split
         self.min_gain = min_gain  # Minimum information gain req. to continue
         self.max_depth = max_depth  # Maximum depth for tree
-        self.progressbar = progressbar.ProgressBar(widgets=bar_widgets)
+        self.progressbar = tqdm #progressbar.ProgressBar(widgets=bar_widgets)
 
         # Initialize decision trees
         self.trees = []
@@ -54,8 +55,10 @@ class RandomForest():
 
     def fit(self, X, y):
         # if X or y is a DataFrame or Series, convert to numpy array
-        X = X.to_numpy()
-        y = y.to_numpy()
+        if not isinstance(X, np.ndarray):
+            X = X.to_numpy()
+        if not isinstance(y, np.ndarray):
+            y = y.to_numpy()
 
         n_features = np.shape(X)[1]
         # If max_features have not been defined => select it as
