@@ -1,6 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import time
+from dataStructures import ListDataset
+import numpy as np
 
 
 def get_train_dataset():
@@ -72,11 +75,11 @@ def process_gene(g):
         version = group_version[1]
     else:
         if len(group_version) == 3:
-            # TODO: TOASK: What should I actually do here? TRAV15-2/DV6-2*01
+            # ASKED: What should I actually do here? TRAV15-2/DV6-2*01 -> Is okay as I dit this
             g = group_version[0]
             version = group_version[2]
 
-            print(f"Warning: error splitting gene {g_old}, fixed to {g}-{version}")
+            # print(f"Warning: error splitting gene {g_old}, fixed to {g}-{version}")
             return g, version
 
         raise RuntimeError(f"splitting full gene on '-' resulted in >2 items: {g_old}")
@@ -121,3 +124,42 @@ def plot_scores(scores, baseline_name, y_label="AUC", x_label="Model", rotate_x=
 
     # clear the graph for future plots
     plt.clf()
+
+
+def readDataframeToListDataset(features_df, labels_df=None, label_col_name=None):
+    """"
+    Read a pandas dataframe to a ListDataset
+    :param features_df: pandas dataframe with features (and labels if labels_df is None)
+    :param labels_df: pandas dataframe with labels
+    :param label_col_name: name of the column with the labels (if labels_df is None)
+    :return: ListDataset
+    """
+
+    if labels_df is None:
+        assert label_col_name is not None, "label_col_name must be specified if labels_df is None"
+        labels_df = features_df[label_col_name]
+        features_df = features_df.drop(label_col_name, axis=1)
+
+    assert len(features_df) == len(labels_df), "features_df and labels_df must have the same length"
+    assert np.isnan(labels_df).sum() == 0, "NaN values in labels_df"
+
+    df = features_df.reset_index(drop=True)
+    assert 'target' not in df.columns, "'target' column already exists in features_df. Please rename it or specify using label_col_name."
+    df['target'] = labels_df.reset_index(drop=True)
+
+    start = time.time()
+    dataset = ListDataset.ListDataset()
+
+    for index, row in df.iterrows():
+        series = row.values[:-1]
+        label = row.values[-1]
+        if label not in [0, 1]:
+            raise ValueError("Label must be 0 or 1")
+        assert not np.isnan(label), "Label cannot be NaN"
+        dataset.add_series(label, series)
+
+    end = time.time()
+    elapsed = end - start
+    print(f"Parsing process finished in {elapsed} seconds")
+
+    return dataset

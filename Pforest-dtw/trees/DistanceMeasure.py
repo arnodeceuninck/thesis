@@ -1,4 +1,5 @@
 import sys
+sys.path.append('..')
 
 import dtaidistance.dtw as dtw
 import dtaidistance
@@ -6,10 +7,13 @@ import random
 import numpy as np
 #from numpy.core.tests.test_mem_overlap import xrange
 
+from trees import CustomDistance
+
 from core import AppContext
 
 import math
 
+DISTANCE_MEASURE = lambda q, e: dtw.distance_fast(q, e, window=2)
 
 class DistanceMeasure:
     """
@@ -29,8 +33,10 @@ class DistanceMeasure:
         for i in range(0, len(temp_exemplars)):
             exemplars = np.asarray(temp_exemplars.__getitem__(i))
             try:
-                dist = dtw.distance_fast(array_query, exemplars, window=2)
+                # dist = dtw.distance_fast(array_query, exemplars, window=2)
+                dist = DISTANCE_MEASURE(array_query, exemplars)
             except RecursionError:
+                raise RecursionError("RecursionError, I didn't implement this with my own function")
                 dist = DistanceMeasure._dtw_distance(array_query, exemplars, d=lambda x, y: abs(x - y))
 
             if len(closest_nodes) == 0:

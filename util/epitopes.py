@@ -1,5 +1,5 @@
 import pandas as pd
-from util import split_gene_in_columns
+from util import split_gene_in_columns,evaluate_cv_no_nan_test
 
 
 def get_vdjdb():
@@ -42,7 +42,7 @@ def remove_negative_positive_cdr3_overlap(negative_samples, positive_samples):
                                                              'CDR3_beta')
 
     if len(negative_samples) != previous_len:
-        print(f'Number of negative samples changed from {previous_len} to {len(negative_samples)}')
+        print(f'Number of negative samples changed from {previous_len} to {len(negative_samples)} (because of overlap with positive samples)')
 
     return negative_samples
 
@@ -74,18 +74,16 @@ def get_negative_subsets(negative_samples):
 class NotEnoughSamplesException(Exception):
     pass
 
+def sample_df(df, sample_size):
+    return df.sample(n=sample_size, random_state=42) if len(df) >= sample_size else pd.DataFrame()
 
 def get_negative_df(negative_alpha_only, negative_beta_only, negative_both, negative_none,
                     alpha_only_count_pos, beta_only_count_pos, both_count_pos, non_count_pos):
-    try:
-        # Sample the negative samples to the same size as the positive samples
-        negative_df_alpha_only = negative_alpha_only.sample(n=alpha_only_count_pos, random_state=42)
-        negative_df_beta_only = negative_beta_only.sample(n=beta_only_count_pos, random_state=42)
-        negative_df_both = negative_both.sample(n=both_count_pos, random_state=42)
-        negative_df_none = negative_none.sample(n=non_count_pos, random_state=42)
-    except ValueError:
-        print('Not enough negative samples to sample from')
-        raise NotEnoughSamplesException()
+
+    negative_df_alpha_only = sample_df(negative_alpha_only, alpha_only_count_pos)
+    negative_df_beta_only = sample_df(negative_beta_only, beta_only_count_pos)
+    negative_df_both = sample_df(negative_both, both_count_pos)
+    negative_df_none = sample_df(negative_none, non_count_pos)
 
     negative_df = pd.concat([negative_df_alpha_only, negative_df_beta_only, negative_df_both, negative_df_none])
     return negative_df
@@ -124,3 +122,17 @@ def get_epitope_df(epitope, silent=False):
     split_gene_in_columns(df)
 
     return df
+
+
+def get_scores_df_for_epitope(epitope, models_to_evaluate):
+    print(f'\nEvaluating eptiope {epitope}...')
+
+    df = get_epitope_df(epitope, silent=True)
+    print(f'Epitope has {len(df)} samples')
+
+    model_scores = evaluate_cv_no_nan_test(models_to_evaluate, df)
+
+    # add epitope column
+    model_scores['epitope'] = epitope
+
+    return model_scores

@@ -2,7 +2,7 @@
 
 import numpy as np
 
-from utils import split_search, split
+from .utils import split_search, split
 
 
 class Node:
@@ -134,8 +134,9 @@ class Tree:
             None
 
         """
+        assert x.shape[0] == y.shape[0], "x and y must have same length"
+        # print(f"Training tree with {x.shape[0]} samples")
         if self._bootstrap:
-            # Resample with replacement
             bootstrap_indices = np.random.randint(0, x.shape[0], x.shape[0])
             x, y = x[bootstrap_indices], y[bootstrap_indices]
 

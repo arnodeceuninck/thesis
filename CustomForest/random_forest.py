@@ -106,5 +106,14 @@ class RandomForest():
         # For each sample
         for sample_predictions in y_preds:
             # Get the relative frequency of each class
-            y_pred.append(np.bincount(sample_predictions.astype('int'))/len(sample_predictions))
-        return  np.array(y_pred)
+            if len(np.unique(np.array(sample_predictions))) == 1:
+                unique_value = sample_predictions[0]
+                if unique_value == 0:
+                    y_pred.append([1,0])
+                else:
+                    y_pred.append([0,1])
+            else:
+                pred_count = np.bincount(sample_predictions.astype('int'))
+                pred_prob = pred_count/len(sample_predictions)
+                y_pred.append(pred_prob)
+        return np.stack(y_pred, axis=0)

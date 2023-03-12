@@ -3,7 +3,7 @@
 import numpy as np
 
 from Forest import Forest
-from dataset_fetcher.loader import load_dataset
+# from dataset_fetcher.loader import load_dataset
 
 
 def train_routine(dataset_name, no_trees, max_depth=8, bootstrap=None,

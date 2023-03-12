@@ -1,4 +1,8 @@
-from distance import DistanceMeasure as dm
+# from distance import DistanceMeasure as dm
+import sys
+sys.path.append('..')
+
+from trees import DistanceMeasure as dm
 from dataStructures import ListDataset
 from core import AppContext
 import numpy as np
@@ -28,8 +32,9 @@ class Splitter:
     :param dataset_per_class A map of <class, series>. Each class represent a branch
     :return A random class from a list of classes which series are similar to the exemplar serie
     """
+
     def split_data(self, sample_dataset: ListDataset, dataset_per_class: dict):
-        splits = dict()     # <index, dataset>
+        splits = dict()  # <index, dataset>
         class_branch = 0
         for class_key in dataset_per_class.keys():
             dataset = dataset_per_class[class_key]
@@ -72,6 +77,7 @@ class Splitter:
     splitting the data n_candidate times and returning
     the less weighted gini split
     """
+
     def find_best_splits(self, sample_dataset):
         series_per_class = sample_dataset.split_classes()
         best_weighted_gini = np.inf

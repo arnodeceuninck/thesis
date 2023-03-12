@@ -107,7 +107,7 @@ def split_search_feature(x, y, feature_idx, min_samples_leaf):
             splits.append(s)
             split_values.append(split_value)
 
-    if len(gini_scores) is 0:
+    if len(gini_scores) == 0:
         # Impossible to split
         # This will occur when samples are identical in a given node
         return np.NaN, np.NaN, None
@@ -170,7 +170,7 @@ def split_search(x, y, min_samples_leaf, feature_search=None):
         split_values.append(s_value)
         splits.append(s)
 
-        if g is not np.NaN:
+        if not np.isnan(g):
             # At least one legal split
             split_flag = True
 

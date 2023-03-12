@@ -2,7 +2,8 @@
 
 import numpy as np
 
-from Tree import Tree
+from .Tree import Tree
+from tqdm import tqdm
 
 
 class Forest:
@@ -39,9 +40,10 @@ class Forest:
             None
 
         """
-        print('Training Forest...\n')
-        for i in range(self._no_trees):
-            print('\nTraining Decision Tree no {}...\n'.format(i + 1))
+        assert x.shape[0] == y.shape[0], "x and y must have same length"
+        # print(f'Training Forest with {x.shape[1]} features and {x.shape[1]} samples...\n')
+        for i in tqdm(range(self._no_trees), desc='Training Forest Trees'):
+            # print('\nTraining Decision Tree no {}...\n'.format(i + 1))
             tree = Tree(max_depth=self._max_depth,
                         min_samples_split=self._min_samples_split,
                         min_samples_leaf=self._min_samples_leaf,
@@ -51,6 +53,7 @@ class Forest:
 
     def eval(self, x, y):
         """"Evaluate accuracy on dataset."""
+        assert x.shape[0] == y.shape[0], "x and y must have same length"
         p = self.predict(x)
         return np.sum(p == y) / x.shape[0]
 
