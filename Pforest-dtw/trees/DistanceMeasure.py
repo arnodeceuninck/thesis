@@ -6,6 +6,7 @@ import dtaidistance
 import random
 import numpy as np
 #from numpy.core.tests.test_mem_overlap import xrange
+import numba
 
 from trees import CustomDistance
 
@@ -13,7 +14,8 @@ from core import AppContext
 
 import math
 
-DISTANCE_MEASURE = lambda q, e: dtw.distance_fast(q, e, window=2)
+# DISTANCE_MEASURE = lambda q, e: dtw.distance_fast(q, e, window=2)
+# DISTANCE_MEASURE = lambda q, e: CustomDistance.calculate_tcr_dist_multiple_chains(q, e)
 
 class DistanceMeasure:
     """
@@ -23,7 +25,7 @@ class DistanceMeasure:
     """
 
     @staticmethod
-    def find_closest_nodes(instance, temp_exemplars: list):
+    def find_closest_nodes(instance, temp_exemplars: list, distance_measure, distance_kwargs):
         array_query = np.asarray(instance)
         closest_nodes = list()
         bsf = np.inf
@@ -33,11 +35,11 @@ class DistanceMeasure:
         for i in range(0, len(temp_exemplars)):
             exemplars = np.asarray(temp_exemplars.__getitem__(i))
             try:
-                # dist = dtw.distance_fast(array_query, exemplars, window=2)
-                dist = DISTANCE_MEASURE(array_query, exemplars)
+                # dist = CustomDistance.calculate_tcr_dist_multiple_chains(array_query, exemplars)
+                dist = distance_measure(array_query, exemplars, **distance_kwargs)
             except RecursionError:
                 raise RecursionError("RecursionError, I didn't implement this with my own function")
-                dist = DistanceMeasure._dtw_distance(array_query, exemplars, d=lambda x, y: abs(x - y))
+                dist: float = DistanceMeasure._dtw_distance(array_query, exemplars, d=lambda x, y: abs(x - y))
 
             if len(closest_nodes) == 0:
                 bsf = dist
@@ -60,14 +62,15 @@ class DistanceMeasure:
         return closest_nodes[r]
 
     @staticmethod
-    def find_closes_branch_ar(array_query, temp_exemplars):
+    def find_closes_branch_ar(array_query, temp_exemplars, distance_measure, distance_kwargs):
         closest_nodes = list()
         bsf = 100000
         for i in range(0, len(temp_exemplars)):
             exemplars = np.asarray(temp_exemplars.__getitem__(i))
             if DistanceMeasure.are_equal(exemplars, array_query):
                 return i
-            dist = dtw.distance_fast(array_query, exemplars)
+            # dist = dtw.distance_fast(array_query, exemplars)
+            dist = distance_measure(array_query, exemplars, **distance_kwargs)
             if dist < bsf:
                 bsf = dist
                 closest_nodes.clear()

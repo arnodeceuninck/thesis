@@ -2,7 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import time
-from dataStructures import ListDataset
 import numpy as np
 
 
@@ -134,6 +133,8 @@ def readDataframeToListDataset(features_df, labels_df=None, label_col_name=None)
     :param label_col_name: name of the column with the labels (if labels_df is None)
     :return: ListDataset
     """
+
+    from dataStructures import ListDataset
 
     if labels_df is None:
         assert label_col_name is not None, "label_col_name must be specified if labels_df is None"

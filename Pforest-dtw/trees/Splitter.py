@@ -33,7 +33,7 @@ class Splitter:
     :return A random class from a list of classes which series are similar to the exemplar serie
     """
 
-    def split_data(self, sample_dataset: ListDataset, dataset_per_class: dict):
+    def split_data(self, sample_dataset: ListDataset, dataset_per_class: dict, distance_measure, distance_kwargs):
         splits = dict()  # <index, dataset>
         class_branch = 0
         for class_key in dataset_per_class.keys():
@@ -50,18 +50,18 @@ class Splitter:
 
         for j in range(0, sample_size):
             exemplar_series = self.get_list_from_dict(self.temp_exemplars)
-            closest_branch = Splitter.find_closest_branch(sample_dataset.get_series(j), exemplar_series)
+            closest_branch = Splitter.find_closest_branch(sample_dataset.get_series(j), exemplar_series, distance_measure, distance_kwargs)
             if closest_branch == -1:
                 return splits
             splits[closest_branch].add_series(sample_dataset.get_class(j), sample_dataset.get_series(j))
         return splits
 
     @staticmethod
-    def find_closest_branch(query, e):
-        return dm.DistanceMeasure.find_closest_nodes(query, e)
+    def find_closest_branch(query, e, distance_measure, distance_kwargs):
+        return dm.DistanceMeasure.find_closest_nodes(query, e, distance_measure, distance_kwargs)
 
-    def find_closest_branch_(self, query):
-        return dm.DistanceMeasure.find_closest_nodes(query, self.exemplars)
+    def find_closest_branch_(self, query, distance_measure, distance_kwargs):
+        return dm.DistanceMeasure.find_closest_nodes(query, self.exemplars, distance_measure, distance_kwargs)
 
     def get_best_splits(self):
         return self.best_splits
@@ -78,12 +78,12 @@ class Splitter:
     the less weighted gini split
     """
 
-    def find_best_splits(self, sample_dataset):
+    def find_best_splits(self, sample_dataset, distance_measure, distance_kwargs):
         series_per_class = sample_dataset.split_classes()
         best_weighted_gini = np.inf
         num_series = sample_dataset.get_series_data_length()
         for _ in range(0, AppContext.AppContext.num_candidates_per_split):
-            splits = self.split_data(sample_dataset, series_per_class)
+            splits = self.split_data(sample_dataset, series_per_class, distance_measure, distance_kwargs)
             weighted_gini = self.weighted_gini(num_series, splits)
             if weighted_gini < best_weighted_gini:
                 best_weighted_gini = weighted_gini

@@ -196,20 +196,20 @@ def pos_features(df):
     return pd.concat(features_list, axis=1).fillna(0)
 
 
-def get_baseline_feature_functions(test):
-    if not test:
-        feature_functions = [onehot_encode, cdr3_length, aa_occurances, physchem_properties, peptide_mass, pi_feature,
-                             pos_features]
-    else:
-        feature_functions = [onehot_encode_test, cdr3_length, aa_occurances, physchem_properties, peptide_mass,
-                             pi_feature,
+def get_baseline_feature_functions(test, cdr_only=False):
+    ohe = onehot_encode if not test else onehot_encode_test
+
+    if cdr_only:
+        return [cdr3_length, aa_occurances, physchem_properties, peptide_mass, pi_feature]
+
+    feature_functions = [ohe, cdr3_length, aa_occurances, physchem_properties, peptide_mass, pi_feature,
                              pos_features]
     return feature_functions
 
 
-def get_baseline_sequence_features(df, test):
+def get_baseline_sequence_features(df, test, cdr_only=False):
     features_list = []
-    for feature_function in get_baseline_feature_functions(test):
+    for feature_function in get_baseline_feature_functions(test, cdr_only):
         features = feature_function(df)
         if features.shape[0] == 0:
             # No features extracted (e.g. in the case of aa_occurances of all NaN)
@@ -236,15 +236,18 @@ def update_alpha_or_beta(new_value):
     ALPHA_OR_BETA = new_value
 
 
-def get_features(df, test=False):
+def get_features(df, test=False, cdr_only=False):
     df_num_rows = df.shape[0]
 
     global ALPHA_OR_BETA
 
     ALPHA_OR_BETA = 'beta'
-    beta_renamed = df[['CDR3_beta', 'TRBV', 'TRBJ']].rename(columns={'CDR3_beta': 'CDR3', 'TRBV': 'V', 'TRBJ': 'J'})
+    if not cdr_only:
+        beta_renamed = df[['CDR3_beta', 'TRBV', 'TRBJ']].rename(columns={'CDR3_beta': 'CDR3', 'TRBV': 'V', 'TRBJ': 'J'})
+    else:
+        beta_renamed = df[['CDR3_beta']].rename(columns={'CDR3_beta': 'CDR3'})
     try:
-        beta_features = get_baseline_sequence_features(beta_renamed, test).add_prefix('beta_')
+        beta_features = get_baseline_sequence_features(beta_renamed, test, cdr_only).add_prefix('beta_')
 
         beta_features_num_rows = beta_features.shape[0]
 
@@ -258,9 +261,12 @@ def get_features(df, test=False):
         beta_features = pd.DataFrame()
 
     ALPHA_OR_BETA = 'alfa'
-    alpha_renamed = df[['CDR3_alfa', 'TRAV', 'TRAJ']].rename(columns={'CDR3_alfa': 'CDR3', 'TRAV': 'V', 'TRAJ': 'J'})
+    if not cdr_only:
+        alpha_renamed = df[['CDR3_alfa', 'TRAV', 'TRAJ']].rename(columns={'CDR3_alfa': 'CDR3', 'TRAV': 'V', 'TRAJ': 'J'})
+    else:
+        alpha_renamed = df[['CDR3_alfa']].rename(columns={'CDR3_alfa': 'CDR3'})
     try:
-        alpha_features = get_baseline_sequence_features(alpha_renamed, test).add_prefix('alfa_')
+        alpha_features = get_baseline_sequence_features(alpha_renamed, test, cdr_only).add_prefix('alfa_')
 
         alpha_features_num_rows = alpha_features.shape[0]
 

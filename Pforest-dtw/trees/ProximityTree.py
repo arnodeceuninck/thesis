@@ -2,6 +2,7 @@ import sys
 from random import random
 from trees import Node
 from core.TreeStatCollector import TreeStatCollector
+from trees import DistanceMeasure as dm
 
 """
 A tree has:
@@ -23,13 +24,18 @@ class ProximityTree:
         if forest is not None:
             self.proximity_forest_id = forest.get_forest_ID()
             self.stats = TreeStatCollector(id, self.proximity_forest_id)
+            self.distance_measure = forest.distance_measure
+            self.distance_kwargs = forest.distance_kwargs
+        else:
+            self.distance_measure = dm.DistanceMeasure.find_closest_nodes
+            self.distance_kwargs = dict()
 
     def get_root_node(self):
         return self.root
 
     def train(self, data):
         self.node_counter = self.node_counter + 1
-        self.root = Node.Node(parent=None, label=None, node_id=self.node_counter, depth=self.tree_depth, tree=self)
+        self.root = Node.Node(parent=None, label=None, node_id=self.node_counter, depth=self.tree_depth, tree=self, distance_measure=self.distance_measure, distance_kwargs=self.distance_kwargs)
         self.root.train(data)
 
     def predict(self, query):
@@ -37,7 +43,7 @@ class ProximityTree:
         if node is None:
             return -1
         while not node.is_leaf:
-            posicion = node.splitter.find_closest_branch_(query)
+            posicion = node.splitter.find_closest_branch_(query, distance_measure=self.distance_measure, distance_kwargs=self.distance_kwargs)
             if posicion == -1:
                 node.is_leaf = True
                 continue

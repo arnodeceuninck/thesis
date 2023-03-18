@@ -5,7 +5,7 @@ import timeit
 
 class Node:
 
-    def __init__(self, parent, label, node_id, depth, tree, train_cache=None):
+    def __init__(self, parent, label, node_id, depth, tree, distance_measure, distance_kwargs, train_cache=None):
         self.depth = depth
         self.is_leaf = False
         self.node_depth = 0
@@ -13,6 +13,8 @@ class Node:
         self.label = label
         self.node_id = node_id
         self.tree = tree
+        self.distance_measure = distance_measure
+        self.distance_kwargs = distance_kwargs
         self.children = list()
         self.splitter = None
         self.train_cache = train_cache
@@ -48,11 +50,12 @@ class Node:
             return
         self.splitter = sp.Splitter(self)
         start = timeit.default_timer()
-        best_split = self.splitter.find_best_splits(dataset)
+        best_split = self.splitter.find_best_splits(dataset, distance_measure=self.distance_measure, distance_kwargs=self.distance_kwargs)
         stop = timeit.default_timer()
         self.tree.time_best_splits = self.tree.time_best_splits + (stop - start)
         for i in range(0, len(best_split.values())):
-            self.children.append(Node(self, i, self.tree.node_counter + 1, self.depth + 1, self.tree))
+            self.children.append(Node(self, i, self.tree.node_counter + 1, self.depth + 1, self.tree,
+                                      distance_measure=self.distance_measure, distance_kwargs=self.distance_kwargs))
             self.tree.node_counter = self.tree.node_counter + 1
         counter = 0
         for split in best_split.values():

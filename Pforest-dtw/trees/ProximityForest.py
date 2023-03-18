@@ -2,6 +2,7 @@ import timeit
 import random
 import numpy as np
 from trees import ProximityTree as pt
+from trees import DistanceMeasure as dm
 from core import AppContext as app
 from core import PFResult as pfr
 from dataStructures import ListDataset
@@ -15,7 +16,7 @@ class ProximityForest:
 
     candidates = app.AppContext.num_candidates_per_split
 
-    def __init__(self, forest_id, max_depth=100, n_trees=100, n_candidates=5):
+    def __init__(self, forest_id, max_depth=100, n_trees=100, n_candidates=5, distance_measure=None, distance_kwargs=None):
         random.seed(1234)
         app.AppContext.num_candidates_per_split = n_candidates
         app.AppContext.num_trees = n_trees
@@ -24,6 +25,8 @@ class ProximityForest:
         self.num_classes_predicted = dict()
         self.forest_id = forest_id
         self.result = pfr.PFResult(self)
+        self.distance_measure = distance_measure if distance_measure is not None else dm.DistanceMeasure.find_closest_nodes
+        self.distance_kwargs = distance_kwargs if distance_kwargs is not None else dict()
         self.trees = list()
         for i in range(0, app.AppContext.num_trees):
             self.trees.append(pt.ProximityTree(i, self))
