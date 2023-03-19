@@ -245,3 +245,88 @@ def get_closest_exemplars(exemplars, data, measure):
     closest_exemplar_indices = np.argmin(distances, axis=1)
     assert len(closest_exemplar_indices) == len(data)
     return closest_exemplar_indices
+
+
+from joblib import Parallel, delayed
+import pandas as pd
+from tqdm import tqdm
+
+
+class ProximityForestClassifier:
+    def __init__(self, n_trees=100, show_progress=True, use_bootstrapping=True, reduce_features=True,
+                 sample_multiple_splits=10, max_depth=5):
+        self.n_trees = n_trees
+        self.trees = []
+        self.classes_ = None
+        self.show_progress = show_progress
+        self.use_bootstrapping = use_bootstrapping
+        self.reduce_features = reduce_features
+        self.sample_multiple_splits = sample_multiple_splits
+        self.max_depth = max_depth
+
+    def fit(self, data_x, data_y, groups):
+        data_x = self.preprocess_data(data_x)
+        data_y = self.preprocess_data(data_y.astype(int))
+        groups = self.preprocess_data(groups)
+
+        # multithreaded
+        iterator = tqdm(range(self.n_trees), disable=not self.show_progress, desc='Fitting')
+        self.trees = Parallel(n_jobs=32)(delayed(self.fit_tree)(data_x, data_y, groups) for i in iterator)
+
+        self.classes_ = np.unique(data_y)
+
+        return self
+
+    def fit_tree(self, data_x, data_y, groups):
+        if self.use_bootstrapping:
+            data_x_bootstrap, data_y_bootstrap, groups_bootstrap = self.bootstrap(data_x, data_y, groups)
+        else:
+            data_x_bootstrap, data_y_bootstrap, groups_bootstrap = data_x, data_y, groups
+
+        if self.reduce_features:
+            num_features_to_keep = int(np.sqrt(data_x_bootstrap.shape[1]))
+        else:
+            num_features_to_keep = None
+            # assert num_features_to_keep <= len(data_x[0])
+
+        return ProximityTreeClassifier(num_features_to_keep=num_features_to_keep,
+                                       splits_to_sample=self.sample_multiple_splits, max_depth=self.max_depth)\
+            .fit(data_x_bootstrap, data_y_bootstrap, groups_bootstrap)
+
+    def bootstrap(self, data_x, data_y, groups):
+        # Bootstrap some rows
+        indices = np.random.choice(len(data_x), size=int(len(data_x) * 0.1), replace=True)
+        data_x_bootstrap = data_x[indices]
+        data_y_bootstrap = data_y[indices]
+        groups_bootstrap = groups[indices]
+        return data_x_bootstrap, data_y_bootstrap, groups_bootstrap
+
+    def get_predictions(self, data):
+        data = self.preprocess_data(data)
+
+        iterator = tqdm(range(self.n_trees), disable=not self.show_progress, desc='Predicting')
+        predictions = Parallel(n_jobs=32)(delayed(self.trees[i].predict)(data) for i in iterator)
+
+        return predictions
+
+    def preprocess_data(self, data):
+        # if data is a pandas dataframe, convert to numpy array
+        if isinstance(data, pd.DataFrame):
+            data = data.replace({True: 1, False: 0})
+            data = data.to_numpy()
+        if isinstance(data, pd.Series):
+            data = data.replace({True: 1, False: 0})
+            data = data.to_numpy()
+        return data
+
+    def predict_proba(self, data):
+        tree_predictions = self.get_predictions(data)
+        return np.mean(tree_predictions, axis=0)
+
+    def predict(self, data):
+        tree_predictions = self.get_predictions(data)
+        most_occuring = np.apply_along_axis(get_most_common_element, 0, tree_predictions)
+        return most_occuring
+        # Get most occuring element for each column
+def get_most_common_element(array):
+    return np.argmax(np.bincount(array))
