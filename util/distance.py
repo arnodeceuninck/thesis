@@ -16,9 +16,10 @@ def calculate_tcr_dist(seq1, seq2, nan_distance):
     else:
         return calculate_tcr_dist_no_nan(seq1, seq2)
 
-def calculate_tcr_dist_multiple_chains(seq1, seq2, nan_distance=5):
+def calculate_tcr_dist_multiple_chains(seq1, seq2, nan_distance=5, print_dist=False):
     assert len(seq1) == len(seq2)
     dist = 0
     for i in range(len(seq1)):
         dist += calculate_tcr_dist(seq1[i], seq2[i], nan_distance=nan_distance) # TODO: weight?
+    if print_dist: print(f"Dist between {seq1} and {seq2} is {dist}")
     return dist
