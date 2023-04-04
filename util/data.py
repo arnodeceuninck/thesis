@@ -53,7 +53,7 @@ def process_gene(g):
     g_old = g
 
     # Remove all forward slashes to make e.g. TRAV14/DV4 and TRAV14DV4 equal.
-    g = g.replace('/', '')
+    # g = g.replace('/', '') # TODO?
 
     # Extract the allele (and set to 01 if none given)
     g_allele = g.split('*')

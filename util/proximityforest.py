@@ -18,13 +18,13 @@ class TreeNode:
 
 
 class InternalNode(TreeNode):
-    def __init__(self, data_x, data_y, groups, depth, max_depth, splits_to_sample):
+    def __init__(self, data_x, data_y, groups, depth, max_depth, splits_to_sample, distance_measure, distance_kwargs):
         assert len(data_x) == len(data_y) == len(groups)
         assert len(data_x) > 0
 
         depth += 1
 
-        self.measure = lambda x, y: np.linalg.norm(x - y)
+        self.measure = lambda x, y: distance_measure(x, y, **distance_kwargs)
         self.branches = []  # Contains internal nodes or leaf nodes
 
         exemplars, closest_exemplars = get_split(data_x, data_y, groups, splits_to_sample, self.measure)
@@ -38,14 +38,21 @@ class InternalNode(TreeNode):
                 # If everything is closer to the other one, you don't need to create a node with 0 data points
                 continue
 
-            subtree = get_node(closest_data_x, closest_data_y, closest_data_groups, depth, max_depth, splits_to_sample)
+            subtree = get_node(closest_data_x, closest_data_y, closest_data_groups, depth, max_depth, splits_to_sample, distance_measure, distance_kwargs)
             self.branches.append(Branch(exemplar, i, subtree))  # TODO: Fix label somewhere here instead of i
 
     def predict(self, data):
+        if len(self.branches) == 1:
+            # If there is only one branch, it means that all data points are closer to the exemplar of that branch
+            return self.branches[0].subtree.predict(data)
+
         # Return the label of the closest subtree to the data point
         exemplar_distance = [self.measure(data, branch.exemplar) for branch in self.branches]
-        closest_exemplars = get_closest_exemplars(exemplar_distance, [data], self.measure)
-        branch = self.branches[closest_exemplars[0]]
+        # get the index of the closest exemplar (lowest number)
+        closest_exemplar = np.argmin(exemplar_distance)
+        # closest_exemplars = get_closest_exemplars(exemplar_distance, [data], self.measure)
+        branch = self.branches[closest_exemplar]
+        # print(f"Taking branch {branch.class_label} after comparing {data} with {self.branches[0].exemplar} (d={exemplar_distance[0]}) and {self.branches[1].exemplar} (d={exemplar_distance[1]})")
         return branch.subtree.predict(data)
 
     def print(self, depth):
@@ -64,16 +71,21 @@ class LeafNode(TreeNode):
 
     def print(self, depth):
         print(f"{'-' * depth}Leaf ({self.class_label})")
+
+
 # Splitting criteriaa
 class ProximityTreeClassifier:
-    def __init__(self, max_depth=5, num_features_to_keep=None, splits_to_sample=10):
+    def __init__(self, max_depth=5, num_features_to_keep=None, splits_to_sample=10, distance_measure=None, distance_kwargs=None):
         self.root = None
         self.max_depth = max_depth
         self.num_features_to_keep = num_features_to_keep
         self.features_to_use_indices = None
         self.splits_to_sample = splits_to_sample
+        self.distance_measure = distance_measure if distance_measure is not None else lambda x, y: np.linalg.norm(x - y)
+        self.distance_kwargs = distance_kwargs if distance_kwargs is not None else {}
 
-    def fit(self, data_x, data_y, groups):
+    def fit(self, data_x, data_y, groups=None):
+        groups = np.zeros(len(data_x)) if groups is None else groups
 
         self.num_features = data_x.shape[1]  # Total number of features, not the number used!!!
 
@@ -81,9 +93,13 @@ class ProximityTreeClassifier:
                                                         replace=False) if self.num_features_to_keep is not None else np.arange(
             len(data_x[0]))
         data_x_reduced = subsample_features(data_x, self.features_to_use_indices)
-        # TODO: Reduce features inpredict
+
+        # TODO: Remove this line to enable subsampling and bootstrapping
+        data_x_reduced = data_x
+
         self.root = get_node(data_x_reduced, data_y, groups, depth=0, max_depth=self.max_depth,
-                             splits_to_sample=self.splits_to_sample)
+                             splits_to_sample=self.splits_to_sample, distance_measure=self.distance_measure,
+                             distance_kwargs=self.distance_kwargs)
 
         return self
 
@@ -104,6 +120,8 @@ class ProximityTreeClassifier:
 
     def print(self):
         self.root.print(0)
+
+
 def is_pure(data_y):
     # Check if all data has the same class label
     unique_y = np.unique(data_y)
@@ -118,7 +136,7 @@ def subsample_features(data_x, feature_indices):
     return data_x[:, feature_indices]
 
 
-def get_node(data_x, data_y, groups, depth, max_depth, splits_to_sample):
+def get_node(data_x, data_y, groups, depth, max_depth, splits_to_sample, distance_measure, distance_kwargs):
     assert len(data_x) == len(data_y) == len(groups)
     assert len(data_x) > 0
 
@@ -127,7 +145,7 @@ def get_node(data_x, data_y, groups, depth, max_depth, splits_to_sample):
         class_label = get_most_common_element(data_y)
         return LeafNode(class_label)
     else:
-        return InternalNode(data_x, data_y, groups, depth, max_depth, splits_to_sample)
+        return InternalNode(data_x, data_y, groups, depth, max_depth, splits_to_sample, distance_measure, distance_kwargs)
 
 
 # Some util functions
@@ -149,22 +167,26 @@ def get_from_group_if_exists_else_random(group_x, group_y, data_x, data_y, label
 
 
 def get_group_data(data_x, data_y, groups, group_id):
-    random_group_indices = np.where(groups == group_id)[0]
-    group_x = np.take(data_x, random_group_indices)
-    group_y = np.take(data_y, random_group_indices)
-    return group_x, group_y
+    # random_group_indices = np.where(groups == group_id)[0]
+    # group_x = np.take(data_x, random_group_indices, axis=0)
+    # group_y = np.take(data_y, random_group_indices)
+    # return group_x, group_y
+    return data_x[groups == group_id], data_y[groups == group_id]
 
 
 def get_single_split(data_x, data_y, groups):
     assert len(data_x) == len(data_y) == len(groups)
     assert len(data_x) != 0
 
-    # Sample uniformly any of the groups
-    # Get the unique values in groups
-    unique_groups = np.unique(groups)
-    random_group = np.random.choice(unique_groups)
+    # # Sample uniformly any of the groups
+    # # Get the unique values in groups
+    # unique_groups = np.unique(groups)
+    # random_group = np.random.choice(unique_groups)
+    #
+    # random_group_x, random_group_y = get_group_data(data_x, data_y, groups, random_group)
 
-    random_group_x, random_group_y = get_group_data(data_x, data_y, groups, random_group)
+    random_group_x = data_x
+    random_group_y = data_y
 
     assert len(random_group_x) == len(random_group_y) != 0
 
@@ -254,7 +276,7 @@ from tqdm import tqdm
 
 class ProximityForestClassifier:
     def __init__(self, n_trees=100, show_progress=True, use_bootstrapping=True, reduce_features=True,
-                 sample_multiple_splits=10, max_depth=5):
+                 sample_multiple_splits=10, max_depth=5, distance_measure=None, distance_kwargs=None, multithreaded=True):
         self.n_trees = n_trees
         self.trees = []
         self.classes_ = None
@@ -263,15 +285,21 @@ class ProximityForestClassifier:
         self.reduce_features = reduce_features
         self.sample_multiple_splits = sample_multiple_splits
         self.max_depth = max_depth
+        self.distance_measure = distance_measure
+        self.distance_kwargs = distance_kwargs
+        self.multithreaded = multithreaded
 
-    def fit(self, data_x, data_y, groups):
+    def fit(self, data_x, data_y, groups=None):
         data_x = self.preprocess_data(data_x)
         data_y = self.preprocess_data(data_y.astype(int))
-        groups = self.preprocess_data(groups)
+        groups = self.preprocess_data(groups) if groups is not None else np.zeros(len(data_x))
 
-        # multithreaded
-        iterator = tqdm(range(self.n_trees), disable=not self.show_progress, desc='Fitting')
-        self.trees = Parallel(n_jobs=32)(delayed(self.fit_tree)(data_x, data_y, groups) for i in iterator)
+        if self.multithreaded:
+            iterator = tqdm(range(self.n_trees), disable=not self.show_progress, desc='Fitting')
+            self.trees = Parallel(n_jobs=3)(delayed(self.fit_tree)(data_x, data_y, groups) for i in iterator)
+        else:
+            for tree in tqdm(range(self.n_trees), disable=not self.show_progress, desc='Fitting'):
+                self.trees.append(self.fit_tree(data_x, data_y, groups))
 
         self.classes_ = np.unique(data_y)
 
@@ -290,7 +318,8 @@ class ProximityForestClassifier:
             # assert num_features_to_keep <= len(data_x[0])
 
         return ProximityTreeClassifier(num_features_to_keep=num_features_to_keep,
-                                       splits_to_sample=self.sample_multiple_splits, max_depth=self.max_depth)\
+                                       splits_to_sample=self.sample_multiple_splits, max_depth=self.max_depth,
+                                       distance_measure=self.distance_measure, distance_kwargs=self.distance_kwargs) \
             .fit(data_x_bootstrap, data_y_bootstrap, groups_bootstrap)
 
     def bootstrap(self, data_x, data_y, groups):
@@ -304,8 +333,13 @@ class ProximityForestClassifier:
     def get_predictions(self, data):
         data = self.preprocess_data(data)
 
-        iterator = tqdm(range(self.n_trees), disable=not self.show_progress, desc='Predicting')
-        predictions = Parallel(n_jobs=32)(delayed(self.trees[i].predict)(data) for i in iterator)
+        if self.multithreaded:
+            iterator = tqdm(range(self.n_trees), disable=not self.show_progress, desc='Predicting')
+            predictions = Parallel(n_jobs=3)(delayed(self.trees[i].predict)(data) for i in iterator)
+        else:
+            predictions = []
+            for tree in tqdm(self.trees, disable=not self.show_progress, desc='Predicting'):
+                predictions.append(tree.predict(data))
 
         return predictions
 
@@ -321,12 +355,16 @@ class ProximityForestClassifier:
 
     def predict_proba(self, data):
         tree_predictions = self.get_predictions(data)
-        return np.mean(tree_predictions, axis=0)
+        means = np.mean(tree_predictions, axis=0)
+        # expand to 2d array
+        return np.stack((1 - means, means), axis=1)
 
     def predict(self, data):
         tree_predictions = self.get_predictions(data)
         most_occuring = np.apply_along_axis(get_most_common_element, 0, tree_predictions)
         return most_occuring
         # Get most occuring element for each column
+
+
 def get_most_common_element(array):
     return np.argmax(np.bincount(array))

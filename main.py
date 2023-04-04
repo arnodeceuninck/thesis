@@ -1,11 +1,82 @@
-# python code
-text = "Inez.Hoeijmakers@student.uantwerpen.be; Emma.VanPuyvelde@student.uantwerpen.be; Arne.Cobben@student.uantwerpen.be; Eline.Grielens@student.uantwerpen.be; Lorenz.Streffer@student.uantwerpen.be; Victoria.Wössner@student.uantwerpen.be; Yorick.Verbruggen@student.uantwerpen.be; Laurens.Verhaegen@student.uantwerpen.be; Arno.Deceuninck@student.uantwerpen.be; Maarten.VanWesemael@student.uantwerpen.be; Thomas.DeJongh@student.uantwerpen.be; Mike.Habex@student.uantwerpen.be; Desi.Cooremans@student.uantwerpen.be; Eline.Hoes@student.uantwerpen.be; Ilse.Lindenbergh@student.uantwerpen.be; Vladomeare.Obolonskyy@student.uantwerpen.be; Jannes.VanDijck@student.uantwerpen.be; Julien.DeWit@student.uantwerpen.be; Floriane.Goossens@student.uantwerpen.be; Fien.Vlemincx@student.uantwerpen.be; Chaouki.Yahyati@student.uantwerpen.be; Tessa.Nuyttens@student.uantwerpen.be; Miek.Jacobs@student.uantwerpen.be; Evelyne.Michiels@student.uantwerpen.be; Fabienne.Hardij@student.uantwerpen.be; Lenie.Thielman@student.uantwerpen.be; Christel.Goorden@student.uantwerpen.be; May.Mertens@student.uantwerpen.be; Liam.DeCock@student.uantwerpen.be; Silke.Lemmens@student.uantwerpen.be; Sofie.Wyckmans@student.uantwerpen.be; Ghazal.Pazhman@student.uantwerpen.be; Maarten.Uwents@student.uantwerpen.be; Anke.deGroot@student.uantwerpen.be; Aline.Corstiaens@student.uantwerpen.be; Eline.Tobback@student.uantwerpen.be; Joachim.Mertens@student.uantwerpen.be; Eva.Cnops@student.uantwerpen.be; Nafisa.Abubakar@student.uantwerpen.be; Max.Kips@student.uantwerpen.be; Laurens.Engelen@student.uantwerpen.be; Yannick.Vanneste@student.uantwerpen.be; Cécile.Taelman@student.uantwerpen.be; Irathush.Tharmalingam@student.uantwerpen.be; Delphine.Truyman@student.uantwerpen.be; Yelena.Walravens@student.uantwerpen.be; Colette.Puts@student.uantwerpen.be; Jasmina.Podleśna@student.uantwerpen.be; Hannah.Dekeyser@student.uantwerpen.be; Timo.Dobbeleir@student.uantwerpen.be; Axelle.Bigaré@student.uantwerpen.be; Sofie.VandenBergh@student.uantwerpen.be; Daphne.Butzen@student.uantwerpen.be; Alexi.DePreter@student.uantwerpen.be; Fien.Vandenberk@student.uantwerpen.be; Emiel.Ruts@student.uantwerpen.be; Tom.Kusters@student.uantwerpen.be; Michiel.Kellens@student.uantwerpen.be; Yannick.Smolders@student.uantwerpen.be; Tom.Stroobants@student.uantwerpen.be; Matthias.Oostvogels@student.uantwerpen.be; Esther.Roelandt@student.uantwerpen.be; Geert.VanNeylen@student.uantwerpen.be; Menthe.Boers@student.uantwerpen.be; Pauline.Liket@student.uantwerpen.be; Helga.Robberecht@student.uantwerpen.be; Peace.Mpakaniye@student.uantwerpen.be; Yeshiwas.Alemineh@student.uantwerpen.be; Mustapha.Sanyang@student.uantwerpen.be; Mohammed.Toyib@student.uantwerpen.be; Eric.Kindong@student.uantwerpen.be; Gabriela.MontillaGonzalez@student.uantwerpen.be; Gianella.JiménezLeon@student.uantwerpen.be; Kevin.Vega@student.uantwerpen.be; Elena.Gorgan@student.uantwerpen.be; Sarah.Malmedy@student.uantwerpen.be; Blijke.Haes@student.uantwerpen.be; Dea.Vandenbrande@student.uantwerpen.be; Marie.Costers@student.uantwerpen.be; Lies.Lemmens@student.uantwerpen.be; Eric.vanderVen@student.uantwerpen.be; Tim.Lambrechts@student.uantwerpen.be; Louke.Boom@student.uantwerpen.be; Nina.Knuyt@student.uantwerpen.be; Margaux.Albertijn@student.uantwerpen.be; Jakob.VanElsen@student.uantwerpen.be; Senne.Vanschaik@student.uantwerpen.be; Gwen.Nedoklan@student.uantwerpen.be; Ankie.Habets@student.uantwerpen.be; Seppe.vanBladel@student.uantwerpen.be; Jakob.Cleymans@student.uantwerpen.be; Sander.Pouliart@student.uantwerpen.be; Thomas.Bedert@student.uantwerpen.be; Robbe.Staes@student.uantwerpen.be; Elise.Enthoven@student.uantwerpen.be; Thomas.Nelissen@student.uantwerpen.be; Rasmus.Boel@student.uantwerpen.be; Céline.Kwick@student.uantwerpen.be; Jeroen.Brughmans@student.uantwerpen.be; Luna.Bergmans@student.uantwerpen.be; Hannah.Devries@student.uantwerpen.be; Sarah.VanSimaey@student.uantwerpen.be; Arno.Wouters@student.uantwerpen.be; Justine.vanMiegroet@student.uantwerpen.be; Lore.Roggeman@student.uantwerpen.be; Jef.Vandorpe@student.uantwerpen.be; Tim.Spee@student.uantwerpen.be; Stacey.Osei@student.uantwerpen.be; Helena.Adriaensen@student.uantwerpen.be; Jonathan.Sztejter@student.uantwerpen.be; Alice.Collin@student.uantwerpen.be; Alexa.VillegasBourgoing@student.uantwerpen.be; Wenke.Helsen@student.uantwerpen.be; Kristiaan.Bogaerts@student.uantwerpen.be; Malika.Belrhazi@student.uantwerpen.be; Aude.Geeraerts@student.uantwerpen.be; Kirsten.Roggeman@student.uantwerpen.be; Sofie.Coffyn@student.uantwerpen.be; Tine.Beelen@student.uantwerpen.be; Laura.Razenberg@student.uantwerpen.be; Toon.VanOs@student.uantwerpen.be; Maxim.Jeuniaux@student.uantwerpen.be; Kenzo.Claes@student.uantwerpen.be; Jonas.Vandenbergh@student.uantwerpen.be; Britt.Vankrinkelen@student.uantwerpen.be; Mariem.ElHamami@student.uantwerpen.be; Thomas.Chovau@student.uantwerpen.be; Sofie.Verbandt@student.uantwerpen.be; Adinda.Top@student.uantwerpen.be; Anne.VanLooveren@student.uantwerpen.be; Babette.Hermans@student.uantwerpen.be; Jana.Franquet@student.uantwerpen.be; Ala.Simonian@student.uantwerpen.be; Sarah.VanBulck@student.uantwerpen.be; Denice.Calkhoven@student.uantwerpen.be; Timon.Hast@student.uantwerpen.be; Jana.Thys@student.uantwerpen.be; Parisa.GhaviPanjeh@student.uantwerpen.be; Eef.Jonkers@student.uantwerpen.be; Chistophe.Mortelmans@student.uantwerpen.be; Nick.Smeulders@student.uantwerpen.be; Maud.Wuyts@student.uantwerpen.be; Valérie.Geerardyn@student.uantwerpen.be; Xynthya.Frison@student.uantwerpen.be; Beau.DeClercq@student.uantwerpen.be; Jonas.Jacobs@student.uantwerpen.be; Dagmar.Michielsen@student.uantwerpen.be; Jan.Moons@student.uantwerpen.be; Julie.Moens@student.uantwerpen.be; Jan.Livens@student.uantwerpen.be; Leandro.Storme@student.uantwerpen.be; Sam.Henkens@student.uantwerpen.be; Robbe.Paepen@student.uantwerpen.be; Jens.vanMeer@student.uantwerpen.be; Joran.DeGang@student.uantwerpen.be; Frouke.Decat@student.uantwerpen.be; Mathias.Hofkens-VandenBrandt@student.uantwerpen.be; Brent.Wouters@student.uantwerpen.be; Charline.Vandenhove@student.uantwerpen.be; Brent.VanDenBossche@student.uantwerpen.be; Katharina.Wilfert@student.uantwerpen.be; Emiel.Nitor@student.uantwerpen.be; Fien.Deceuninck@student.uantwerpen.be; Eamonn.deRooij@student.uantwerpen.be; Daphne.Lucidarme@student.uantwerpen.be; Maria.Dionysopoulou@student.uantwerpen.be; Hélène.DeWitte @student.uantwerpen.be; Elias.Thierens@student.uantwerpen.be; Ilias.ElAttabi@student.uantwerpen.be; Michiel.Yzewyn@student.uantwerpen.be; Jarne.Besjes@student.uantwerpen.be; Bert.Livens@student.uantwerpen.be; Judith.Hershko@student.uantwerpen.be; Joshua.Moelans@student.uantwerpen.be; Jitse.Kools@student.uantwerpen.be; Geertje.Vandenberge@student.uantwerpen.be; Lori.Trimpeneers@student.uantwerpen.be; Tibo.DeClerck@student.uantwerpen.be"
+import numpy as np
+import pandas as pd
+from tcrdist.repertoire import TCRrep
 
-from unidecode import unidecode
 
-string_with_accents = "éàôü"
-string_without_accents = unidecode(string_with_accents)
+def calculate_tcr_dist2(seq1, seq2, nan_distance=0):
+    if (seq1 == seq2).all():
+        return 0
 
-print(string_without_accents)
-print(unidecode(text))
+    # create a dataframe with the two sequences
 
+    # seq1 and seq2 are two rows in the tDataFrame
+    # the columns are cdr3_a_aa, v_a_gene, j_a_gene, cdr3_b_aa, v_b_gene, j_b_gene
+
+    df = pd.DataFrame([seq1, seq2], columns=['cdr3_a_aa', 'v_a_gene', 'j_a_gene', 'cdr3_b_aa', 'v_b_gene', 'j_b_gene'])
+    df['count'] = 1
+
+    # contains the df a nan value?
+    if df.isnull().values.any():
+        return nan_distance
+
+    # create a TCRrep object
+    tr = TCRrep(cell_df=df,
+                organism='human',
+                chains=['alpha', 'beta'],
+                db_file='alphabeta_gammadelta_db.tsv'
+                )
+    # compute the distances
+    tr.compute_distances()
+    # get the computed distances
+    # return tr.pw_cdr3_a_aa[0][1], tr.pw_cdr3_b_aa[0][1] # TODO: normalize the distances
+    # if pw_alpha is 1x1, return it's only value (probably 0) # todo: this is the case because the family is not recognized, must be fixed
+    if tr.pw_alpha.shape == (1, 1):
+        return tr.pw_alpha[0][0]
+    return tr.pw_alpha[0][1] + tr.pw_beta[0][1] + tr.pw_cdr3_a_aa[0][1] + tr.pw_cdr3_b_aa[0][1]
+
+from util import get_train_dataset, ProximityTreeClassifier, calculate_tcr_dist_multiple_chains
+from sklearn.model_selection import train_test_split
+
+x_columns = ['CDR3_alfa', 'TRAV', 'TRAJ', 'CDR3_beta', 'TRBV', 'TRBJ']
+# x_columns = ['CDR3_alfa', 'CDR3_beta']
+y_column = 'reaction'
+
+df = get_train_dataset()
+df = df[x_columns + [y_column]]
+df = df.sample(100)
+
+for col in ['TRAV', 'TRAJ', 'TRBV', 'TRBJ']:
+    # only append if not nan
+    df[col] = df[col].apply(lambda x: x + '*01' if not pd.isna(x) else x)
+    df[col] = df[col].apply(lambda x: x.replace('2DV8', '2/DV8') if not pd.isna(x) else x)
+    df[col] = df[col].apply(lambda x: x.replace('14DV4', '14/DV4') if not pd.isna(x) else x)
+    df[col] = df[col].apply(lambda x: x.replace('23DV6', '23/DV6') if not pd.isna(x) else x)
+
+train_df, val_df = train_test_split(df, test_size=0.2, random_state=42)
+
+# create numpy arrays for the train and test data
+train_X = train_df[x_columns].to_numpy()
+train_y = train_df[y_column].to_numpy()
+
+val_X = val_df[x_columns].to_numpy()
+val_y = val_df[y_column].to_numpy()
+#%%
+from util import ProximityForestClassifier
+from sklearn.metrics import accuracy_score
+
+model = ProximityForestClassifier(reduce_features=False, distance_measure=calculate_tcr_dist2,
+                                  distance_kwargs={"nan_distance": 0}, multithreaded=True, n_trees=20)
+model.fit(train_X, train_y)
+
+predictions = model.predict(val_X)
+
+accuracy_score(val_y, predictions)
+#%%
+from sklearn import metrics
+from util import plot_roc_curve
+
+predictions = model.predict_proba(val_X)
+fpr, tpr, thresholds = metrics.roc_curve(val_y, predictions[:, 1], pos_label=1)
+roc_auc = metrics.auc(fpr, tpr)
+plot_roc_curve(fpr, tpr, label=f'Random Forest (AUC = {roc_auc:.3f})', title="GILGFVFTL")
+print(f"ROC AUC: {roc_auc}")
