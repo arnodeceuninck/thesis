@@ -5,20 +5,24 @@ import time
 import numpy as np
 
 
-def get_train_dataset():
+def get_train_dataset(vdjdb=False):
     """
     :return: The train part of the combined positive and negative dataset that was made in data.ipybn
     """
+    if vdjdb:
+        return pd.read_csv('data/generated_combined_dataset_train_vdjdb.csv')
+    else:
+        return pd.read_csv('data/generated_combined_dataset_train.csv')
 
-    return pd.read_csv('data/generated_combined_dataset_train.csv')
 
-
-def get_test_dataset():
+def get_test_dataset(vdjdb=False):
     """
     :return: The test part of the combined positive and negative dataset that was made in data.ipybn
     """
-
-    return pd.read_csv('data/generated_combined_dataset_test.csv')
+    if vdjdb:
+        return pd.read_csv('data/generated_combined_dataset_test_vdjdb.csv')
+    else:
+        return pd.read_csv('data/generated_combined_dataset_test.csv')
 
 
 def sample_and_drop(df, n):

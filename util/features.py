@@ -41,7 +41,7 @@ def get_mutation_stability(amino_acid):
     return mutation_stability[amino_acid]
 
 
-ONEHOT_ENCODER = {"alfa": None, "beta": None}
+ONEHOT_ENCODER = {"alpha": None, "beta": None}
 ALPHA_OR_BETA = None  # Should be set to "alpha" or "beta"
 
 
@@ -51,11 +51,11 @@ def onehot_encode_test(df):
 
 def onehot_encode(df, test=False):
     global ONEHOT_ENCODER, ALPHA_OR_BETA
-    assert ALPHA_OR_BETA in ["alfa",
-                             "beta"], f"ALPHA_OR_BETA must be set to 'alfa' or 'beta', is currently set to {ALPHA_OR_BETA}"
+    assert ALPHA_OR_BETA in ["alpha", "beta"], f"ALPHA_OR_BETA must be set to 'alpha' or 'beta', is currently set to {ALPHA_OR_BETA}"
 
     # One hot encode the columns (creates a new column per unique value here and fills it with 1 or 0)
-    onehot_cols = ['V', 'J']
+    # get all columns in df with the name 'V' or 'J' or that starts with 'V_' or 'J_'
+    onehot_cols = [col for col in df.columns if col.startswith('V_') or col.startswith('J_') or col in ['V', 'J']]
     if not test:
         ONEHOT_ENCODER[ALPHA_OR_BETA] = feature_extraction.DictVectorizer(sparse=False)
         encodings = ONEHOT_ENCODER[ALPHA_OR_BETA].fit_transform(df[onehot_cols].to_dict(orient='records'))
@@ -75,6 +75,7 @@ def onehot_encode(df, test=False):
         assert col in onehot_df.columns, f'Column {col} not in dataframe'
 
     return onehot_df
+
 
 
 def get_length(sequence):
@@ -101,10 +102,10 @@ def get_amino_acid_composition(sequence):
 
 def aa_occurances(df):
     composition = [get_amino_acid_composition(sequence) for sequence in df['CDR3']]
-    # aa_alfa_counts = pd.DataFrame.from_records(composition).fillna(0)
-    aa_alfa_counts = pd.DataFrame.from_records(composition).fillna(0) # Filling na with 0, since they weren't counted
-    aa_alfa_counts.columns = [f'{column}_count' for column in aa_alfa_counts.columns]
-    return aa_alfa_counts
+    # aa_alpha_counts = pd.DataFrame.from_records(composition).fillna(0)
+    aa_alpha_counts = pd.DataFrame.from_records(composition).fillna(0) # Filling na with 0, since they weren't counted
+    aa_alpha_counts.columns = [f'{column}_count' for column in aa_alpha_counts.columns]
+    return aa_alpha_counts
 
 
 def get_property(sequence, prop_lookup):
@@ -236,7 +237,54 @@ def update_alpha_or_beta(new_value):
     ALPHA_OR_BETA = new_value
 
 
-def get_features(df, test=False, cdr_only=False):
+def get_features(df, test=False, columns=None, cdr_only=False):
+    if cdr_only:
+        assert columns is None, 'Columns should be None when cdr_only is True'
+        columns = ['CDR3']
+
+    if columns is None:
+        columns = ['CDR3', 'V', 'J']
+
+    df_num_rows = df.shape[0]
+
+    global ALPHA_OR_BETA
+
+    chains = {"alpha": 'A', "beta": 'B'}
+    all_chains_features = []
+    for chain in chains:
+        ALPHA_OR_BETA = chain
+
+        short = chains[chain]
+        rename_map = {f"CDR3_{chain}": "CDR3",
+                      f"TR{short}V": "V",
+                      f"TR{short}J": "J",
+                      f"TR{short}V_family": "V_family",
+                      f"TR{short}J_family": "J_family",
+                      f"TR{short}V_version": "V_version",
+                      f"TR{short}J_version": "J_version"}
+        # remove columns from rename_map that are not in df
+        rename_map = {k: v for k, v in rename_map.items() if k in df.columns}
+
+        renamed = df[rename_map.keys()].rename(columns=rename_map)
+
+        # only keep the columns that are in columns
+        renamed = renamed[columns]
+
+        chain_features = get_baseline_sequence_features(renamed, test).add_prefix(
+            f'{chain}_')
+
+        all_chains_features.append(chain_features)
+
+        chain_features_num_rows = chain_features.shape[0]
+
+        assert df_num_rows == chain_features_num_rows, f"Number of rows in df ({df_num_rows}) and chain_features ({chain_features_num_rows}) must be the same"
+
+    ALPHA_OR_BETA = None
+
+    return pd.concat(all_chains_features, axis=1)
+
+
+def get_features_old_deprecated(df, test=False, cdr_only=False):
     df_num_rows = df.shape[0]
 
     global ALPHA_OR_BETA
@@ -260,13 +308,13 @@ def get_features(df, test=False, cdr_only=False):
         print(f'Error while extracting beta features: {e}')
         beta_features = pd.DataFrame()
 
-    ALPHA_OR_BETA = 'alfa'
+    ALPHA_OR_BETA = 'alpha'
     if not cdr_only:
-        alpha_renamed = df[['CDR3_alfa', 'TRAV', 'TRAJ']].rename(columns={'CDR3_alfa': 'CDR3', 'TRAV': 'V', 'TRAJ': 'J'})
+        alpha_renamed = df[['CDR3_alpha', 'TRAV', 'TRAJ']].rename(columns={'CDR3_alpha': 'CDR3', 'TRAV': 'V', 'TRAJ': 'J'})
     else:
-        alpha_renamed = df[['CDR3_alfa']].rename(columns={'CDR3_alfa': 'CDR3'})
+        alpha_renamed = df[['CDR3_alpha']].rename(columns={'CDR3_alpha': 'CDR3'})
     try:
-        alpha_features = get_baseline_sequence_features(alpha_renamed, test, cdr_only).add_prefix('alfa_')
+        alpha_features = get_baseline_sequence_features(alpha_renamed, test, cdr_only).add_prefix('alpha_')
 
         alpha_features_num_rows = alpha_features.shape[0]
 
@@ -282,3 +330,17 @@ def get_features(df, test=False, cdr_only=False):
 
 def get_columns_starting_with(df, prefix):
     return df[df.columns[df.columns.str.startswith(prefix)]]
+
+from numpy.random import randint
+from sklearn.base import BaseEstimator, TransformerMixin
+
+
+class MissingIndicator(BaseEstimator, TransformerMixin):
+    """Add an attribute that is True if the sample contains missing values, False otherwise."""
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, X, y=None):
+        X = X.copy()
+        X["missing"] = X.isnull().any(axis=1)
+        return X

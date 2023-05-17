@@ -2,12 +2,16 @@ import pandas as pd
 from util import split_gene_in_columns,evaluate_cv_no_nan_test
 
 
-def get_vdjdb():
+def get_vdjdb(species=None):
     df_vdjdb = pd.read_csv('data/vdjdb-2022-03-30/vdjdb_full.txt', sep='\t')
+
+    if species is not None:
+        df_vdjdb = df_vdjdb[df_vdjdb['species'] == species]
+        assert len(df_vdjdb) > 0, f'No samples found for species {species}'
 
     rename_columns = {
         'antigen.epitope': 'epitope',
-        'cdr3.alpha': 'CDR3_alfa',
+        'cdr3.alpha': 'CDR3_alpha',
         'v.alpha': 'TRAV',
         'j.alpha': 'TRAJ',
         'cdr3.beta': 'CDR3_beta',
@@ -36,8 +40,8 @@ def remove_items_occuring_in_other_column(df1, column_to_remove, df2, column_to_
 def remove_negative_positive_cdr3_overlap(negative_samples, positive_samples):
     previous_len = len(negative_samples)
 
-    negative_samples = remove_items_occuring_in_other_column(negative_samples, 'CDR3_alfa', positive_samples,
-                                                             'CDR3_alfa')
+    negative_samples = remove_items_occuring_in_other_column(negative_samples, 'CDR3_alpha', positive_samples,
+                                                             'CDR3_alpha')
     negative_samples = remove_items_occuring_in_other_column(negative_samples, 'CDR3_beta', positive_samples,
                                                              'CDR3_beta')
 
@@ -49,7 +53,7 @@ def remove_negative_positive_cdr3_overlap(negative_samples, positive_samples):
 
 # get the counts of positive dataset containing alpha, beta and both (so the number of columns where it's not NaN)
 def filter_df(df, alpha_not_nan, beta_not_nan):
-    alpha_condition = df['CDR3_alfa'].notna() if alpha_not_nan else df['CDR3_alfa'].isna()
+    alpha_condition = df['CDR3_alpha'].notna() if alpha_not_nan else df['CDR3_alpha'].isna()
     beta_condition = df['CDR3_beta'].notna() if beta_not_nan else df['CDR3_beta'].isna()
     return df[alpha_condition & beta_condition]
 
@@ -98,8 +102,8 @@ def combine_and_shuffle(positive_samples, negative_df, current_epitope):
     return df
 
 
-def get_epitope_df(epitope, silent=False):
-    df_vdjdb = get_vdjdb()
+def get_epitope_df(epitope, silent=False, species=None, split_genes=True):
+    df_vdjdb = get_vdjdb(species)
 
     positive_samples = df_vdjdb[df_vdjdb['epitope'] == epitope]
     negative_samples = df_vdjdb[df_vdjdb['epitope'] != epitope]
@@ -112,14 +116,15 @@ def get_epitope_df(epitope, silent=False):
 
     negative_alpha_only, negative_beta_only, negative_both, negative_none = get_negative_subsets(negative_samples)
     print(
-        f'Negative samples: alpha only: {len(negative_alpha_only)}, beta only: {len(negative_beta_only)}, both: {len(negative_both)}, none: {len(negative_none)}') if not silent else None
+        f'Negative samples (will be sampled to select same amount as positive): alpha only: {len(negative_alpha_only)}, beta only: {len(negative_beta_only)}, both: {len(negative_both)}, none: {len(negative_none)}') if not silent else None
 
     negative_df = get_negative_df(negative_alpha_only, negative_beta_only, negative_both, negative_none,
                                   alpha_only_count_pos, beta_only_count_pos, both_count_pos, non_count_pos)
 
     df = combine_and_shuffle(positive_samples, negative_df, epitope)
 
-    split_gene_in_columns(df)
+    if split_genes:
+        split_gene_in_columns(df)
 
     return df
 

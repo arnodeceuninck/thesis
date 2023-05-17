@@ -2,6 +2,11 @@ import numpy as np
 
 
 class Branch:
+    """
+    A branch in a tree, contains an exemplar and a subtree
+    An exemplar is an input data point, if a data point is closest to this exemplar, it goes to the subtree
+    A class label is for the leaf nodes
+    """
     def __init__(self, exemplar, class_label, subtree):
         self.exemplar = exemplar  # An object, if from a node it is closest to this exemplar, it goes to given tree
         self.subtree = subtree  # Should be an internal node or a leaf node
@@ -10,6 +15,9 @@ class Branch:
 
 
 class TreeNode:
+    """
+    Node in the proximity tree. This can be either an internal node or a leaf node.
+    """
     def predict(self, data):
         raise NotImplementedError()
 
@@ -18,7 +26,22 @@ class TreeNode:
 
 
 class InternalNode(TreeNode):
+    """
+    Internal node in the proximity tree.
+    """
     def __init__(self, data_x, data_y, groups, depth, max_depth, splits_to_sample, distance_measure, distance_kwargs):
+        """
+        Create & train an internal node
+
+        :param data_x: x values
+        :param data_y: target labels
+        :param groups: if you subbranches to be from the same group
+        :param depth: current depth
+        :param max_depth: maximum depth
+        :param splits_to_sample: number of splits to sample (the split with the lowest gini impurity is chosen as actual split)
+        :param distance_measure: distance measure to use
+        :param distance_kwargs: kwargs for the distance measure
+        """
         assert len(data_x) == len(data_y) == len(groups)
         assert len(data_x) > 0
 
@@ -42,6 +65,9 @@ class InternalNode(TreeNode):
             self.branches.append(Branch(exemplar, i, subtree))  # TODO: Fix label somewhere here instead of i
 
     def predict(self, data):
+        """
+        Returns the prediction result of the subbranch that is closest to the given data point
+        """
         if len(self.branches) == 1:
             # If there is only one branch, it means that all data points are closer to the exemplar of that branch
             return self.branches[0].subtree.predict(data)
@@ -56,6 +82,10 @@ class InternalNode(TreeNode):
         return branch.subtree.predict(data)
 
     def print(self, depth):
+        """
+        Prints the tree in a nice format
+        :param depth: current depth
+        """
         for branch in self.branches:
             print(f"{'-' * depth}Exemplar ({branch.class_label}): " + str(branch.exemplar))
             branch.subtree.print(depth + 1)
@@ -75,7 +105,18 @@ class LeafNode(TreeNode):
 
 # Splitting criteriaa
 class ProximityTreeClassifier:
+    """
+    Proximity Tree Classifier
+    """
     def __init__(self, max_depth=5, num_features_to_keep=None, splits_to_sample=10, distance_measure=None, distance_kwargs=None):
+        """
+
+        :param max_depth:
+        :param num_features_to_keep: Number of features to keep, if None, all features are used. DO NOT USE THIS WITH TCR DISTANCE. The distance function depends on the position of the features.
+        :param splits_to_sample: Number of splits to sample in each node, the split with the lowest gini impurity is chosen as actual split
+        :param distance_measure: Distance measure to use, if None, linalg.norm(x-y) is used
+        :param distance_kwargs: kwargs for the distance measure
+        """
         self.root = None
         self.max_depth = max_depth
         self.num_features_to_keep = num_features_to_keep
@@ -96,6 +137,7 @@ class ProximityTreeClassifier:
 
         # TODO: Remove this line to enable subsampling and bootstrapping
         data_x_reduced = data_x
+        # assert self.num_features_to_keep is None, 'Be sure the distance measure supports this!'
 
         self.root = get_node(data_x_reduced, data_y, groups, depth=0, max_depth=self.max_depth,
                              splits_to_sample=self.splits_to_sample, distance_measure=self.distance_measure,

@@ -36,9 +36,9 @@ def fix_test(x_test, train_columns):
     for col in train_columns:
         if col not in x_test.columns:
             # only columns starting with pos_0 are allowed to be missing, the rest should already exist (be sure you use the test version of the onehot encoder if this isn't the case)
-            assert col.startswith('alfa_pos_') or col.startswith('beta_pos_') or col.endswith(
-                '_count') or col in ['beta_J', 'beta_V', 'alfa_J',
-                                     'alfa_V'], f'Column {col} not in test set'  # Don't know whether col in ['beta_J', 'beta_V', 'alfa_J','alfa_V'] should be aloowed, was required for alpha beta knn
+            assert col.startswith('alpha_pos_') or col.startswith('beta_pos_') or col.endswith(
+                '_count') or col in ['beta_J', 'beta_V', 'alpha_J',
+                                     'alpha_V'], f'Column {col} not in test set'  # Don't know whether col in ['beta_J', 'beta_V', 'alpha_J','alpha_V'] should be aloowed, was required for alpha beta knn
             cols_to_add.append(col)
 
             # line below raises performance error, which is why I add them all at once using cols to add
@@ -73,7 +73,10 @@ def evaluate(clf, x, y):
     print(f"ROC: {scores.mean():.3f} (+/- {scores.std() * 2:.3f})")
 
 
-def evaluate_no_cv(clf, x, y, x_test, y_test):
+def evaluate_no_cv(clf, x, y, x_test, y_test, model_imputer=None):
+    if model_imputer is not None:
+        x = model_imputer.fit_transform(x)
+
     clf.fit(x, y)
     y_pred = clf.predict_proba(x_test)[:, 1]
     fpr, tpr, thresholds = metrics.roc_curve(y_test, y_pred, pos_label=1)
@@ -147,8 +150,8 @@ def evaluate_cv_no_nan_test(models_to_evaluate, df, folds=5):
 
 
 def evaluate_seperate_chains(clf1, clf2, x, y, x_test, y_test, imputer=None):
-    # Keep only the columns starting with 'alfa_'
-    x_alpha = get_columns_starting_with(x, 'alfa_')
+    # Keep only the columns starting with 'alpha_'
+    x_alpha = get_columns_starting_with(x, 'alpha_')
     x_beta = get_columns_starting_with(x, 'beta_')
 
     # remember those, since the imputer removes them
@@ -164,7 +167,7 @@ def evaluate_seperate_chains(clf1, clf2, x, y, x_test, y_test, imputer=None):
     # print('Alpha fitting don')
     clf2.fit(x_beta, y)
 
-    x_test_alpha = get_columns_starting_with(x_test, 'alfa_')
+    x_test_alpha = get_columns_starting_with(x_test, 'alpha_')
     x_test_beta = get_columns_starting_with(x_test, 'beta_')
 
     x_test_alpha = fix_test(x_test_alpha, x_alpha_columns)

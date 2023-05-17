@@ -1,32 +1,40 @@
-# Seperate file to analyze the execution time profile and see which functions can be optimized using numba
-
-import sys
-sys.path.append('Pforest-dtw')
-
-from trees import ProximityForest
-from core import FileReader
+from util import get_train_dataset, ProximityTreeClassifier, calculate_tcr_dist_multiple_chains
 from sklearn.model_selection import train_test_split
-from util import get_train_dataset, get_test_dataset
-from dataStructures import ListDataset
-import pandas as pd
-import time
-from util import readDataframeToListDataset
-from util import calculate_tcr_dist_multiple_chains
+from util import ProximityForestClassifier, calculate_tcr_dist2, calculate_tcr_dist2_cached
+from sklearn.metrics import accuracy_score
+from sklearn import metrics
+from util import plot_roc_curve
 
 
-train_df = get_train_dataset()
-# only keep the CDR3 columns
-train_df = train_df[['CDR3_alfa', 'CDR3_beta', 'reaction']]
-# train_df.dropna(inplace=True) # TODO: remove this, distance function should handle this
-train_df = train_df.sample(1000)
+x_columns = ['CDR3_alfa', 'TRAV', 'TRAJ', 'CDR3_beta', 'TRBV', 'TRBJ']
+# x_columns = ['CDR3_alfa', 'CDR3_beta']
+y_column = 'reaction'
 
-train_df, val_df = train_test_split(train_df, test_size=0.2, random_state=42)
+df = get_train_dataset(vdjdb=True)
+df = df[x_columns + [y_column]]
+df = df.sample(100) # (of the 12000)
+train_df, val_df = train_test_split(df, test_size=0.2, random_state=42)
 
-train_dataset = readDataframeToListDataset(train_df, label_col_name='reaction')
-val_dataset = readDataframeToListDataset(val_df, label_col_name='reaction')
+# create numpy arrays for the train and test data
+train_X = train_df[x_columns].to_numpy()
+train_y = train_df[y_column].to_numpy()
 
-Pforest = ProximityForest.ProximityForest(1, n_trees=3, n_candidates=5, distance_measure=calculate_tcr_dist_multiple_chains, distance_kwargs={'nan_distance': 5})  #todo: 100  trees instead of 3
+val_X = val_df[x_columns].to_numpy()
+val_y = val_df[y_column].to_numpy()
 
-Pforest.train(train_dataset)
-results = Pforest.test(val_dataset)
-print(results.accuracy)
+
+model = ProximityForestClassifier(reduce_features=False, distance_measure=calculate_tcr_dist2,
+                                  distance_kwargs={"nan_distance": 0}, multithreaded=False)
+model.fit(train_X, train_y)
+
+
+predictions = model.predict(val_X)
+
+print(accuracy_score(val_y, predictions))
+
+
+predictions = model.predict_proba(val_X)
+fpr, tpr, thresholds = metrics.roc_curve(val_y, predictions[:, 1], pos_label=1)
+roc_auc = metrics.auc(fpr, tpr)
+plot_roc_curve(fpr, tpr, label=f'Random Forest (AUC = {roc_auc:.3f})', title="GILGFVFTL")
+print(f"ROC AUC: {roc_auc}")
