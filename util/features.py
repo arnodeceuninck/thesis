@@ -94,7 +94,7 @@ def cdr3_length(df):
 def get_amino_acid_composition(sequence):
     if not isinstance(sequence, str):
         # It's probably NaN
-        return {}  # {aa: 0 for aa in parser.amino_acids}
+        return {}  # will be converted to NaN anyway
     else:
         composition = parser.amino_acid_composition(sequence)
         return composition
@@ -224,6 +224,11 @@ def get_baseline_sequence_features(df, test, cdr_only=False):
     features_in_one_df = pd.concat(features_list, axis=1)
     assert features_in_one_df.shape[0] == df.shape[
         0], f'Feature functions returned {features_in_one_df.shape[0]} rows, expected {df.shape[0]}'
+
+    # set all values to nan if that row is also nan in the original df
+    df.reset_index(drop=True, inplace=True)
+    features_in_one_df[df['CDR3'].isna()] = np.nan
+
     return features_in_one_df
 
 
