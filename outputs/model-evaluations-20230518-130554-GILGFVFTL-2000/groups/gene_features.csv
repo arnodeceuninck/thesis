@@ -1,0 +1,31 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr,improvement
+0,Random Forest (NaNs dropped in train),0.8769592476489029,False,,both,baseline,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,434.0,0.0,434.0,102.0,2000.0,FV,False,1,-0.01313015120304406
+1,Random Forest (NaNs dropped in train),0.9227330779054917,False,,both,baseline,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,424.0,0.0,424.0,112.0,2000.0,FV,False,1,0.032643679053544816
+2,Random Forest (NaNs dropped in train),0.8654901960784314,False,,both,baseline,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,435.0,0.0,435.0,101.0,2000.0,FV,False,1,-0.02459920277351557
+3,Random Forest (NaNs dropped in train),0.8774630541871921,False,,both,baseline,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,422.0,0.0,422.0,114.0,2000.0,FV,False,1,-0.012626344664754874
+4,Random Forest (NaNs dropped in train),0.9078014184397164,False,,both,baseline,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,429.0,0.0,429.0,107.0,2000.0,FV,False,1,0.017712019587769467
+0,Random Forest (FV),0.8869514106583073,True,,both,gene_features,0.0,GILGFVFTL,HomoSapiens,543.0,615.0,442.0,0.0,1600.0,102.0,2000.0,FV,False,18,-0.0031379881936396403
+1,Random Forest (FV),0.9329501915708813,True,,both,gene_features,1.0,GILGFVFTL,HomoSapiens,544.0,623.0,433.0,0.0,1600.0,112.0,2000.0,FV,False,18,0.04286079271893439
+2,Random Forest (FV),0.8970588235294117,True,,both,gene_features,2.0,GILGFVFTL,HomoSapiens,551.0,604.0,445.0,0.0,1600.0,101.0,2000.0,FV,False,18,0.006969424677464753
+3,Random Forest (FV),0.9045566502463054,True,,both,gene_features,3.0,GILGFVFTL,HomoSapiens,537.0,632.0,431.0,0.0,1600.0,114.0,2000.0,FV,False,18,0.014467251394358449
+4,Random Forest (FV),0.901063829787234,True,,both,gene_features,4.0,GILGFVFTL,HomoSapiens,551.0,612.0,437.0,0.0,1600.0,107.0,2000.0,FV,False,18,0.01097443093528705
+0,Random Forest (F),0.914576802507837,True,,both,gene_features,0.0,GILGFVFTL,HomoSapiens,543.0,615.0,442.0,0.0,1600.0,102.0,2000.0,F,False,19,0.024487403655890083
+1,Random Forest (F),0.941890166028097,True,,both,gene_features,1.0,GILGFVFTL,HomoSapiens,544.0,623.0,433.0,0.0,1600.0,112.0,2000.0,F,False,19,0.05180076717615012
+2,Random Forest (F),0.8696078431372549,True,,both,gene_features,2.0,GILGFVFTL,HomoSapiens,551.0,604.0,445.0,0.0,1600.0,101.0,2000.0,F,False,19,-0.020481555714692012
+3,Random Forest (F),0.917179802955665,True,,both,gene_features,3.0,GILGFVFTL,HomoSapiens,537.0,632.0,431.0,0.0,1600.0,114.0,2000.0,F,False,19,0.027090404103718102
+4,Random Forest (F),0.9042553191489361,True,,both,gene_features,4.0,GILGFVFTL,HomoSapiens,551.0,612.0,437.0,0.0,1600.0,107.0,2000.0,F,False,19,0.014165920296989154
+0,Random Forest (V),0.893025078369906,True,,both,gene_features,0.0,GILGFVFTL,HomoSapiens,543.0,615.0,442.0,0.0,1600.0,102.0,2000.0,V,False,20,0.0029356795179590334
+1,Random Forest (V),0.932471264367816,True,,both,gene_features,1.0,GILGFVFTL,HomoSapiens,544.0,623.0,433.0,0.0,1600.0,112.0,2000.0,V,False,20,0.04238186551586909
+2,Random Forest (V),0.8590196078431372,True,,both,gene_features,2.0,GILGFVFTL,HomoSapiens,551.0,604.0,445.0,0.0,1600.0,101.0,2000.0,V,False,20,-0.03106979100880969
+3,Random Forest (V),0.8888546798029556,True,,both,gene_features,3.0,GILGFVFTL,HomoSapiens,537.0,632.0,431.0,0.0,1600.0,114.0,2000.0,V,False,20,-0.0012347190489913062
+4,Random Forest (V),0.8859929078014184,True,,both,gene_features,4.0,GILGFVFTL,HomoSapiens,551.0,612.0,437.0,0.0,1600.0,107.0,2000.0,V,False,20,-0.004096491050528561
+0,Random Forest (F+V),0.8989028213166144,True,,both,gene_features,0.0,GILGFVFTL,HomoSapiens,543.0,615.0,442.0,0.0,1600.0,102.0,2000.0,F+V,False,21,0.00881342246466743
+1,Random Forest (F+V),0.938697318007663,True,,both,gene_features,1.0,GILGFVFTL,HomoSapiens,544.0,623.0,433.0,0.0,1600.0,112.0,2000.0,F+V,False,21,0.04860791915571605
+2,Random Forest (F+V),0.8862745098039215,True,,both,gene_features,2.0,GILGFVFTL,HomoSapiens,551.0,604.0,445.0,0.0,1600.0,101.0,2000.0,F+V,False,21,-0.003814889048025405
+3,Random Forest (F+V),0.9105603448275862,True,,both,gene_features,3.0,GILGFVFTL,HomoSapiens,537.0,632.0,431.0,0.0,1600.0,114.0,2000.0,F+V,False,21,0.020470945975639254
+4,Random Forest (F+V),0.8999999999999998,True,,both,gene_features,4.0,GILGFVFTL,HomoSapiens,551.0,612.0,437.0,0.0,1600.0,107.0,2000.0,F+V,False,21,0.009910601148052867
+0,Random Forest (FV+F+V),0.8930250783699059,True,,both,gene_features,0.0,GILGFVFTL,HomoSapiens,543.0,615.0,442.0,0.0,1600.0,102.0,2000.0,FV+F+V,False,22,0.0029356795179589223
+1,Random Forest (FV+F+V),0.946360153256705,True,,both,gene_features,1.0,GILGFVFTL,HomoSapiens,544.0,623.0,433.0,0.0,1600.0,112.0,2000.0,FV+F+V,False,22,0.05627075440475804
+2,Random Forest (FV+F+V),0.9049019607843137,True,,both,gene_features,2.0,GILGFVFTL,HomoSapiens,551.0,604.0,445.0,0.0,1600.0,101.0,2000.0,FV+F+V,False,22,0.014812561932366797
+3,Random Forest (FV+F+V),0.909020935960591,True,,both,gene_features,3.0,GILGFVFTL,HomoSapiens,537.0,632.0,431.0,0.0,1600.0,114.0,2000.0,FV+F+V,False,22,0.018931537108644036
+4,Random Forest (FV+F+V),0.901063829787234,True,,both,gene_features,4.0,GILGFVFTL,HomoSapiens,551.0,612.0,437.0,0.0,1600.0,107.0,2000.0,FV+F+V,False,22,0.01097443093528705

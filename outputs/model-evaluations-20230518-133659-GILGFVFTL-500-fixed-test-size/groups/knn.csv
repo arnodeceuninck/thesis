@@ -1,0 +1,16 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr,improvement
+0,Random Forest (NaNs dropped in train),0.8832758620689654,False,,both,baseline,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,100.0,0.0,100.0,108.0,500.0,FV,False,1,-0.000517241379310529
+1,Random Forest (NaNs dropped in train),0.8863793103448276,False,,both,baseline,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,103.0,0.0,103.0,108.0,500.0,FV,False,1,0.002586206896551757
+2,Random Forest (NaNs dropped in train),0.890344827586207,False,,both,baseline,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,101.0,0.0,101.0,108.0,500.0,FV,False,1,0.0065517241379311475
+3,Random Forest (NaNs dropped in train),0.8832758620689655,False,,both,baseline,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,106.0,0.0,106.0,108.0,500.0,FV,False,1,-0.000517241379310418
+4,Random Forest (NaNs dropped in train),0.8756896551724137,False,,both,baseline,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,100.0,0.0,100.0,108.0,500.0,FV,False,1,-0.00810344827586218
+0,KNN Classifier (mean imputed),0.8317241379310345,True,,both,knn,0.0,GILGFVFTL,HomoSapiens,135.0,161.0,104.0,0.0,400.0,108.0,500.0,FV,False,9,-0.05206896551724138
+1,KNN Classifier (mean imputed),0.7724137931034483,True,,both,knn,1.0,GILGFVFTL,HomoSapiens,136.0,157.0,107.0,0.0,400.0,108.0,500.0,FV,False,9,-0.11137931034482762
+2,KNN Classifier (mean imputed),0.8132758620689655,True,,both,knn,2.0,GILGFVFTL,HomoSapiens,137.0,158.0,105.0,0.0,400.0,108.0,500.0,FV,False,9,-0.07051724137931037
+3,KNN Classifier (mean imputed),0.804655172413793,True,,both,knn,3.0,GILGFVFTL,HomoSapiens,136.0,156.0,108.0,0.0,400.0,108.0,500.0,FV,False,9,-0.07913793103448286
+4,KNN Classifier (mean imputed),0.7613793103448275,True,,both,knn,4.0,GILGFVFTL,HomoSapiens,133.0,162.0,105.0,0.0,400.0,108.0,500.0,FV,False,9,-0.12241379310344835
+0,KNN Classifier (KNN imputed),0.7651724137931033,True,,both,knn,0.0,GILGFVFTL,HomoSapiens,135.0,161.0,104.0,0.0,400.0,108.0,500.0,FV,False,10,-0.11862068965517258
+1,KNN Classifier (KNN imputed),0.8172413793103448,True,,both,knn,1.0,GILGFVFTL,HomoSapiens,136.0,157.0,107.0,0.0,400.0,108.0,500.0,FV,False,10,-0.06655172413793109
+2,KNN Classifier (KNN imputed),0.8386206896551723,True,,both,knn,2.0,GILGFVFTL,HomoSapiens,137.0,158.0,105.0,0.0,400.0,108.0,500.0,FV,False,10,-0.04517241379310355
+3,KNN Classifier (KNN imputed),0.7898275862068965,True,,both,knn,3.0,GILGFVFTL,HomoSapiens,136.0,156.0,108.0,0.0,400.0,108.0,500.0,FV,False,10,-0.09396551724137936
+4,KNN Classifier (KNN imputed),0.7891379310344828,True,,both,knn,4.0,GILGFVFTL,HomoSapiens,133.0,162.0,105.0,0.0,400.0,108.0,500.0,FV,False,10,-0.09465517241379307

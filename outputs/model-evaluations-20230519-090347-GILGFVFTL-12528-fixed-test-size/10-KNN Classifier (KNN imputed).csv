@@ -1,0 +1,6 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr
+0,KNN Classifier (KNN imputed),0.9186206896551725,True,,both,knn,0.0,GILGFVFTL,HomoSapiens,3276.0,3906.0,2840.0,0.0,10022.0,108.0,12528.0,FV,False,10
+1,KNN Classifier (KNN imputed),0.9301724137931034,True,,both,knn,1.0,GILGFVFTL,HomoSapiens,3320.0,3882.0,2820.0,0.0,10022.0,108.0,12528.0,FV,False,10
+2,KNN Classifier (KNN imputed),0.9236206896551724,True,,both,knn,2.0,GILGFVFTL,HomoSapiens,3269.0,3926.0,2827.0,0.0,10022.0,108.0,12528.0,FV,False,10
+3,KNN Classifier (KNN imputed),0.9322413793103448,True,,both,knn,3.0,GILGFVFTL,HomoSapiens,3300.0,3867.0,2855.0,0.0,10022.0,108.0,12528.0,FV,False,10
+4,KNN Classifier (KNN imputed),0.934655172413793,True,,both,knn,4.0,GILGFVFTL,HomoSapiens,3300.0,3931.0,2791.0,0.0,10022.0,108.0,12528.0,FV,False,10

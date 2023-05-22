@@ -1,0 +1,16 @@
+Started at 2023-05-22 21:35:19.531579
+
+Models to evaluate: 4
+
+1/4: RandomForest (own impl., weighted)
+{'name': 'RandomForest (own impl., weighted)', 'model': <CustomForest.random_forest.RandomForest object at 0x0000016F14519610>, 'group': 'weighted_random_forest'}
+
+2/4: RandomForest (own impl.)
+{'name': 'RandomForest (own impl.)', 'model': <CustomForest.random_forest.RandomForest object at 0x0000016F14519310>, 'group': 'weighted_random_forest', 'imputer': SimpleImputer()}
+
+3/4: RandomForest (own impl., weighted, no nan)
+{'name': 'RandomForest (own impl., weighted, no nan)', 'model': <CustomForest.random_forest.RandomForest object at 0x0000016F1450ECD0>, 'group': 'weighted_random_forest', 'drop_train_na': True}
+
+4/4: RandomForest (own impl., no nan)
+{'name': 'RandomForest (own impl., no nan)', 'model': <CustomForest.random_forest.RandomForest object at 0x0000016F15B496D0>, 'group': 'weighted_random_forest', 'drop_train_na': True}
+

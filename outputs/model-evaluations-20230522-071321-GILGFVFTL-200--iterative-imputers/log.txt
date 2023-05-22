@@ -1,0 +1,18 @@
+Started at 2023-05-22 07:13:21.235484
+
+Models to evaluate: 2
+
+1/2: Random Forest (Iterative imputed, max_iter=1)
+{'name': 'Random Forest (Iterative imputed, max_iter=1)', 'model': RandomForestClassifier(random_state=0), 'imputer': IterativeImputer(max_iter=1), 'group': 'rf_iterative_imputations'}
+
+2/2: Random Forest (Iterative imputed, max_iter=5)
+{'name': 'Random Forest (Iterative imputed, max_iter=5)', 'model': RandomForestClassifier(random_state=0), 'imputer': IterativeImputer(max_iter=5), 'group': 'rf_iterative_imputations'}
+
+Finished at 2023-05-22 07:29:55.899745
+Time taken: 0:16:34.664261
+Saved scores to outputs/model-evaluations-20230522-071321-GILGFVFTL-200--iterative-imputers
+Saved all scores to outputs/model-evaluations-20230522-071321-GILGFVFTL-200--iterative-imputers/scores-20230522-072955.csv
+Saved group scores to outputs/model-evaluations-20230522-071321-GILGFVFTL-200--iterative-imputers/groups
+Saved all group scores to outputs/model-evaluations-20230522-071321-GILGFVFTL-200--iterative-imputers/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230522-071321-GILGFVFTL-200--iterative-imputers/all-models.png
+Saved log to outputs/model-evaluations-20230522-071321-GILGFVFTL-200--iterative-imputers/log.txt

@@ -1,0 +1,151 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr
+0,Random Forest (NaNs dropped in train),0.9098275862068965,False,,both,baseline,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,40.0,0.0,40.0,108.0,200.0,FV,False,1
+1,Random Forest (NaNs dropped in train),0.895,False,,both,baseline,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,41.0,0.0,41.0,108.0,200.0,FV,False,1
+2,Random Forest (NaNs dropped in train),0.8920689655172414,False,,both,baseline,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,42.0,0.0,42.0,108.0,200.0,FV,False,1
+3,Random Forest (NaNs dropped in train),0.8670689655172412,False,,both,baseline,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,37.0,0.0,37.0,108.0,200.0,FV,False,1
+4,Random Forest (NaNs dropped in train),0.8844827586206897,False,,both,baseline,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,38.0,0.0,38.0,108.0,200.0,FV,False,1
+0,Random Forest (Zero imputed),0.9182758620689655,True,,both,rf_imputations,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,2
+1,Random Forest (Zero imputed),0.8901724137931034,True,,both,rf_imputations,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,2
+2,Random Forest (Zero imputed),0.9374137931034481,True,,both,rf_imputations,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,2
+3,Random Forest (Zero imputed),0.8763793103448276,True,,both,rf_imputations,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,2
+4,Random Forest (Zero imputed),0.8977586206896551,True,,both,rf_imputations,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,2
+0,Random Forest (Mean imputed),0.9131034482758621,True,,both,rf_imputations,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,3
+1,Random Forest (Mean imputed),0.9025862068965517,True,,both,rf_imputations,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,3
+2,Random Forest (Mean imputed),0.8944827586206897,True,,both,rf_imputations,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,3
+3,Random Forest (Mean imputed),0.891551724137931,True,,both,rf_imputations,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,3
+4,Random Forest (Mean imputed),0.8955172413793102,True,,both,rf_imputations,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,3
+0,Random Forest (Most frequent imputed),0.9093103448275861,True,,both,rf_imputations,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,4
+1,Random Forest (Most frequent imputed),0.8934482758620689,True,,both,rf_imputations,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,4
+2,Random Forest (Most frequent imputed),0.9394827586206896,True,,both,rf_imputations,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,4
+3,Random Forest (Most frequent imputed),0.9025862068965517,True,,both,rf_imputations,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,4
+4,Random Forest (Most frequent imputed),0.9,True,,both,rf_imputations,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,4
+0,Random Forest (Median imputed),0.9227586206896552,True,,both,rf_imputations,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,5
+1,Random Forest (Median imputed),0.9034482758620689,True,,both,rf_imputations,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,5
+2,Random Forest (Median imputed),0.9317241379310345,True,,both,rf_imputations,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,5
+3,Random Forest (Median imputed),0.8910344827586207,True,,both,rf_imputations,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,5
+4,Random Forest (Median imputed),0.8829310344827587,True,,both,rf_imputations,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,5
+0,"Random Forest (KNN imputed, k=1)",0.8972413793103449,True,,both,rf_knn_imputations,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,6
+1,"Random Forest (KNN imputed, k=1)",0.8998275862068965,True,,both,rf_knn_imputations,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,6
+2,"Random Forest (KNN imputed, k=1)",0.8912068965517241,True,,both,rf_knn_imputations,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,6
+3,"Random Forest (KNN imputed, k=1)",0.8532758620689657,True,,both,rf_knn_imputations,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,6
+4,"Random Forest (KNN imputed, k=1)",0.8886206896551725,True,,both,rf_knn_imputations,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,6
+0,"Random Forest (KNN imputed, k=5)",0.9074137931034484,True,,both,rf_knn_imputations,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,7
+1,"Random Forest (KNN imputed, k=5)",0.9032758620689655,True,,both,rf_knn_imputations,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,7
+2,"Random Forest (KNN imputed, k=5)",0.9243103448275862,True,,both,rf_knn_imputations,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,7
+3,"Random Forest (KNN imputed, k=5)",0.8887931034482759,True,,both,rf_knn_imputations,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,7
+4,"Random Forest (KNN imputed, k=5)",0.8758620689655171,True,,both,rf_knn_imputations,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,7
+0,"Random Forest (KNN imputed, k=10)",0.9094827586206896,True,,both,rf_knn_imputations,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,8
+1,"Random Forest (KNN imputed, k=10)",0.9106896551724137,True,,both,rf_knn_imputations,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,8
+2,"Random Forest (KNN imputed, k=10)",0.9120689655172414,True,,both,rf_knn_imputations,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,8
+3,"Random Forest (KNN imputed, k=10)",0.8867241379310344,True,,both,rf_knn_imputations,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,8
+4,"Random Forest (KNN imputed, k=10)",0.8903448275862069,True,,both,rf_knn_imputations,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,8
+0,KNN Classifier (mean imputed),0.7498275862068965,True,,both,knn,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,9
+1,KNN Classifier (mean imputed),0.7170689655172413,True,,both,knn,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,9
+2,KNN Classifier (mean imputed),0.7343103448275862,True,,both,knn,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,9
+3,KNN Classifier (mean imputed),0.725,True,,both,knn,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,9
+4,KNN Classifier (mean imputed),0.7605172413793104,True,,both,knn,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,9
+0,KNN Classifier (KNN imputed),0.66,True,,both,knn,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,10
+1,KNN Classifier (KNN imputed),0.6887931034482758,True,,both,knn,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,10
+2,KNN Classifier (KNN imputed),0.6868965517241379,True,,both,knn,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,10
+3,KNN Classifier (KNN imputed),0.6393103448275863,True,,both,knn,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,10
+4,KNN Classifier (KNN imputed),0.7660344827586207,True,,both,knn,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,10
+0,Random Forest (Zero imputed) (with missing indicator),0.9117241379310344,True,,both,rf_imputations_with_missing_indicator,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,True,11
+1,Random Forest (Zero imputed) (with missing indicator),0.8805172413793103,True,,both,rf_imputations_with_missing_indicator,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,True,11
+2,Random Forest (Zero imputed) (with missing indicator),0.9306896551724138,True,,both,rf_imputations_with_missing_indicator,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,True,11
+3,Random Forest (Zero imputed) (with missing indicator),0.9041379310344827,True,,both,rf_imputations_with_missing_indicator,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,True,11
+4,Random Forest (Zero imputed) (with missing indicator),0.8977586206896553,True,,both,rf_imputations_with_missing_indicator,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,True,11
+0,Random Forest (Mean imputed) (with missing indicator),0.9131034482758621,True,,both,rf_imputations_with_missing_indicator,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,True,12
+1,Random Forest (Mean imputed) (with missing indicator),0.9025862068965517,True,,both,rf_imputations_with_missing_indicator,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,True,12
+2,Random Forest (Mean imputed) (with missing indicator),0.8944827586206897,True,,both,rf_imputations_with_missing_indicator,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,True,12
+3,Random Forest (Mean imputed) (with missing indicator),0.891551724137931,True,,both,rf_imputations_with_missing_indicator,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,True,12
+4,Random Forest (Mean imputed) (with missing indicator),0.8955172413793102,True,,both,rf_imputations_with_missing_indicator,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,True,12
+0,Random Forest (Most frequent imputed) (with missing indicator),0.9093103448275861,True,,both,rf_imputations_with_missing_indicator,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,True,13
+1,Random Forest (Most frequent imputed) (with missing indicator),0.8934482758620689,True,,both,rf_imputations_with_missing_indicator,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,True,13
+2,Random Forest (Most frequent imputed) (with missing indicator),0.9394827586206896,True,,both,rf_imputations_with_missing_indicator,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,True,13
+3,Random Forest (Most frequent imputed) (with missing indicator),0.9025862068965517,True,,both,rf_imputations_with_missing_indicator,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,True,13
+4,Random Forest (Most frequent imputed) (with missing indicator),0.9,True,,both,rf_imputations_with_missing_indicator,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,True,13
+0,Random Forest (Median imputed) (with missing indicator),0.9227586206896552,True,,both,rf_imputations_with_missing_indicator,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,True,14
+1,Random Forest (Median imputed) (with missing indicator),0.9034482758620689,True,,both,rf_imputations_with_missing_indicator,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,True,14
+2,Random Forest (Median imputed) (with missing indicator),0.9317241379310345,True,,both,rf_imputations_with_missing_indicator,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,True,14
+3,Random Forest (Median imputed) (with missing indicator),0.8910344827586207,True,,both,rf_imputations_with_missing_indicator,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,True,14
+4,Random Forest (Median imputed) (with missing indicator),0.8829310344827587,True,,both,rf_imputations_with_missing_indicator,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,True,14
+0,HistGradientBoosting,0.906551724137931,True,,both,gradient_boosting,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,15
+1,HistGradientBoosting,0.9134482758620689,True,,both,gradient_boosting,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,15
+2,HistGradientBoosting,0.9431034482758621,True,,both,gradient_boosting,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,15
+3,HistGradientBoosting,0.8979310344827586,True,,both,gradient_boosting,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,15
+4,HistGradientBoosting,0.9162068965517242,True,,both,gradient_boosting,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,15
+0,XGBoost,0.8975862068965517,True,,both,gradient_boosting,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,16
+1,XGBoost,0.8848275862068965,True,,both,gradient_boosting,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,16
+2,XGBoost,0.8937931034482758,True,,both,gradient_boosting,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,16
+3,XGBoost,0.8975862068965518,True,,both,gradient_boosting,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,16
+4,XGBoost,0.8999999999999999,True,,both,gradient_boosting,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,16
+0,LightGBM,0.8917241379310346,True,,both,gradient_boosting,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,17
+1,LightGBM,0.8979310344827587,True,,both,gradient_boosting,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,17
+2,LightGBM,0.9120689655172414,True,,both,gradient_boosting,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,17
+3,LightGBM,0.9013793103448277,True,,both,gradient_boosting,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,17
+4,LightGBM,0.9044827586206896,True,,both,gradient_boosting,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,17
+0,Random Forest (FV),0.9131034482758621,True,,both,gene_features,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,18
+1,Random Forest (FV),0.9025862068965517,True,,both,gene_features,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,18
+2,Random Forest (FV),0.8944827586206897,True,,both,gene_features,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,18
+3,Random Forest (FV),0.891551724137931,True,,both,gene_features,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,18
+4,Random Forest (FV),0.8955172413793102,True,,both,gene_features,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,18
+0,Random Forest (F),0.8962068965517241,True,,both,gene_features,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,F,False,19
+1,Random Forest (F),0.896896551724138,True,,both,gene_features,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,F,False,19
+2,Random Forest (F),0.8975862068965517,True,,both,gene_features,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,F,False,19
+3,Random Forest (F),0.8839655172413794,True,,both,gene_features,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,F,False,19
+4,Random Forest (F),0.8931034482758622,True,,both,gene_features,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,F,False,19
+0,Random Forest (V),0.9236206896551725,True,,both,gene_features,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,V,False,20
+1,Random Forest (V),0.8843103448275862,True,,both,gene_features,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,V,False,20
+2,Random Forest (V),0.9091379310344827,True,,both,gene_features,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,V,False,20
+3,Random Forest (V),0.9022413793103448,True,,both,gene_features,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,V,False,20
+4,Random Forest (V),0.89,True,,both,gene_features,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,V,False,20
+0,Random Forest (F+V),0.9239655172413792,True,,both,gene_features,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,F+V,False,21
+1,Random Forest (F+V),0.9129310344827587,True,,both,gene_features,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,F+V,False,21
+2,Random Forest (F+V),0.9206896551724137,True,,both,gene_features,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,F+V,False,21
+3,Random Forest (F+V),0.8810344827586207,True,,both,gene_features,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,F+V,False,21
+4,Random Forest (F+V),0.8893103448275862,True,,both,gene_features,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,F+V,False,21
+0,Random Forest (FV+F+V),0.9205172413793103,True,,both,gene_features,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV+F+V,False,22
+1,Random Forest (FV+F+V),0.8932758620689656,True,,both,gene_features,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV+F+V,False,22
+2,Random Forest (FV+F+V),0.9132758620689654,True,,both,gene_features,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV+F+V,False,22
+3,Random Forest (FV+F+V),0.8970689655172414,True,,both,gene_features,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV+F+V,False,22
+4,Random Forest (FV+F+V),0.9058620689655171,True,,both,gene_features,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV+F+V,False,22
+0,Random Forest (both chains),0.9131034482758621,True,,both,chain_inputs,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,23
+1,Random Forest (both chains),0.9025862068965517,True,,both,chain_inputs,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,23
+2,Random Forest (both chains),0.8944827586206897,True,,both,chain_inputs,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,23
+3,Random Forest (both chains),0.891551724137931,True,,both,chain_inputs,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,23
+4,Random Forest (both chains),0.8955172413793102,True,,both,chain_inputs,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,23
+0,Random Forest (Alpha chain),0.8079310344827587,True,,alpha,chain_inputs,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,24
+1,Random Forest (Alpha chain),0.7713793103448277,True,,alpha,chain_inputs,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,24
+2,Random Forest (Alpha chain),0.8034482758620689,True,,alpha,chain_inputs,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,24
+3,Random Forest (Alpha chain),0.7756896551724137,True,,alpha,chain_inputs,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,24
+4,Random Forest (Alpha chain),0.7794827586206897,True,,alpha,chain_inputs,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,24
+0,Random Forest (Beta chain),0.8708620689655172,True,,beta,chain_inputs,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,25
+1,Random Forest (Beta chain),0.8584482758620688,True,,beta,chain_inputs,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,25
+2,Random Forest (Beta chain),0.8756896551724137,True,,beta,chain_inputs,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,25
+3,Random Forest (Beta chain),0.8806896551724138,True,,beta,chain_inputs,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,25
+4,Random Forest (Beta chain),0.8801724137931034,True,,beta,chain_inputs,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,25
+0,Random Forest (Seperate chains),0.9143103448275861,True,SimpleImputer,seperate,chain_inputs,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,26
+1,Random Forest (Seperate chains),0.908103448275862,True,SimpleImputer,seperate,chain_inputs,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,26
+2,Random Forest (Seperate chains),0.9356896551724139,True,SimpleImputer,seperate,chain_inputs,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,26
+3,Random Forest (Seperate chains),0.9168965517241379,True,SimpleImputer,seperate,chain_inputs,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,26
+4,Random Forest (Seperate chains),0.9148275862068965,True,SimpleImputer,seperate,chain_inputs,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,26
+0,Random Forest (both chains) (without nans),0.9098275862068965,False,,both,chain_inputs,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,40.0,0.0,40.0,108.0,200.0,FV,False,27
+1,Random Forest (both chains) (without nans),0.895,False,,both,chain_inputs,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,41.0,0.0,41.0,108.0,200.0,FV,False,27
+2,Random Forest (both chains) (without nans),0.8920689655172414,False,,both,chain_inputs,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,42.0,0.0,42.0,108.0,200.0,FV,False,27
+3,Random Forest (both chains) (without nans),0.8670689655172412,False,,both,chain_inputs,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,37.0,0.0,37.0,108.0,200.0,FV,False,27
+4,Random Forest (both chains) (without nans),0.8844827586206897,False,,both,chain_inputs,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,38.0,0.0,38.0,108.0,200.0,FV,False,27
+0,Random Forest (Alpha chain) (without nans),0.7667241379310344,False,,alpha,chain_inputs,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,40.0,0.0,40.0,108.0,200.0,FV,False,28
+1,Random Forest (Alpha chain) (without nans),0.8010344827586207,False,,alpha,chain_inputs,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,41.0,0.0,41.0,108.0,200.0,FV,False,28
+2,Random Forest (Alpha chain) (without nans),0.786896551724138,False,,alpha,chain_inputs,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,42.0,0.0,42.0,108.0,200.0,FV,False,28
+3,Random Forest (Alpha chain) (without nans),0.7577586206896552,False,,alpha,chain_inputs,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,37.0,0.0,37.0,108.0,200.0,FV,False,28
+4,Random Forest (Alpha chain) (without nans),0.7718965517241378,False,,alpha,chain_inputs,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,38.0,0.0,38.0,108.0,200.0,FV,False,28
+0,Random Forest (Beta chain) (without nans),0.8563793103448276,False,,beta,chain_inputs,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,40.0,0.0,40.0,108.0,200.0,FV,False,29
+1,Random Forest (Beta chain) (without nans),0.841551724137931,False,,beta,chain_inputs,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,41.0,0.0,41.0,108.0,200.0,FV,False,29
+2,Random Forest (Beta chain) (without nans),0.8529310344827588,False,,beta,chain_inputs,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,42.0,0.0,42.0,108.0,200.0,FV,False,29
+3,Random Forest (Beta chain) (without nans),0.8248275862068966,False,,beta,chain_inputs,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,37.0,0.0,37.0,108.0,200.0,FV,False,29
+4,Random Forest (Beta chain) (without nans),0.846551724137931,False,,beta,chain_inputs,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,38.0,0.0,38.0,108.0,200.0,FV,False,29
+0,Random Forest (Seperate chains) (without nans),0.9048275862068965,False,,seperate,chain_inputs,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,40.0,0.0,40.0,108.0,200.0,FV,False,30
+1,Random Forest (Seperate chains) (without nans),0.9067241379310345,False,,seperate,chain_inputs,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,41.0,0.0,41.0,108.0,200.0,FV,False,30
+2,Random Forest (Seperate chains) (without nans),0.9108620689655172,False,,seperate,chain_inputs,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,42.0,0.0,42.0,108.0,200.0,FV,False,30
+3,Random Forest (Seperate chains) (without nans),0.8774137931034482,False,,seperate,chain_inputs,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,37.0,0.0,37.0,108.0,200.0,FV,False,30
+4,Random Forest (Seperate chains) (without nans),0.8981034482758621,False,,seperate,chain_inputs,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,38.0,0.0,38.0,108.0,200.0,FV,False,30

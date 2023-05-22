@@ -1,0 +1,6 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr
+0,Random Forest (Most frequent imputed),0.9093103448275861,True,,both,rf_imputations,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,4
+1,Random Forest (Most frequent imputed),0.8934482758620689,True,,both,rf_imputations,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,4
+2,Random Forest (Most frequent imputed),0.9394827586206896,True,,both,rf_imputations,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,4
+3,Random Forest (Most frequent imputed),0.9025862068965517,True,,both,rf_imputations,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,4
+4,Random Forest (Most frequent imputed),0.9,True,,both,rf_imputations,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,4

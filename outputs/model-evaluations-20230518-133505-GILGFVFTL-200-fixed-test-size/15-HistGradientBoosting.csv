@@ -1,0 +1,6 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr
+0,HistGradientBoosting,0.906551724137931,True,,both,gradient_boosting,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,FV,False,15
+1,HistGradientBoosting,0.9134482758620689,True,,both,gradient_boosting,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,FV,False,15
+2,HistGradientBoosting,0.9431034482758621,True,,both,gradient_boosting,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,FV,False,15
+3,HistGradientBoosting,0.8979310344827586,True,,both,gradient_boosting,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,FV,False,15
+4,HistGradientBoosting,0.9162068965517242,True,,both,gradient_boosting,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,FV,False,15

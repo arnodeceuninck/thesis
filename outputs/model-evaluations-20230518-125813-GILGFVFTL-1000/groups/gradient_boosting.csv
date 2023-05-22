@@ -1,0 +1,21 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr,improvement
+0,Random Forest (NaNs dropped in train),0.8718820861678004,False,,both,baseline,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,217.0,0.0,217.0,42.0,1000.0,FV,False,1,-0.02982822905183158
+1,Random Forest (NaNs dropped in train),0.8623188405797102,False,,both,baseline,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,212.0,0.0,212.0,47.0,1000.0,FV,False,1,-0.039391474639921764
+2,Random Forest (NaNs dropped in train),0.8948863636363636,False,,both,baseline,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,205.0,0.0,205.0,54.0,1000.0,FV,False,1,-0.006823951583268317
+3,Random Forest (NaNs dropped in train),0.99375,False,,both,baseline,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,215.0,0.0,215.0,44.0,1000.0,FV,False,1,0.09203968478036806
+4,Random Forest (NaNs dropped in train),0.8857142857142857,False,,both,baseline,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,213.0,0.0,213.0,46.0,1000.0,FV,False,1,-0.015996029505346288
+0,HistGradientBoosting,0.820861678004535,True,,both,gradient_boosting,0.0,GILGFVFTL,HomoSapiens,269.0,308.0,223.0,0.0,800.0,42.0,1000.0,FV,False,15,-0.08084863721509694
+1,HistGradientBoosting,0.8659420289855073,True,,both,gradient_boosting,1.0,GILGFVFTL,HomoSapiens,264.0,319.0,217.0,0.0,800.0,47.0,1000.0,FV,False,15,-0.03576828623412465
+2,HistGradientBoosting,0.9019886363636364,True,,both,gradient_boosting,2.0,GILGFVFTL,HomoSapiens,270.0,321.0,209.0,0.0,800.0,54.0,1000.0,FV,False,15,0.0002783211440043898
+3,HistGradientBoosting,1.0,True,,both,gradient_boosting,3.0,GILGFVFTL,HomoSapiens,275.0,307.0,218.0,0.0,800.0,44.0,1000.0,FV,False,15,0.09828968478036804
+4,HistGradientBoosting,0.8628571428571429,True,,both,gradient_boosting,4.0,GILGFVFTL,HomoSapiens,266.0,317.0,217.0,0.0,800.0,46.0,1000.0,FV,False,15,-0.038853172362489086
+0,XGBoost,0.8072562358276644,True,,both,gradient_boosting,0.0,GILGFVFTL,HomoSapiens,269.0,308.0,223.0,0.0,800.0,42.0,1000.0,FV,False,16,-0.0944540793919676
+1,XGBoost,0.8405797101449276,True,,both,gradient_boosting,1.0,GILGFVFTL,HomoSapiens,264.0,319.0,217.0,0.0,800.0,47.0,1000.0,FV,False,16,-0.06113060507470436
+2,XGBoost,0.9190340909090909,True,,both,gradient_boosting,2.0,GILGFVFTL,HomoSapiens,270.0,321.0,209.0,0.0,800.0,54.0,1000.0,FV,False,16,0.017323775689458976
+3,XGBoost,1.0,True,,both,gradient_boosting,3.0,GILGFVFTL,HomoSapiens,275.0,307.0,218.0,0.0,800.0,44.0,1000.0,FV,False,16,0.09828968478036804
+4,XGBoost,0.8571428571428571,True,,both,gradient_boosting,4.0,GILGFVFTL,HomoSapiens,266.0,317.0,217.0,0.0,800.0,46.0,1000.0,FV,False,16,-0.04456745807677487
+0,LightGBM,0.820861678004535,True,,both,gradient_boosting,0.0,GILGFVFTL,HomoSapiens,269.0,308.0,223.0,0.0,800.0,42.0,1000.0,FV,False,17,-0.08084863721509694
+1,LightGBM,0.8478260869565217,True,,both,gradient_boosting,1.0,GILGFVFTL,HomoSapiens,264.0,319.0,217.0,0.0,800.0,47.0,1000.0,FV,False,17,-0.053884228263110234
+2,LightGBM,0.9275568181818182,True,,both,gradient_boosting,2.0,GILGFVFTL,HomoSapiens,270.0,321.0,209.0,0.0,800.0,54.0,1000.0,FV,False,17,0.02584650296218627
+3,LightGBM,1.0,True,,both,gradient_boosting,3.0,GILGFVFTL,HomoSapiens,275.0,307.0,218.0,0.0,800.0,44.0,1000.0,FV,False,17,0.09828968478036804
+4,LightGBM,0.8857142857142857,True,,both,gradient_boosting,4.0,GILGFVFTL,HomoSapiens,266.0,317.0,217.0,0.0,800.0,46.0,1000.0,FV,False,17,-0.015996029505346288

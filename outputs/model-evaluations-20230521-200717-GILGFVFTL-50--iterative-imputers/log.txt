@@ -1,0 +1,16 @@
+Started at 2023-05-21 20:07:17.278331
+
+Models to evaluate: 4
+
+1/4: Random Forest (Iterative imputed, max_iter=1)
+{'name': 'Random Forest (Iterative imputed, max_iter=1)', 'model': RandomForestClassifier(random_state=0), 'imputer': IterativeImputer(max_iter=1), 'group': 'rf_iterative_imputations'}
+
+2/4: Random Forest (Iterative imputed, max_iter=5)
+{'name': 'Random Forest (Iterative imputed, max_iter=5)', 'model': RandomForestClassifier(random_state=0), 'imputer': IterativeImputer(max_iter=5), 'group': 'rf_iterative_imputations'}
+
+3/4: Random Forest (Iterative imputed, max_iter=10)
+{'name': 'Random Forest (Iterative imputed, max_iter=10)', 'model': RandomForestClassifier(random_state=0), 'imputer': IterativeImputer(), 'group': 'rf_iterative_imputations'}
+
+4/4: Random Forest (Iterative imputed, max_iter=15)
+{'name': 'Random Forest (Iterative imputed, max_iter=15)', 'model': RandomForestClassifier(random_state=0), 'imputer': IterativeImputer(max_iter=15), 'group': 'rf_iterative_imputations'}
+

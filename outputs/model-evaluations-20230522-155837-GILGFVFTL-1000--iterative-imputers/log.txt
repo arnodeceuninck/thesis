@@ -1,0 +1,10 @@
+Started at 2023-05-22 15:58:37.084359
+
+Models to evaluate: 2
+
+1/2: Random Forest (Iterative imputed, max_iter=1)
+{'name': 'Random Forest (Iterative imputed, max_iter=1)', 'model': RandomForestClassifier(random_state=0), 'imputer': IterativeImputer(max_iter=1), 'group': 'rf_iterative_imputations'}
+
+2/2: Random Forest (Iterative imputed, max_iter=5)
+{'name': 'Random Forest (Iterative imputed, max_iter=5)', 'model': RandomForestClassifier(random_state=0), 'imputer': IterativeImputer(max_iter=5), 'group': 'rf_iterative_imputations'}
+

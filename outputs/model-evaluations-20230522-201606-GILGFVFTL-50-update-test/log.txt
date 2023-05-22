@@ -1,0 +1,15 @@
+Started at 2023-05-22 20:16:06.167771
+
+Models to evaluate: 1
+
+1/1: Random Forest (NaNs dropped in train)
+{'name': 'Random Forest (NaNs dropped in train)', 'model': RandomForestClassifier(random_state=0), 'drop_train_na': True, 'group': 'baseline'}
+
+Finished at 2023-05-22 20:16:06.921937
+Time taken: 0:00:00.754166
+Saved scores to outputs/model-evaluations-20230522-201606-GILGFVFTL-50-update-test
+Saved all scores to outputs/model-evaluations-20230522-201606-GILGFVFTL-50-update-test/scores-20230522-201606.csv
+Saved group scores to outputs/model-evaluations-20230522-201606-GILGFVFTL-50-update-test/groups
+Saved all group scores to outputs/model-evaluations-20230522-201606-GILGFVFTL-50-update-test/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230522-201606-GILGFVFTL-50-update-test/all-models.png
+Saved log to outputs/model-evaluations-20230522-201606-GILGFVFTL-50-update-test/log.txt

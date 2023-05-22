@@ -1,0 +1,112 @@
+Started at 2023-05-18 13:35:05.142882
+
+Models to evaluate: 30
+
+1/30: Random Forest (NaNs dropped in train)
+{'name': 'Random Forest (NaNs dropped in train)', 'model': RandomForestClassifier(random_state=0), 'drop_train_na': True, 'group': 'baseline'}
+
+2/30: Random Forest (Zero imputed)
+{'name': 'Random Forest (Zero imputed)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(fill_value=0, strategy='constant'), 'group': 'rf_imputations'}
+
+3/30: Random Forest (Mean imputed)
+{'name': 'Random Forest (Mean imputed)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(), 'group': 'rf_imputations'}
+
+4/30: Random Forest (Most frequent imputed)
+{'name': 'Random Forest (Most frequent imputed)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(strategy='most_frequent'), 'group': 'rf_imputations'}
+
+5/30: Random Forest (Median imputed)
+{'name': 'Random Forest (Median imputed)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(strategy='median'), 'group': 'rf_imputations'}
+
+6/30: Random Forest (KNN imputed, k=1)
+{'name': 'Random Forest (KNN imputed, k=1)', 'model': RandomForestClassifier(random_state=0), 'imputer': KNNImputer(n_neighbors=1), 'group': 'rf_knn_imputations'}
+
+7/30: Random Forest (KNN imputed, k=5)
+{'name': 'Random Forest (KNN imputed, k=5)', 'model': RandomForestClassifier(random_state=0), 'imputer': KNNImputer(), 'group': 'rf_knn_imputations'}
+
+8/30: Random Forest (KNN imputed, k=10)
+{'name': 'Random Forest (KNN imputed, k=10)', 'model': RandomForestClassifier(random_state=0), 'imputer': KNNImputer(n_neighbors=10), 'group': 'rf_knn_imputations'}
+
+9/30: KNN Classifier (mean imputed)
+{'name': 'KNN Classifier (mean imputed)', 'model': KNeighborsClassifier(), 'group': 'knn', 'imputer': SimpleImputer()}
+
+10/30: KNN Classifier (KNN imputed)
+{'name': 'KNN Classifier (KNN imputed)', 'model': KNeighborsClassifier(), 'group': 'knn', 'imputer': KNNImputer()}
+
+11/30: Random Forest (Zero imputed) (with missing indicator)
+{'name': 'Random Forest (Zero imputed) (with missing indicator)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(fill_value=0, strategy='constant'), 'group': 'rf_imputations_with_missing_indicator', 'missing_indicator': True}
+
+12/30: Random Forest (Mean imputed) (with missing indicator)
+{'name': 'Random Forest (Mean imputed) (with missing indicator)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(), 'group': 'rf_imputations_with_missing_indicator', 'missing_indicator': True}
+
+13/30: Random Forest (Most frequent imputed) (with missing indicator)
+{'name': 'Random Forest (Most frequent imputed) (with missing indicator)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(strategy='most_frequent'), 'group': 'rf_imputations_with_missing_indicator', 'missing_indicator': True}
+
+14/30: Random Forest (Median imputed) (with missing indicator)
+{'name': 'Random Forest (Median imputed) (with missing indicator)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(strategy='median'), 'group': 'rf_imputations_with_missing_indicator', 'missing_indicator': True}
+
+15/30: HistGradientBoosting
+{'name': 'HistGradientBoosting', 'model': HistGradientBoostingClassifier(random_state=0), 'group': 'gradient_boosting'}
+
+16/30: XGBoost
+{'name': 'XGBoost', 'model': XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, gamma=None,
+              gpu_id=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=None, max_bin=None,
+              max_cat_to_onehot=None, max_delta_step=None, max_depth=None,
+              max_leaves=None, min_child_weight=None, missing=nan,
+              monotone_constraints=None, n_estimators=100, n_jobs=None,
+              num_parallel_tree=None, predictor=None, random_state=0,
+              reg_alpha=None, reg_lambda=None, ...), 'group': 'gradient_boosting'}
+
+17/30: LightGBM
+{'name': 'LightGBM', 'model': LGBMClassifier(random_state=0), 'group': 'gradient_boosting'}
+
+18/30: Random Forest (FV)
+{'name': 'Random Forest (FV)', 'model': RandomForestClassifier(random_state=0), 'gene_features': 'FV', 'group': 'gene_features', 'imputer': SimpleImputer()}
+
+19/30: Random Forest (F)
+{'name': 'Random Forest (F)', 'model': RandomForestClassifier(random_state=0), 'gene_features': 'F', 'group': 'gene_features', 'imputer': SimpleImputer()}
+
+20/30: Random Forest (V)
+{'name': 'Random Forest (V)', 'model': RandomForestClassifier(random_state=0), 'gene_features': 'V', 'group': 'gene_features', 'imputer': SimpleImputer()}
+
+21/30: Random Forest (F+V)
+{'name': 'Random Forest (F+V)', 'model': RandomForestClassifier(random_state=0), 'gene_features': 'F+V', 'group': 'gene_features', 'imputer': SimpleImputer()}
+
+22/30: Random Forest (FV+F+V)
+{'name': 'Random Forest (FV+F+V)', 'model': RandomForestClassifier(random_state=0), 'gene_features': 'FV+F+V', 'group': 'gene_features', 'imputer': SimpleImputer()}
+
+23/30: Random Forest (both chains)
+{'name': 'Random Forest (both chains)', 'model': RandomForestClassifier(random_state=0), 'chain': 'both', 'group': 'chain_inputs', 'imputer': SimpleImputer()}
+
+24/30: Random Forest (Alpha chain)
+{'name': 'Random Forest (Alpha chain)', 'model': RandomForestClassifier(random_state=0), 'chain': 'alpha', 'group': 'chain_inputs', 'imputer': SimpleImputer()}
+
+25/30: Random Forest (Beta chain)
+{'name': 'Random Forest (Beta chain)', 'model': RandomForestClassifier(random_state=0), 'chain': 'beta', 'group': 'chain_inputs', 'imputer': SimpleImputer()}
+
+26/30: Random Forest (Seperate chains)
+{'name': 'Random Forest (Seperate chains)', 'model_alpha': RandomForestClassifier(random_state=0), 'model_beta': RandomForestClassifier(random_state=0), 'chain': 'seperate', 'group': 'chain_inputs', 'imputer': SimpleImputer()}
+
+27/30: Random Forest (both chains) (without nans)
+{'name': 'Random Forest (both chains) (without nans)', 'model': RandomForestClassifier(random_state=0), 'chain': 'both', 'group': 'chain_inputs', 'imputer': None, 'drop_train_na': True}
+
+28/30: Random Forest (Alpha chain) (without nans)
+{'name': 'Random Forest (Alpha chain) (without nans)', 'model': RandomForestClassifier(random_state=0), 'chain': 'alpha', 'group': 'chain_inputs', 'imputer': None, 'drop_train_na': True}
+
+29/30: Random Forest (Beta chain) (without nans)
+{'name': 'Random Forest (Beta chain) (without nans)', 'model': RandomForestClassifier(random_state=0), 'chain': 'beta', 'group': 'chain_inputs', 'imputer': None, 'drop_train_na': True}
+
+30/30: Random Forest (Seperate chains) (without nans)
+{'name': 'Random Forest (Seperate chains) (without nans)', 'model_alpha': RandomForestClassifier(random_state=0), 'model_beta': RandomForestClassifier(random_state=0), 'chain': 'seperate', 'group': 'chain_inputs', 'imputer': None, 'drop_train_na': True}
+
+Finished at 2023-05-18 13:36:05.728870
+Time taken: 0:01:00.585988
+Saved scores to outputs/model-evaluations-20230518-133505-GILGFVFTL-200
+Saved all scores to outputs/model-evaluations-20230518-133505-GILGFVFTL-200/scores-20230518-133605.csv
+Saved group scores to outputs/model-evaluations-20230518-133505-GILGFVFTL-200/groups
+Saved all group scores to outputs/model-evaluations-20230518-133505-GILGFVFTL-200/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230518-133505-GILGFVFTL-200/all-models.png
+Saved log to outputs/model-evaluations-20230518-133505-GILGFVFTL-200/log.txt

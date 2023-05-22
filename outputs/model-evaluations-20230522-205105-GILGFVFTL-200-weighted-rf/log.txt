@@ -1,0 +1,24 @@
+Started at 2023-05-22 20:51:05.451850
+
+Models to evaluate: 4
+
+1/4: RandomForest (own impl., weighted)
+{'name': 'RandomForest (own impl., weighted)', 'model': <CustomForest.random_forest.RandomForest object at 0x0000016F14AEC970>, 'group': 'weighted_random_forest'}
+
+2/4: RandomForest (own impl.)
+{'name': 'RandomForest (own impl.)', 'model': <CustomForest.random_forest.RandomForest object at 0x0000016F1444D580>, 'group': 'weighted_random_forest', 'imputer': SimpleImputer()}
+
+3/4: RandomForest (own impl., weighted, no nan)
+{'name': 'RandomForest (own impl., weighted, no nan)', 'model': <CustomForest.random_forest.RandomForest object at 0x0000016F1450ECD0>, 'group': 'weighted_random_forest', 'drop_train_na': True}
+
+4/4: RandomForest (own impl., no nan)
+{'name': 'RandomForest (own impl., no nan)', 'model': <CustomForest.random_forest.RandomForest object at 0x0000016F144F7B50>, 'group': 'weighted_random_forest', 'drop_train_na': True}
+
+Finished at 2023-05-22 21:11:14.701349
+Time taken: 0:20:09.249499
+Saved scores to outputs/model-evaluations-20230522-205105-GILGFVFTL-200-weighted-rf
+Saved all scores to outputs/model-evaluations-20230522-205105-GILGFVFTL-200-weighted-rf/scores-20230522-211114.csv
+Saved group scores to outputs/model-evaluations-20230522-205105-GILGFVFTL-200-weighted-rf/groups
+Saved all group scores to outputs/model-evaluations-20230522-205105-GILGFVFTL-200-weighted-rf/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230522-205105-GILGFVFTL-200-weighted-rf/all-models.png
+Saved log to outputs/model-evaluations-20230522-205105-GILGFVFTL-200-weighted-rf/log.txt

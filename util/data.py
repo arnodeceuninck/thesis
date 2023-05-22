@@ -99,34 +99,34 @@ def split_gene_in_columns(df):
         # combined_dataset.drop(col, axis=1, inplace=True)
 
 
-def plot_scores(scores, baseline_name, y_label="AUC", x_label="Model", rotate_x=False):
-
-    if baseline_name is not None:
-        baseline = scores[baseline_name]
-
-        diff = [scores[score] - baseline for score in scores]
-    else:
-        diff = [scores[score] for score in scores]
-
-    graph = sns.barplot(x=list(scores.keys()), y=diff)
-
-    if baseline_name is not None:
-        # draw a horizontal line at y=baseline and label it
-        graph.axhline(0, color="k", clip_on=False)
-
-        y_ticks = graph.get_yticks()
-        graph.set_yticklabels([f"{baseline+y:.2f}" for y in y_ticks])
-
-    if rotate_x:
-        graph.set_xticklabels(graph.get_xticklabels(), rotation=90)
-
-    graph.set_ylabel(y_label)
-    graph.set_xlabel(x_label)
-
-    plt.show()
-
-    # clear the graph for future plots
-    plt.clf()
+# def plot_scores(scores, baseline_name, y_label="AUC", x_label="Model", rotate_x=False):
+#
+#     if baseline_name is not None:
+#         baseline = scores[baseline_name]
+#
+#         diff = [scores[score] - baseline for score in scores]
+#     else:
+#         diff = [scores[score] for score in scores]
+#
+#     graph = sns.barplot(x=list(scores.keys()), y=diff)
+#
+#     if baseline_name is not None:
+#         # draw a horizontal line at y=baseline and label it
+#         graph.axhline(0, color="k", clip_on=False)
+#
+#         y_ticks = graph.get_yticks()
+#         graph.set_yticklabels([f"{baseline+y:.2f}" for y in y_ticks])
+#
+#     if rotate_x:
+#         graph.set_xticklabels(graph.get_xticklabels(), rotation=90)
+#
+#     graph.set_ylabel(y_label)
+#     graph.set_xlabel(x_label)
+#
+#     plt.show()
+#
+#     # clear the graph for future plots
+#     plt.clf()
 
 
 def readDataframeToListDataset(features_df, labels_df=None, label_col_name=None):
