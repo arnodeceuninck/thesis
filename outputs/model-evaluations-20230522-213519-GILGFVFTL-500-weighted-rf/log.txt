@@ -14,3 +14,11 @@ Models to evaluate: 4
 4/4: RandomForest (own impl., no nan)
 {'name': 'RandomForest (own impl., no nan)', 'model': <CustomForest.random_forest.RandomForest object at 0x0000016F15B496D0>, 'group': 'weighted_random_forest', 'drop_train_na': True}
 
+Finished at 2023-05-22 23:21:54.655671
+Time taken: 1:46:35.124092
+Saved scores to outputs/model-evaluations-20230522-213519-GILGFVFTL-500-weighted-rf
+Saved all scores to outputs/model-evaluations-20230522-213519-GILGFVFTL-500-weighted-rf/scores-20230522-232154.csv
+Saved group scores to outputs/model-evaluations-20230522-213519-GILGFVFTL-500-weighted-rf/groups
+Saved all group scores to outputs/model-evaluations-20230522-213519-GILGFVFTL-500-weighted-rf/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230522-213519-GILGFVFTL-500-weighted-rf/all-models.png
+Saved log to outputs/model-evaluations-20230522-213519-GILGFVFTL-500-weighted-rf/log.txt

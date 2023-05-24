@@ -1,0 +1,18 @@
+Started at 2023-05-23 19:09:21.500285
+
+Models to evaluate: 2
+
+1/2: ProximityForest (no_nan, measure=tcr_approx)
+{'name': 'ProximityForest (no_nan, measure=tcr_approx)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x00000264137BD100>, 'group': 'proximity_forest', 'extract_features': False, 'columns_to_use': ['CDR3', 'V', 'J'], 'drop_train_na': True}
+
+2/2: ProximityForest (nan_dist, measure=tcr_approx)
+{'name': 'ProximityForest (nan_dist, measure=tcr_approx)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x000002641772AF70>, 'group': 'proximity_forest', 'extract_features': False, 'columns_to_use': ['CDR3', 'V', 'J'], 'drop_train_na': True}
+
+Finished at 2023-05-23 19:09:45.153435
+Time taken: 0:00:23.653150
+Saved scores to outputs/model-evaluations-20230523-190921-GILGFVFTL-50-distance-models-cdr
+Saved all scores to outputs/model-evaluations-20230523-190921-GILGFVFTL-50-distance-models-cdr/scores-20230523-190945.csv
+Saved group scores to outputs/model-evaluations-20230523-190921-GILGFVFTL-50-distance-models-cdr/groups
+Saved all group scores to outputs/model-evaluations-20230523-190921-GILGFVFTL-50-distance-models-cdr/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230523-190921-GILGFVFTL-50-distance-models-cdr/all-models.png
+Saved log to outputs/model-evaluations-20230523-190921-GILGFVFTL-50-distance-models-cdr/log.txt

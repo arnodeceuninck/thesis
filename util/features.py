@@ -51,7 +51,8 @@ def onehot_encode_test(df):
 
 def onehot_encode(df, test=False):
     global ONEHOT_ENCODER, ALPHA_OR_BETA
-    assert ALPHA_OR_BETA in ["alpha", "beta"], f"ALPHA_OR_BETA must be set to 'alpha' or 'beta', is currently set to {ALPHA_OR_BETA}"
+    assert ALPHA_OR_BETA in ["alpha",
+                             "beta"], f"ALPHA_OR_BETA must be set to 'alpha' or 'beta', is currently set to {ALPHA_OR_BETA}"
 
     # One hot encode the columns (creates a new column per unique value here and fills it with 1 or 0)
     # get all columns in df with the name 'V' or 'J' or that starts with 'V_' or 'J_'
@@ -75,7 +76,6 @@ def onehot_encode(df, test=False):
         assert col in onehot_df.columns, f'Column {col} not in dataframe'
 
     return onehot_df
-
 
 
 def get_length(sequence):
@@ -103,7 +103,7 @@ def get_amino_acid_composition(sequence):
 def aa_occurances(df):
     composition = [get_amino_acid_composition(sequence) for sequence in df['CDR3']]
     # aa_alpha_counts = pd.DataFrame.from_records(composition).fillna(0)
-    aa_alpha_counts = pd.DataFrame.from_records(composition).fillna(0) # Filling na with 0, since they weren't counted
+    aa_alpha_counts = pd.DataFrame.from_records(composition).fillna(0)  # Filling na with 0, since they weren't counted
     aa_alpha_counts.columns = [f'{column}_count' for column in aa_alpha_counts.columns]
     return aa_alpha_counts
 
@@ -197,20 +197,24 @@ def pos_features(df):
     return pd.concat(features_list, axis=1).fillna(0)
 
 
-def get_baseline_feature_functions(test, cdr_only=False):
-    ohe = onehot_encode if not test else onehot_encode_test
+def get_baseline_feature_functions(test, columns_to_use):
 
-    if cdr_only:
-        return [cdr3_length, aa_occurances, physchem_properties, peptide_mass, pi_feature]
+    feature_functions = []
 
-    feature_functions = [ohe, cdr3_length, aa_occurances, physchem_properties, peptide_mass, pi_feature,
-                             pos_features]
+    ohe_columns = ["V", "J", "V_family", "J_family", "V_version", "J_version"]
+    if any([column in columns_to_use for column in ohe_columns]):
+        ohe = onehot_encode if not test else onehot_encode_test
+        feature_functions.append(ohe)
+
+    if "CDR3" in columns_to_use:
+        feature_functions.extend([cdr3_length, aa_occurances, physchem_properties, peptide_mass, pi_feature, pos_features])
+
     return feature_functions
 
 
-def get_baseline_sequence_features(df, test, cdr_only=False):
+def get_baseline_sequence_features(df, test, columns_to_use):
     features_list = []
-    for feature_function in get_baseline_feature_functions(test, cdr_only):
+    for feature_function in get_baseline_feature_functions(test, columns_to_use):
         features = feature_function(df)
         if features.shape[0] == 0:
             # No features extracted (e.g. in the case of aa_occurances of all NaN)
@@ -242,7 +246,7 @@ def update_alpha_or_beta(new_value):
     ALPHA_OR_BETA = new_value
 
 
-def get_features(df, test=False, columns=None, cdr_only=False):
+def get_features(df, test=False, columns=None, cdr_only=False, extract_features=True):
     if cdr_only:
         assert columns is None, 'Columns should be None when cdr_only is True'
         columns = ['CDR3']
@@ -275,8 +279,12 @@ def get_features(df, test=False, columns=None, cdr_only=False):
         # only keep the columns that are in columns
         renamed = renamed[columns]
 
-        chain_features = get_baseline_sequence_features(renamed, test).add_prefix(
-            f'{chain}_')
+        if extract_features:
+            chain_features = get_baseline_sequence_features(renamed, test, columns)
+        else:
+            chain_features = renamed
+
+        chain_features = chain_features.add_prefix(f"{chain}_")
 
         all_chains_features.append(chain_features)
 
@@ -315,7 +323,8 @@ def get_features_old_deprecated(df, test=False, cdr_only=False):
 
     ALPHA_OR_BETA = 'alpha'
     if not cdr_only:
-        alpha_renamed = df[['CDR3_alpha', 'TRAV', 'TRAJ']].rename(columns={'CDR3_alpha': 'CDR3', 'TRAV': 'V', 'TRAJ': 'J'})
+        alpha_renamed = df[['CDR3_alpha', 'TRAV', 'TRAJ']].rename(
+            columns={'CDR3_alpha': 'CDR3', 'TRAV': 'V', 'TRAJ': 'J'})
     else:
         alpha_renamed = df[['CDR3_alpha']].rename(columns={'CDR3_alpha': 'CDR3'})
     try:
@@ -336,12 +345,14 @@ def get_features_old_deprecated(df, test=False, cdr_only=False):
 def get_columns_starting_with(df, prefix):
     return df[df.columns[df.columns.str.startswith(prefix)]]
 
+
 from numpy.random import randint
 from sklearn.base import BaseEstimator, TransformerMixin
 
 
 class MissingIndicator(BaseEstimator, TransformerMixin):
     """Add an attribute that is True if the sample contains missing values, False otherwise."""
+
     def fit(self, X, y=None):
         return self
 

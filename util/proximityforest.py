@@ -126,6 +126,9 @@ class ProximityTreeClassifier:
         self.distance_kwargs = distance_kwargs if distance_kwargs is not None else {}
 
     def fit(self, data_x, data_y, groups=None):
+        assert len(data_x) == len(data_y)
+        assert len(data_x) > 0
+
         groups = np.zeros(len(data_x)) if groups is None else groups
 
         self.num_features = data_x.shape[1]  # Total number of features, not the number used!!!
@@ -133,9 +136,10 @@ class ProximityTreeClassifier:
         self.features_to_use_indices = np.random.choice(len(data_x[0]), self.num_features_to_keep,
                                                         replace=False) if self.num_features_to_keep is not None else np.arange(
             len(data_x[0]))
-        data_x_reduced = subsample_features(data_x, self.features_to_use_indices)
 
-        # TODO: Remove this line to enable subsampling and bootstrapping
+
+        # TODO: Uncomment  and Remove this line to enable subsampling and bootstrapping
+        # data_x_reduced = subsample_features(data_x, self.features_to_use_indices)
         data_x_reduced = data_x
         # assert self.num_features_to_keep is None, 'Be sure the distance measure supports this!'
 
@@ -317,21 +321,23 @@ from tqdm import tqdm
 
 
 class ProximityForestClassifier:
-    def __init__(self, n_trees=100, show_progress=True, use_bootstrapping=True, reduce_features=True,
-                 sample_multiple_splits=10, max_depth=5, distance_measure=None, distance_kwargs=None, multithreaded=True):
+    def __init__(self, n_trees=100, show_progress=True, use_bootstrapping=True, reduce_features=False,
+                 sample_multiple_splits=None, max_depth=5, distance_measure=None, distance_kwargs=None, multithreaded=False):
         self.n_trees = n_trees
         self.trees = []
         self.classes_ = None
         self.show_progress = show_progress
         self.use_bootstrapping = use_bootstrapping
         self.reduce_features = reduce_features
-        self.sample_multiple_splits = sample_multiple_splits
+        self.sample_multiple_splits = sample_multiple_splits # if None or "sqrt", sqrt of len(data_x) is used # TODO: possible optimizations: disable resampling, get best split from all splits
         self.max_depth = max_depth
         self.distance_measure = distance_measure
         self.distance_kwargs = distance_kwargs
         self.multithreaded = multithreaded
 
     def fit(self, data_x, data_y, groups=None):
+        self.trees = []
+
         data_x = self.preprocess_data(data_x)
         data_y = self.preprocess_data(data_y.astype(int))
         groups = self.preprocess_data(groups) if groups is not None else np.zeros(len(data_x))
@@ -359,6 +365,13 @@ class ProximityForestClassifier:
             num_features_to_keep = None
             # assert num_features_to_keep <= len(data_x[0])
 
+        if self.sample_multiple_splits is None or self.sample_multiple_splits == 'sqrt':
+            self.sample_multiple_splits = int(np.sqrt(len(data_x_bootstrap)))
+        elif self.sample_multiple_splits == 'all':
+            self.sample_multiple_splits = len(data_x_bootstrap)
+        else:
+            assert isinstance(self.sample_multiple_splits, int)
+
         return ProximityTreeClassifier(num_features_to_keep=num_features_to_keep,
                                        splits_to_sample=self.sample_multiple_splits, max_depth=self.max_depth,
                                        distance_measure=self.distance_measure, distance_kwargs=self.distance_kwargs) \
@@ -366,7 +379,7 @@ class ProximityForestClassifier:
 
     def bootstrap(self, data_x, data_y, groups):
         # Bootstrap some rows
-        indices = np.random.choice(len(data_x), size=int(len(data_x) * 0.1), replace=True)
+        indices = np.random.choice(len(data_x), size=int(len(data_x) * 0.7), replace=False) # no replacements, since replacements will always be closest
         data_x_bootstrap = data_x[indices]
         data_y_bootstrap = data_y[indices]
         groups_bootstrap = groups[indices]

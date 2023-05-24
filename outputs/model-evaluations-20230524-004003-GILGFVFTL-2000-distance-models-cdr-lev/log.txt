@@ -1,0 +1,18 @@
+Started at 2023-05-24 00:40:03.623013
+
+Models to evaluate: 2
+
+1/2: ProximityForest (nan_dist=0, measure=lev)
+{'name': 'ProximityForest (nan_dist=0, measure=lev)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x000001CBEB69BDF0>, 'group': 'proximity_forest', 'extract_features': False, 'columns_to_use': ['CDR3', 'V', 'J'], 'drop_train_na': False}
+
+2/2: ProximityForest (no_nan, measure=lev)
+{'name': 'ProximityForest (no_nan, measure=lev)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x000001CBEB69BD30>, 'group': 'proximity_forest', 'extract_features': False, 'columns_to_use': ['CDR3', 'V', 'J'], 'drop_train_na': True}
+
+Finished at 2023-05-24 02:22:22.505034
+Time taken: 1:42:18.882021
+Saved scores to outputs/model-evaluations-20230524-004003-GILGFVFTL-2000-distance-models-cdr-lev
+Saved all scores to outputs/model-evaluations-20230524-004003-GILGFVFTL-2000-distance-models-cdr-lev/scores-20230524-022222.csv
+Saved group scores to outputs/model-evaluations-20230524-004003-GILGFVFTL-2000-distance-models-cdr-lev/groups
+Saved all group scores to outputs/model-evaluations-20230524-004003-GILGFVFTL-2000-distance-models-cdr-lev/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230524-004003-GILGFVFTL-2000-distance-models-cdr-lev/all-models.png
+Saved log to outputs/model-evaluations-20230524-004003-GILGFVFTL-2000-distance-models-cdr-lev/log.txt

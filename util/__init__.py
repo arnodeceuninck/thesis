@@ -14,3 +14,5 @@ except ModuleNotFoundError:
 from .proximityforest import *
 
 from .plot import *
+
+from .knnstring import *

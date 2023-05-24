@@ -1,0 +1,21 @@
+Started at 2023-05-23 16:33:03.030762
+
+Models to evaluate: 3
+
+1/3: RandomForest (only CDR3)
+{'name': 'RandomForest (only CDR3)', 'model': RandomForestClassifier(random_state=0), 'group': 'cdr_only', 'columns_to_use': ['CDR3'], 'imputer': SimpleImputer()}
+
+2/3: RandomForest (only CDR3, no nan)
+{'name': 'RandomForest (only CDR3, no nan)', 'model': RandomForestClassifier(random_state=0), 'group': 'cdr_only', 'columns_to_use': ['CDR3'], 'drop_train_na': True}
+
+3/3: ProximityForest (nan_dist=0, measure=tcr_dist)
+{'name': 'ProximityForest (nan_dist=0, measure=tcr_dist)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x0000012BB16D3E50>, 'group': 'proximity_forest', 'extract_features': False, 'columns_to_use': ['CDR3'], 'drop_train_na': True}
+
+Finished at 2023-05-23 16:45:35.184595
+Time taken: 0:12:32.153833
+Saved scores to outputs/model-evaluations-20230523-163303-GILGFVFTL-500-distance-models-cdr
+Saved all scores to outputs/model-evaluations-20230523-163303-GILGFVFTL-500-distance-models-cdr/scores-20230523-164535.csv
+Saved group scores to outputs/model-evaluations-20230523-163303-GILGFVFTL-500-distance-models-cdr/groups
+Saved all group scores to outputs/model-evaluations-20230523-163303-GILGFVFTL-500-distance-models-cdr/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230523-163303-GILGFVFTL-500-distance-models-cdr/all-models.png
+Saved log to outputs/model-evaluations-20230523-163303-GILGFVFTL-500-distance-models-cdr/log.txt

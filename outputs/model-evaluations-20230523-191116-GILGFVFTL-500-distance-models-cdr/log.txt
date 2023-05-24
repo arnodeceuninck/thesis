@@ -1,0 +1,10 @@
+Started at 2023-05-23 19:11:16.134705
+
+Models to evaluate: 2
+
+1/2: ProximityForest (no_nan, measure=tcr_approx)
+{'name': 'ProximityForest (no_nan, measure=tcr_approx)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x00000264137BD100>, 'group': 'proximity_forest', 'extract_features': False, 'columns_to_use': ['CDR3', 'V', 'J'], 'drop_train_na': True}
+
+2/2: ProximityForest (nan_dist, measure=tcr_approx)
+{'name': 'ProximityForest (nan_dist, measure=tcr_approx)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x000002641772AF70>, 'group': 'proximity_forest', 'extract_features': False, 'columns_to_use': ['CDR3', 'V', 'J'], 'drop_train_na': True}
+

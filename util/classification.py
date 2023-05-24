@@ -47,6 +47,8 @@ def fix_test(x_test, train_columns):
 
             # print(f'Column {col} not in test set, added with NaN values')
     # x_test = x_test.copy()
+    if len(cols_to_add) == 0:
+        return x_test
     # create a dataframe with all columns to add, set to 0
     df = pd.DataFrame(np.zeros((x_test.shape[0], len(cols_to_add))), columns=cols_to_add)
     # add the new columns to the test set
@@ -74,11 +76,15 @@ def evaluate(clf, x, y):
 
 
 def evaluate_no_cv(clf, x, y, x_test, y_test, model_imputer=None):
+    assert len(x) == len(y), f'Length of x ({len(x)}) and y ({len(y)}) not equal'
+    assert len(x_test) == len(y_test), f'Length of x_test ({len(x_test)}) and y_test ({len(y_test)}) not equal'
+
     if model_imputer is not None:
         x = model_imputer.fit_transform(x)
 
     clf.fit(x, y)
     y_pred = clf.predict_proba(x_test)[:, 1]
+    assert len(y_pred) == len(y_test), f'Length of y_pred ({len(y_pred)}) and y_test ({len(y_test)}) not equal'
     fpr, tpr, thresholds = metrics.roc_curve(y_test, y_pred, pos_label=1)
     roc_auc = metrics.auc(fpr, tpr)
     # print(f"ROC AUC: {roc_auc:.3f}")

@@ -25,7 +25,7 @@ def calculate_tcr_dist(seq1, seq2, nan_distance):
         return calculate_tcr_dist_no_nan(seq1, seq2)
 
 def calculate_tcr_dist_multiple_chains(seq1, seq2, nan_distance=5, print_dist=False):
-    # seq1 is e.g. ['ABCD', 'EFGH']: the alpha and beta chains
+    # seq1 is e.g. ['ABCD', 'EFGH']: the alpha and beta chain
     assert len(seq1) == len(seq2)
     dist = 0
     for i in range(len(seq1)):
@@ -79,3 +79,79 @@ def calculate_tcr_dist2_cached(seq1, seq2, nan_distance=0, organism='human'):
 
 def get_cache_counter():
     return CACHE_COUNTER
+
+
+
+### approximation
+
+def reverse_hamming(s1, s2):
+    """
+
+    :param s1: string
+    :param s2: string of same length las s1
+    :return: hamming distance of s1 and s2, but reversed (1 if character equal, 0 if not)
+
+    >>> reverse_hamming('abc', 'abc')
+    3
+    >>> reverse_hamming('abc', 'abd')
+    2
+    >>> reverse_hamming('abc', 'xyz')
+    0
+    """
+    assert len(s1) == len(s2), "s1 and s2 must have same length"
+    return sum([0 if s1[i] != s2[i] else 1 for i in range(len(s1))])
+
+
+def distance_score(cdr1, cdr2):
+    """
+
+    :param cdr1: CDR string, e.g. 'CAMSRPFITQGGSEKLVF'
+    :param cdr2: CD2 string, e.g. 'CAALRMDTGRRALTF'
+    :return: distance schore based on hamming distance of right alignment and left alignment. Higher score means more similar.
+
+    >>> distance_score('ABC', 'ABC')
+    1.0
+    >>> distance_score('ABC', 'ABD')
+    0.6666666666666666
+    >>> distance_score('ABC', 'XYZ')
+    0.0
+    >>> distance_score('ABC', 'AB')
+    0.3333333333333333
+    >>> distance_score(np.nan, 'A')
+    0.99
+    """
+
+    if pd.isnull(cdr1) or pd.isnull(cdr2):
+        return 0.99
+
+    l = min(len(cdr1), len(cdr2))
+    l_max = max(len(cdr1), len(cdr2))
+
+    cdr1_left = cdr1[:l]
+    cdr2_left = cdr2[:l]
+
+    left_distance = reverse_hamming(cdr1_left, cdr2_left)
+
+    cdr1_right = cdr1[-l:]
+    cdr2_right = cdr2[-l:]
+
+    right_distance = reverse_hamming(cdr1_right, cdr2_right)
+
+    # print(f"({left_distance} + {right_distance}) / {l_max} = {(left_distance + right_distance) / l_max}")
+    return (left_distance + right_distance) / (2*l_max)
+
+
+def calculate_approx_distance(seq1, seq2, nan_distance=0):
+    alpha_seq1 = seq1[0]
+    alpha_seq2 = seq2[0]
+
+    beta_seq1 = seq1[3]
+    beta_seq2 = seq2[3]
+
+    alpha_score = distance_score(alpha_seq1, alpha_seq2)
+    beta_score = distance_score(beta_seq1, beta_seq2)
+    if alpha_score < 0.7 and beta_score < 0.7:
+        very_high_number = 10000  # not np.infm, to still be able to sort in case no better distances found
+        return very_high_number + alpha_score + beta_score
+
+    return calculate_tcr_dist2_cached(seq1, seq2, nan_distance=nan_distance)
