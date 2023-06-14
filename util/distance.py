@@ -3,7 +3,7 @@ from functools import cache  # TODO: from methodtools import lru_cache? Should w
 
 import pwseqdist as pwsd
 import numpy as np
-import numba
+# import numba
 import numpy as np
 import pandas as pd
 from tcrdist.repertoire import TCRrep
@@ -43,8 +43,16 @@ def calculate_tcr_dist2(seq1, seq2, nan_distance=0, organism='human'):
     if (seq1 == seq2).all():
         return 0
 
-    df = pd.DataFrame([seq1, seq2], columns=['cdr3_a_aa', 'v_a_gene', 'j_a_gene', 'cdr3_b_aa', 'v_b_gene', 'j_b_gene'])
-    df['count'] = 1
+    if isinstance(seq1, list):
+        df = pd.DataFrame([seq1, seq2], columns=['cdr3_a_aa', 'v_a_gene', 'j_a_gene', 'cdr3_b_aa', 'v_b_gene', 'j_b_gene'])
+        df['count'] = 1
+    elif isinstance(seq1, pd.Series):
+        # create a dataframe from the two series
+        df = pd.DataFrame([seq1, seq2])
+        column_rename_map = {'alpha_CDR3': 'cdr3_a_aa', 'alpha_V': 'v_a_gene', 'alpha_J': 'j_a_gene',
+                                'beta_CDR3': 'cdr3_b_aa', 'beta_V': 'v_b_gene', 'beta_J': 'j_b_gene'}
+        df = df.rename(columns=column_rename_map)
+        df['count'] = 1
 
     # contains the df a nan value?
     if df.isnull().values.any():
@@ -63,8 +71,8 @@ def calculate_tcr_dist2(seq1, seq2, nan_distance=0, organism='human'):
         print("Warning: shape 1x1")
         return tr.pw_alpha[0][0]
 
-    distance_sum = tr.pw_alpha[0][1] + tr.pw_beta[0][
-        1]  # + tr.pw_cdr3_a_aa[0][1] + tr.pw_cdr3_b_aa[0][1] # cdr distances are already in pw
+    distance_sum = tr.pw_alpha[0][1] + tr.pw_beta[0][1]  # + tr.pw_cdr3_a_aa[0][1] + tr.pw_cdr3_b_aa[0][1] # cdr distances are already in pw
+
     # print(f"Distance between {seq1} and {seq2} is {distance_sum}")
     return distance_sum
 
@@ -75,9 +83,11 @@ CACHE_COUNTER = defaultdict(int)
 
 
 def calculate_tcr_dist2_cached(seq1, seq2, nan_distance=0, organism='human'):
-    id = str(seq1) + str(seq2)  # might slow down a lot
+    # id = str(seq1) + str(seq2)  # might slow down a lot
+    # convert distanse series to hashable id
+    id = tuple(seq1) + tuple(seq2)
     if id in CACHE_DICT:
-        CACHE_COUNTER[id] += 1
+        # CACHE_COUNTER[id] += 1
         # print(f"Cache hit for {id} (hit {CACHE_COUNTER[id]} times)")
         return CACHE_DICT[id]
     else:
@@ -158,11 +168,29 @@ def calculate_approx_distance(seq1, seq2, nan_distance=0):
 
     alpha_score = distance_score(alpha_seq1, alpha_seq2)
     beta_score = distance_score(beta_seq1, beta_seq2)
-    if alpha_score < 0.7 and beta_score < 0.7:
+    # print(f"seq1: {seq1}, seq2: {seq2}")
+    # print(f"alpha_score: {alpha_score}, beta_score: {beta_score}")
+    if alpha_score < 0.4 and beta_score < 0.4:
         very_high_number = 10000  # not np.infm, to still be able to sort in case no better distances found
-        return very_high_number + alpha_score + beta_score
+        return very_high_number - alpha_score - beta_score
 
     return calculate_tcr_dist2_cached(seq1, seq2, nan_distance=nan_distance)
+
+def calculate_approx_distance_or(seq1, seq2, nan_distance=0):
+    alpha_seq1 = seq1[0]
+    alpha_seq2 = seq2[0]
+
+    beta_seq1 = seq1[3]
+    beta_seq2 = seq2[3]
+
+    alpha_score = distance_score(alpha_seq1, alpha_seq2)
+    beta_score = distance_score(beta_seq1, beta_seq2)
+    if alpha_score < 0.7 or beta_score < 0.7:
+        very_high_number = 10000  # not np.infm, to still be able to sort in case no better distances found
+        return very_high_number - alpha_score - beta_score
+
+    return calculate_tcr_dist2_cached(seq1, seq2, nan_distance=nan_distance)
+
 
 
 def hamming(s1, s2):

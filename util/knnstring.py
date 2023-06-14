@@ -68,7 +68,8 @@ def levenstein_distance(a, b, nan_distance=0):
             min_dist(s1 + 1, s2 + 1),  # replace character
         )
 
-    return min_dist(0, 0)
+    dist = min_dist(0, 0)
+    return dist
 
 
 def multi_lev(a, b, nan_distance=0):

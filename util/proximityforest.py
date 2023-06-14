@@ -329,7 +329,7 @@ class ProximityForestClassifier:
         self.show_progress = show_progress
         self.use_bootstrapping = use_bootstrapping
         self.reduce_features = reduce_features
-        self.sample_multiple_splits = sample_multiple_splits # if None or "sqrt", sqrt of len(data_x) is used # TODO: possible optimizations: disable resampling, get best split from all splits
+        self.sample_multiple_splits = sample_multiple_splits # if None or "sqrt", "all" or "half" # TODO: possible optimizations: disable resampling, get best split from all splits
         self.max_depth = max_depth
         self.distance_measure = distance_measure
         self.distance_kwargs = distance_kwargs
@@ -369,6 +369,8 @@ class ProximityForestClassifier:
             self.sample_multiple_splits = int(np.sqrt(len(data_x_bootstrap)))
         elif self.sample_multiple_splits == 'all':
             self.sample_multiple_splits = len(data_x_bootstrap)
+        elif self.sample_multiple_splits == 'half':
+            self.sample_multiple_splits = int(len(data_x_bootstrap) / 2)
         else:
             assert isinstance(self.sample_multiple_splits, int)
 
