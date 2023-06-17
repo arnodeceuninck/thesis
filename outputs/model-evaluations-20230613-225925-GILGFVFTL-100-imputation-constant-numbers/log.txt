@@ -1,0 +1,19 @@
+Started at 2023-06-13 22:59:25.011242
+
+Models to evaluate: 5
+
+1/5: RandomForest (mean imputed)
+{'name': 'RandomForest (mean imputed)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(), 'group': 'mean_impute_models'}
+
+2/5: KNN (most frequent imputed)
+{'name': 'KNN (most frequent imputed)', 'model': KNeighborsClassifier(), 'imputer': SimpleImputer(strategy='median'), 'group': 'mean_impute_models'}
+
+3/5: ProximityForest (mean imputed)
+{'name': 'ProximityForest (mean imputed)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x0000026A8D567100>, 'imputer': SimpleImputer(), 'group': 'mean_impute_models'}
+
+4/5: MLP (mean imputed)
+{'name': 'MLP (mean imputed)', 'model': MLPClassifier(random_state=0), 'imputer': SimpleImputer(), 'group': 'mean_impute_models'}
+
+5/5: HistGradientBoosting (mean imputed)
+{'name': 'HistGradientBoosting (mean imputed)', 'model': HistGradientBoostingClassifier(random_state=0), 'imputer': SimpleImputer(), 'group': 'mean_impute_models'}
+

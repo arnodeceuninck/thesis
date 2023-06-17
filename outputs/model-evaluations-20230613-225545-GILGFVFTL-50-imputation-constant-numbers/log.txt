@@ -1,0 +1,19 @@
+Started at 2023-06-13 22:55:45.541620
+
+Models to evaluate: 5
+
+1/5: RandomForest (mean imputed)
+{'name': 'RandomForest (mean imputed)', 'model': RandomForestClassifier(random_state=0), 'group': 'mean_impute_models'}
+
+2/5: KNN (mean imputed)
+{'name': 'KNN (mean imputed)', 'model': KNeighborsClassifier(metric=<function levenstein_distance at 0x000002A931866790>), 'group': 'mean_impute_models'}
+
+3/5: ProximityForest (mean imputed)
+{'name': 'ProximityForest (mean imputed)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x000002A93A06B6D0>, 'group': 'mean_impute_models'}
+
+4/5: MLP (mean imputed)
+{'name': 'MLP (mean imputed)', 'model': MLPClassifier(random_state=0), 'group': 'mean_impute_models'}
+
+5/5: HistGradientBoosting (mean imputed)
+{'name': 'HistGradientBoosting (mean imputed)', 'model': HistGradientBoostingClassifier(random_state=0), 'group': 'mean_impute_models'}
+

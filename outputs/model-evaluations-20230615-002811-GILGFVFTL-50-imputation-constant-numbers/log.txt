@@ -1,0 +1,10 @@
+Started at 2023-06-15 00:28:11.879913
+
+Models to evaluate: 2
+
+1/2: RandomForest (No NaNs)
+{'name': 'RandomForest (No NaNs)', 'model': RandomForestClassifier(random_state=0), 'drop_train_na': True}
+
+2/2: RandomForest (Mean imputed)
+{'name': 'RandomForest (Mean imputed)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(), 'drop_train_na': False}
+

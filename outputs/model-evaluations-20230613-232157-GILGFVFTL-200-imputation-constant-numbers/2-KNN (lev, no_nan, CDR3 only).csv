@@ -1,0 +1,6 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr
+0,"KNN (lev, no_nan, CDR3 only)",0.8618965517241379,False,,both,knn_metrics,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,40.0,0.0,40.0,108.0,200.0,,False,2
+1,"KNN (lev, no_nan, CDR3 only)",0.8731034482758621,False,,both,knn_metrics,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,41.0,0.0,41.0,108.0,200.0,,False,2
+2,"KNN (lev, no_nan, CDR3 only)",0.8458620689655172,False,,both,knn_metrics,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,42.0,0.0,42.0,108.0,200.0,,False,2
+3,"KNN (lev, no_nan, CDR3 only)",0.8456896551724138,False,,both,knn_metrics,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,37.0,0.0,37.0,108.0,200.0,,False,2
+4,"KNN (lev, no_nan, CDR3 only)",0.8420689655172414,False,,both,knn_metrics,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,38.0,0.0,38.0,108.0,200.0,,False,2

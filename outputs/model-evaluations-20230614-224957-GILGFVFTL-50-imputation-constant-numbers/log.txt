@@ -1,0 +1,7 @@
+Started at 2023-06-14 22:49:57.542005
+
+Models to evaluate: 1
+
+1/1: KNN (tcrdist3)
+{'name': 'KNN (tcrdist3)', 'model': <util.knnstring.KNNString object at 0x000002A7C4A13970>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+

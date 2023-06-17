@@ -1,0 +1,19 @@
+Started at 2023-06-14 23:36:11.590690
+
+Models to evaluate: 5
+
+1/5: KNN (levenstein, no_nan)
+{'name': 'KNN (levenstein, no_nan)', 'model': <util.knnstring.KNNString object at 0x000002416A0DE0D0>, 'group': 'knn', 'extract_features': False, 'drop_train_na': True}
+
+2/5: KNN (levenstein, nan_dist=0)
+{'name': 'KNN (levenstein, nan_dist=0)', 'model': <util.knnstring.KNNString object at 0x00000241206230D0>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+3/5: KNN (levenstein, nan_dist=100)
+{'name': 'KNN (levenstein, nan_dist=100)', 'model': <util.knnstring.KNNString object at 0x00000241206230A0>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+4/5: KNN (levenstein, nan_dist=250)
+{'name': 'KNN (levenstein, nan_dist=250)', 'model': <util.knnstring.KNNString object at 0x0000024120623100>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+5/5: KNN (levenstein, nan_dist=400)
+{'name': 'KNN (levenstein, nan_dist=400)', 'model': <util.knnstring.KNNString object at 0x0000024120623250>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+

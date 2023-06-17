@@ -1,0 +1,11 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr,improvement
+0,"ProximityForest (levenstein, no_nan)",0.8675862068965519,False,,both,knn,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,18.0,0.0,18.0,108.0,100.0,,False,1,0.05403448275862077
+1,"ProximityForest (levenstein, no_nan)",0.8232758620689654,False,,both,knn,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,16.0,0.0,16.0,108.0,100.0,,False,1,0.009724137931034327
+2,"ProximityForest (levenstein, no_nan)",0.8172413793103449,False,,both,knn,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,15.0,0.0,15.0,108.0,100.0,,False,1,0.0036896551724138194
+3,"ProximityForest (levenstein, no_nan)",0.756896551724138,False,,both,knn,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,17.0,0.0,17.0,108.0,100.0,,False,1,-0.05665517241379314
+4,"ProximityForest (levenstein, no_nan)",0.8027586206896552,False,,both,knn,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,18.0,0.0,18.0,108.0,100.0,,False,1,-0.010793103448275887
+0,"ProximityForest (levenstein, nan_dist=7)",0.8703448275862069,True,,both,knn,0.0,GILGFVFTL,HomoSapiens,26.0,34.0,20.0,0.0,80.0,108.0,100.0,,False,2,0.05679310344827582
+1,"ProximityForest (levenstein, nan_dist=7)",0.8603448275862069,True,,both,knn,1.0,GILGFVFTL,HomoSapiens,28.0,35.0,17.0,0.0,80.0,108.0,100.0,,False,2,0.04679310344827581
+2,"ProximityForest (levenstein, nan_dist=7)",0.8289655172413792,True,,both,knn,2.0,GILGFVFTL,HomoSapiens,29.0,34.0,17.0,0.0,80.0,108.0,100.0,,False,2,0.015413793103448148
+3,"ProximityForest (levenstein, nan_dist=7)",0.7663793103448275,True,,both,knn,3.0,GILGFVFTL,HomoSapiens,27.0,34.0,19.0,0.0,80.0,108.0,100.0,,False,2,-0.04717241379310355
+4,"ProximityForest (levenstein, nan_dist=7)",0.8227586206896552,True,,both,knn,4.0,GILGFVFTL,HomoSapiens,24.0,36.0,20.0,0.0,80.0,108.0,100.0,,False,2,0.00920689655172413

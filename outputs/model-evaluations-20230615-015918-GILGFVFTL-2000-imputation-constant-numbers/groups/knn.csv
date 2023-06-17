@@ -1,0 +1,26 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr,improvement
+0,"KNN (levenstein, no_nan)",0.9094827586206896,False,,both,knn,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,432.0,0.0,432.0,108.0,2000.0,,False,1,-0.005137931034482901
+1,"KNN (levenstein, no_nan)",0.9098275862068964,False,,both,knn,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,414.0,0.0,414.0,108.0,2000.0,,False,1,-0.004793103448276104
+2,"KNN (levenstein, no_nan)",0.9167241379310345,False,,both,knn,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,424.0,0.0,424.0,108.0,2000.0,,False,1,0.002103448275861952
+3,"KNN (levenstein, no_nan)",0.9267241379310345,False,,both,knn,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,423.0,0.0,423.0,108.0,2000.0,,False,1,0.012103448275861961
+4,"KNN (levenstein, no_nan)",0.9103448275862068,False,,both,knn,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,430.0,0.0,430.0,108.0,2000.0,,False,1,-0.004275862068965686
+0,"KNN (levenstein, nan_dist=0)",0.9167241379310345,True,,both,knn,0.0,GILGFVFTL,HomoSapiens,547.0,611.0,442.0,0.0,1600.0,108.0,2000.0,,False,2,0.002103448275861952
+1,"KNN (levenstein, nan_dist=0)",0.9041379310344827,True,,both,knn,1.0,GILGFVFTL,HomoSapiens,549.0,623.0,428.0,0.0,1600.0,108.0,2000.0,,False,2,-0.010482758620689814
+2,"KNN (levenstein, nan_dist=0)",0.9317241379310344,True,,both,knn,2.0,GILGFVFTL,HomoSapiens,538.0,625.0,437.0,0.0,1600.0,108.0,2000.0,,False,2,0.017103448275861854
+3,"KNN (levenstein, nan_dist=0)",0.8718965517241379,True,,both,knn,3.0,GILGFVFTL,HomoSapiens,541.0,623.0,436.0,0.0,1600.0,108.0,2000.0,,False,2,-0.04272413793103458
+4,"KNN (levenstein, nan_dist=0)",0.8929310344827586,True,,both,knn,4.0,GILGFVFTL,HomoSapiens,548.0,608.0,444.0,0.0,1600.0,108.0,2000.0,,False,2,-0.021689655172413946
+0,"KNN (levenstein, nan_dist=2)",0.9134482758620689,True,,both,knn,0.0,GILGFVFTL,HomoSapiens,547.0,611.0,442.0,0.0,1600.0,108.0,2000.0,,False,3,-0.0011724137931036216
+1,"KNN (levenstein, nan_dist=2)",0.9055172413793103,True,,both,knn,1.0,GILGFVFTL,HomoSapiens,549.0,623.0,428.0,0.0,1600.0,108.0,2000.0,,False,3,-0.00910344827586218
+2,"KNN (levenstein, nan_dist=2)",0.9072413793103449,True,,both,knn,2.0,GILGFVFTL,HomoSapiens,538.0,625.0,437.0,0.0,1600.0,108.0,2000.0,,False,3,-0.007379310344827639
+3,"KNN (levenstein, nan_dist=2)",0.8844827586206896,True,,both,knn,3.0,GILGFVFTL,HomoSapiens,541.0,623.0,436.0,0.0,1600.0,108.0,2000.0,,False,3,-0.030137931034482923
+4,"KNN (levenstein, nan_dist=2)",0.9260344827586208,True,,both,knn,4.0,GILGFVFTL,HomoSapiens,548.0,608.0,444.0,0.0,1600.0,108.0,2000.0,,False,3,0.011413793103448255
+0,"KNN (levenstein, nan_dist=7)",0.9199999999999999,True,,both,knn,0.0,GILGFVFTL,HomoSapiens,547.0,611.0,442.0,0.0,1600.0,108.0,2000.0,,False,4,0.005379310344827415
+1,"KNN (levenstein, nan_dist=7)",0.9072413793103448,True,,both,knn,1.0,GILGFVFTL,HomoSapiens,549.0,623.0,428.0,0.0,1600.0,108.0,2000.0,,False,4,-0.00737931034482775
+2,"KNN (levenstein, nan_dist=7)",0.903448275862069,True,,both,knn,2.0,GILGFVFTL,HomoSapiens,538.0,625.0,437.0,0.0,1600.0,108.0,2000.0,,False,4,-0.01117241379310352
+3,"KNN (levenstein, nan_dist=7)",0.9120689655172414,True,,both,knn,3.0,GILGFVFTL,HomoSapiens,541.0,623.0,436.0,0.0,1600.0,108.0,2000.0,,False,4,-0.002551724137931144
+4,"KNN (levenstein, nan_dist=7)",0.9203448275862068,True,,both,knn,4.0,GILGFVFTL,HomoSapiens,548.0,608.0,444.0,0.0,1600.0,108.0,2000.0,,False,4,0.005724137931034323
+0,"KNN (levenstein, nan_dist=12)",0.911551724137931,True,,both,knn,0.0,GILGFVFTL,HomoSapiens,547.0,611.0,442.0,0.0,1600.0,108.0,2000.0,,False,5,-0.003068965517241562
+1,"KNN (levenstein, nan_dist=12)",0.9289655172413793,True,,both,knn,1.0,GILGFVFTL,HomoSapiens,549.0,623.0,428.0,0.0,1600.0,108.0,2000.0,,False,5,0.01434482758620681
+2,"KNN (levenstein, nan_dist=12)",0.9239655172413793,True,,both,knn,2.0,GILGFVFTL,HomoSapiens,538.0,625.0,437.0,0.0,1600.0,108.0,2000.0,,False,5,0.009344827586206805
+3,"KNN (levenstein, nan_dist=12)",0.921551724137931,True,,both,knn,3.0,GILGFVFTL,HomoSapiens,541.0,623.0,436.0,0.0,1600.0,108.0,2000.0,,False,5,0.006931034482758447
+4,"KNN (levenstein, nan_dist=12)",0.9158620689655173,True,,both,knn,4.0,GILGFVFTL,HomoSapiens,548.0,608.0,444.0,0.0,1600.0,108.0,2000.0,,False,5,0.0012413793103447368

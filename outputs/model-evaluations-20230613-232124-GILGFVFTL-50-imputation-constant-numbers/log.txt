@@ -1,0 +1,24 @@
+Started at 2023-06-13 23:21:24.834513
+
+Models to evaluate: 4
+
+1/4: KNN (tcr_dist, no_nan, CDR3 only)
+{'name': 'KNN (tcr_dist, no_nan, CDR3 only)', 'model': <util.knnstring.KNNString object at 0x0000025A3E553D30>, 'group': 'knn_metrics', 'extract_features': False, 'columns_to_use': ['CDR3'], 'drop_train_na': True}
+
+2/4: KNN (lev, no_nan, CDR3 only)
+{'name': 'KNN (lev, no_nan, CDR3 only)', 'model': <util.knnstring.KNNString object at 0x0000025A3E553B80>, 'group': 'knn_metrics', 'extract_features': False, 'columns_to_use': ['CDR3'], 'drop_train_na': True}
+
+3/4: KNN (hamming, no_nan, CDR3 only)
+{'name': 'KNN (hamming, no_nan, CDR3 only)', 'model': <util.knnstring.KNNString object at 0x0000025A3E553D60>, 'group': 'knn_metrics', 'extract_features': False, 'columns_to_use': ['CDR3'], 'drop_train_na': True}
+
+4/4: KNN (tcrdist3, no_nan, CDR3 only)
+{'name': 'KNN (tcrdist3, no_nan, CDR3 only)', 'model': <util.knnstring.KNNString object at 0x0000025A3E553A60>, 'group': 'knn_metrics', 'extract_features': False, 'drop_train_na': True}
+
+Finished at 2023-06-13 23:21:32.437502
+Time taken: 0:00:07.602989
+Saved scores to outputs/model-evaluations-20230613-232124-GILGFVFTL-50-imputation-constant-numbers
+Saved all scores to outputs/model-evaluations-20230613-232124-GILGFVFTL-50-imputation-constant-numbers/scores-20230613-232132.csv
+Saved group scores to outputs/model-evaluations-20230613-232124-GILGFVFTL-50-imputation-constant-numbers/groups
+Saved all group scores to outputs/model-evaluations-20230613-232124-GILGFVFTL-50-imputation-constant-numbers/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230613-232124-GILGFVFTL-50-imputation-constant-numbers/all-models.png
+Saved log to outputs/model-evaluations-20230613-232124-GILGFVFTL-50-imputation-constant-numbers/log.txt

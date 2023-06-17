@@ -1,0 +1,13 @@
+Started at 2023-06-15 02:22:59.228366
+
+Models to evaluate: 3
+
+1/3: ProximityForest (sqrt, lev, nd=7)
+{'name': 'ProximityForest (sqrt, lev, nd=7)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x0000028CCE793910>, 'extract_features': False, 'drop_train_na': False}
+
+2/3: ProximityForest (half, lev, nd=7)
+{'name': 'ProximityForest (half, lev, nd=7)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x0000028CCE7935B0>, 'extract_features': False, 'drop_train_na': False}
+
+3/3: ProximityForest (all, lev, nd=7)
+{'name': 'ProximityForest (all, lev, nd=7)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x0000028CCE793EE0>, 'extract_features': False, 'drop_train_na': False}
+

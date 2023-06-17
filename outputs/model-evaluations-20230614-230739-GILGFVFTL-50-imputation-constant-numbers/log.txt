@@ -1,0 +1,10 @@
+Started at 2023-06-14 23:07:39.174037
+
+Models to evaluate: 2
+
+1/2: KNN (tcrdist3, no_nan)
+{'name': 'KNN (tcrdist3, no_nan)', 'model': <util.knnstring.KNNString object at 0x000001F8B6F8A3D0>, 'group': 'knn', 'extract_features': False, 'drop_train_na': True}
+
+2/2: KNN (tcrdist3, no_nan)
+{'name': 'KNN (tcrdist3, no_nan)', 'model': <util.knnstring.KNNString object at 0x000001F8B7FE5DC0>, 'group': 'knn', 'extract_features': False, 'drop_train_na': True}
+

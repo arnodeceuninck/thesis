@@ -1,0 +1,27 @@
+Started at 2023-06-14 23:25:29.737514
+
+Models to evaluate: 5
+
+1/5: KNN (tcrdist approx, no_nan)
+{'name': 'KNN (tcrdist approx, no_nan)', 'model': <util.knnstring.KNNString object at 0x000001A664E2FE20>, 'group': 'knn', 'extract_features': False, 'drop_train_na': True}
+
+2/5: KNN (tcrdist approx, nan_dist=0)
+{'name': 'KNN (tcrdist approx, nan_dist=0)', 'model': <util.knnstring.KNNString object at 0x000001A664E2F910>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+3/5: KNN (tcrdist approx, nan_dist=100)
+{'name': 'KNN (tcrdist approx, nan_dist=100)', 'model': <util.knnstring.KNNString object at 0x000001A664E2F8E0>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+4/5: KNN (tcrdist approx, nan_dist=200)
+{'name': 'KNN (tcrdist approx, nan_dist=200)', 'model': <util.knnstring.KNNString object at 0x000001A664E2F9D0>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+5/5: KNN (tcrdist approx, nan_dist=400)
+{'name': 'KNN (tcrdist approx, nan_dist=400)', 'model': <util.knnstring.KNNString object at 0x000001A664E2FA60>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+Finished at 2023-06-14 23:26:00.731564
+Time taken: 0:00:30.994050
+Saved scores to outputs/model-evaluations-20230614-232529-GILGFVFTL-50-imputation-constant-numbers
+Saved all scores to outputs/model-evaluations-20230614-232529-GILGFVFTL-50-imputation-constant-numbers/scores-20230614-232600.csv
+Saved group scores to outputs/model-evaluations-20230614-232529-GILGFVFTL-50-imputation-constant-numbers/groups
+Saved all group scores to outputs/model-evaluations-20230614-232529-GILGFVFTL-50-imputation-constant-numbers/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230614-232529-GILGFVFTL-50-imputation-constant-numbers/all-models.png
+Saved log to outputs/model-evaluations-20230614-232529-GILGFVFTL-50-imputation-constant-numbers/log.txt

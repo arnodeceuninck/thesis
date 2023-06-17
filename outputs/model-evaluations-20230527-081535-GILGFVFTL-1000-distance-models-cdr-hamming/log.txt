@@ -1,0 +1,18 @@
+Started at 2023-05-27 08:15:35.636592
+
+Models to evaluate: 2
+
+1/2: ProximityForest (nan_dist=0, measure=hamming, cdr_only)
+{'name': 'ProximityForest (nan_dist=0, measure=hamming, cdr_only)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x00000246AFE384C0>, 'group': 'proximity_forest', 'extract_features': False, 'columns_to_use': ['CDR3'], 'drop_train_na': False}
+
+2/2: ProximityForest (no_nan, measure=hamming, cdr_only)
+{'name': 'ProximityForest (no_nan, measure=hamming, cdr_only)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x00000246AFE38370>, 'group': 'proximity_forest', 'extract_features': False, 'columns_to_use': ['CDR3'], 'drop_train_na': True}
+
+Finished at 2023-05-27 08:16:22.418501
+Time taken: 0:00:46.781909
+Saved scores to outputs/model-evaluations-20230527-081535-GILGFVFTL-1000-distance-models-cdr-hamming
+Saved all scores to outputs/model-evaluations-20230527-081535-GILGFVFTL-1000-distance-models-cdr-hamming/scores-20230527-081622.csv
+Saved group scores to outputs/model-evaluations-20230527-081535-GILGFVFTL-1000-distance-models-cdr-hamming/groups
+Saved all group scores to outputs/model-evaluations-20230527-081535-GILGFVFTL-1000-distance-models-cdr-hamming/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230527-081535-GILGFVFTL-1000-distance-models-cdr-hamming/all-models.png
+Saved log to outputs/model-evaluations-20230527-081535-GILGFVFTL-1000-distance-models-cdr-hamming/log.txt

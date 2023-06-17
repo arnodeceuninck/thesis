@@ -1,0 +1,401 @@
+,epitope,drop_train_nan,serperate_chains,seed,auc,alpha_only_count_pos,beta_only_count_pos,both_count_pos,non_count_pos,model,a_frac,b_frac,both_frac,non_frac
+0,NLVPMVATV,True,False,0,0.611764705882353,0,0,87,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+1,NLVPMVATV,False,False,0,0.5647058823529412,364,746,90,0,"Random Forest (Both chains, nan in train)",0.30333333333333334,0.6216666666666667,0.075,0.0
+2,NLVPMVATV,True,True,0,0.6676470588235295,0,0,87,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+3,NLVPMVATV,False,True,0,0.5735294117647058,364,746,90,0,"Random Forest (Seperate chains, nan in train)",0.30333333333333334,0.6216666666666667,0.075,0.0
+4,NLVPMVATV,True,False,1,0.6166666666666667,0,0,85,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+5,NLVPMVATV,False,False,1,0.625,334,780,86,0,"Random Forest (Both chains, nan in train)",0.2783333333333333,0.65,0.07166666666666667,0.0
+6,NLVPMVATV,True,True,1,0.6,0,0,85,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+7,NLVPMVATV,False,True,1,0.6041666666666666,334,780,86,0,"Random Forest (Seperate chains, nan in train)",0.2783333333333333,0.65,0.07166666666666667,0.0
+8,NLVPMVATV,True,False,2,0.6064814814814815,0,0,77,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+9,NLVPMVATV,False,False,2,0.7314814814814815,342,776,82,0,"Random Forest (Both chains, nan in train)",0.285,0.6466666666666666,0.06833333333333333,0.0
+10,NLVPMVATV,True,True,2,0.7314814814814814,0,0,77,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+11,NLVPMVATV,False,True,2,0.8657407407407408,342,776,82,0,"Random Forest (Seperate chains, nan in train)",0.285,0.6466666666666666,0.06833333333333333,0.0
+12,NLVPMVATV,True,False,3,0.5470588235294117,0,0,80,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+13,NLVPMVATV,False,False,3,0.4588235294117647,345,769,86,0,"Random Forest (Both chains, nan in train)",0.2875,0.6408333333333334,0.07166666666666667,0.0
+14,NLVPMVATV,True,True,3,0.48823529411764705,0,0,80,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+15,NLVPMVATV,False,True,3,0.4647058823529412,345,769,86,0,"Random Forest (Seperate chains, nan in train)",0.2875,0.6408333333333334,0.07166666666666667,0.0
+16,NLVPMVATV,True,False,4,0.5512820512820512,0,0,76,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+17,NLVPMVATV,False,False,4,0.594017094017094,371,751,78,0,"Random Forest (Both chains, nan in train)",0.30916666666666665,0.6258333333333334,0.065,0.0
+18,NLVPMVATV,True,True,4,0.641025641025641,0,0,76,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+19,NLVPMVATV,False,True,4,0.5769230769230769,371,751,78,0,"Random Forest (Seperate chains, nan in train)",0.30916666666666665,0.6258333333333334,0.065,0.0
+20,TPRVTGGGAM,True,False,0,0.8290598290598291,0,0,102,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+21,TPRVTGGGAM,False,False,0,0.9401709401709402,8,479,103,0,"Random Forest (Both chains, nan in train)",0.013559322033898305,0.811864406779661,0.17457627118644067,0.0
+22,TPRVTGGGAM,True,True,0,0.9145299145299145,0,0,102,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+23,TPRVTGGGAM,False,True,0,0.9829059829059829,8,479,103,0,"Random Forest (Seperate chains, nan in train)",0.013559322033898305,0.811864406779661,0.17457627118644067,0.0
+24,TPRVTGGGAM,True,False,1,0.8484848484848485,0,0,98,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+25,TPRVTGGGAM,False,False,1,0.9848484848484849,7,483,100,0,"Random Forest (Both chains, nan in train)",0.011864406779661017,0.8186440677966101,0.1694915254237288,0.0
+26,TPRVTGGGAM,True,True,1,0.890909090909091,0,0,98,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+27,TPRVTGGGAM,False,True,1,0.9636363636363636,7,483,100,0,"Random Forest (Seperate chains, nan in train)",0.011864406779661017,0.8186440677966101,0.1694915254237288,0.0
+28,TPRVTGGGAM,True,False,2,0.834375,0,0,98,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+29,TPRVTGGGAM,False,False,2,0.9343750000000001,6,484,100,0,"Random Forest (Both chains, nan in train)",0.010169491525423728,0.8203389830508474,0.1694915254237288,0.0
+30,TPRVTGGGAM,True,True,2,0.8875000000000001,0,0,98,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+31,TPRVTGGGAM,False,True,2,0.9437499999999999,6,484,100,0,"Random Forest (Seperate chains, nan in train)",0.010169491525423728,0.8203389830508474,0.1694915254237288,0.0
+32,TPRVTGGGAM,True,False,3,0.9015151515151515,0,0,107,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+33,TPRVTGGGAM,False,False,3,1.0,6,475,109,0,"Random Forest (Both chains, nan in train)",0.010169491525423728,0.8050847457627118,0.1847457627118644,0.0
+34,TPRVTGGGAM,True,True,3,0.8939393939393939,0,0,107,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+35,TPRVTGGGAM,False,True,3,0.9696969696969696,6,475,109,0,"Random Forest (Seperate chains, nan in train)",0.010169491525423728,0.8050847457627118,0.1847457627118644,0.0
+36,TPRVTGGGAM,True,False,4,0.9674556213017752,0,0,98,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+37,TPRVTGGGAM,False,False,4,1.0,7,484,99,0,"Random Forest (Both chains, nan in train)",0.011864406779661017,0.8203389830508474,0.16779661016949152,0.0
+38,TPRVTGGGAM,True,True,4,0.9881656804733727,0,0,98,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+39,TPRVTGGGAM,False,True,4,1.0,7,484,99,0,"Random Forest (Seperate chains, nan in train)",0.011864406779661017,0.8203389830508474,0.16779661016949152,0.0
+40,ELAGIGILTV,True,False,0,0.8085553997194951,0,0,179,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+41,ELAGIGILTV,False,False,0,0.8127629733520336,0,1014,186,0,"Random Forest (Both chains, nan in train)",0.0,0.845,0.155,0.0
+42,ELAGIGILTV,True,True,0,0.8267882187938289,0,0,179,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+43,ELAGIGILTV,False,True,0,0.8401122019635344,0,1014,186,0,"Random Forest (Seperate chains, nan in train)",0.0,0.845,0.155,0.0
+44,ELAGIGILTV,True,False,1,0.9157754010695187,0,0,185,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+45,ELAGIGILTV,False,False,1,0.9425133689839573,1,1001,198,0,"Random Forest (Both chains, nan in train)",0.0008333333333333334,0.8341666666666666,0.165,0.0
+46,ELAGIGILTV,True,True,1,0.9385026737967914,0,0,185,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+47,ELAGIGILTV,False,True,1,0.9244652406417112,1,1001,198,0,"Random Forest (Seperate chains, nan in train)",0.0008333333333333334,0.8341666666666666,0.165,0.0
+48,ELAGIGILTV,True,False,2,0.9195402298850575,0,0,193,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+49,ELAGIGILTV,False,False,2,0.9287356321839081,1,994,205,0,"Random Forest (Both chains, nan in train)",0.0008333333333333334,0.8283333333333334,0.17083333333333334,0.0
+50,ELAGIGILTV,True,True,2,0.904022988505747,0,0,193,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+51,ELAGIGILTV,False,True,2,0.9310344827586207,1,994,205,0,"Random Forest (Seperate chains, nan in train)",0.0008333333333333334,0.8283333333333334,0.17083333333333334,0.0
+52,ELAGIGILTV,True,False,3,0.9086538461538461,0,0,192,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+53,ELAGIGILTV,False,False,3,0.9423076923076923,0,997,203,0,"Random Forest (Both chains, nan in train)",0.0,0.8308333333333333,0.16916666666666666,0.0
+54,ELAGIGILTV,True,True,3,0.9048076923076923,0,0,192,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+55,ELAGIGILTV,False,True,3,0.9221153846153847,0,997,203,0,"Random Forest (Seperate chains, nan in train)",0.0,0.8308333333333333,0.16916666666666666,0.0
+56,ELAGIGILTV,True,False,4,0.9269949066213922,0,0,175,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+57,ELAGIGILTV,False,False,4,0.9151103565365026,1,1012,187,0,"Random Forest (Both chains, nan in train)",0.0008333333333333334,0.8433333333333334,0.15583333333333332,0.0
+58,ELAGIGILTV,True,True,4,0.9176570458404074,0,0,175,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+59,ELAGIGILTV,False,True,4,0.9185059422750425,1,1012,187,0,"Random Forest (Seperate chains, nan in train)",0.0008333333333333334,0.8433333333333334,0.15583333333333332,0.0
+60,YSEHPTFTSQY,True,False,0,0.84375,0,0,31,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+61,YSEHPTFTSQY,False,False,0,1.0,0,180,32,0,"Random Forest (Both chains, nan in train)",0.0,0.8490566037735849,0.1509433962264151,0.0
+62,YSEHPTFTSQY,True,True,0,0.90625,0,0,31,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+63,YSEHPTFTSQY,False,True,0,0.96875,0,180,32,0,"Random Forest (Seperate chains, nan in train)",0.0,0.8490566037735849,0.1509433962264151,0.0
+64,YSEHPTFTSQY,True,False,1,0.6,0,0,33,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+65,YSEHPTFTSQY,False,False,1,0.78,0,178,34,0,"Random Forest (Both chains, nan in train)",0.0,0.839622641509434,0.16037735849056603,0.0
+66,YSEHPTFTSQY,True,True,1,0.64,0,0,33,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+67,YSEHPTFTSQY,False,True,1,0.64,0,178,34,0,"Random Forest (Seperate chains, nan in train)",0.0,0.839622641509434,0.16037735849056603,0.0
+68,YSEHPTFTSQY,True,False,2,0.5,0,0,40,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+69,YSEHPTFTSQY,False,False,2,1.0,0,172,40,0,"Random Forest (Both chains, nan in train)",0.0,0.8113207547169812,0.18867924528301888,0.0
+70,YSEHPTFTSQY,True,True,2,0.5,0,0,40,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+71,YSEHPTFTSQY,False,True,2,0.5,0,172,40,0,"Random Forest (Seperate chains, nan in train)",0.0,0.8113207547169812,0.18867924528301888,0.0
+72,YSEHPTFTSQY,True,False,3,0.6,0,0,37,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+73,YSEHPTFTSQY,False,False,3,0.6,0,174,38,0,"Random Forest (Both chains, nan in train)",0.0,0.8207547169811321,0.1792452830188679,0.0
+74,YSEHPTFTSQY,True,True,3,1.0,0,0,37,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+75,YSEHPTFTSQY,False,True,3,1.0,0,174,38,0,"Random Forest (Seperate chains, nan in train)",0.0,0.8207547169811321,0.1792452830188679,0.0
+76,YSEHPTFTSQY,True,False,4,0.75,0,0,38,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+77,YSEHPTFTSQY,False,False,4,1.0,0,173,39,0,"Random Forest (Both chains, nan in train)",0.0,0.8160377358490566,0.18396226415094338,0.0
+78,YSEHPTFTSQY,True,True,4,0.5,0,0,38,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+79,YSEHPTFTSQY,False,True,4,0.75,0,173,39,0,"Random Forest (Seperate chains, nan in train)",0.0,0.8160377358490566,0.18396226415094338,0.0
+80,PKYVKQNTLKLAT,True,False,0,0.6141975308641976,0,0,102,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+81,PKYVKQNTLKLAT,False,False,0,0.7253086419753088,155,557,110,0,"Random Forest (Both chains, nan in train)",0.18856447688564476,0.6776155717761557,0.13381995133819952,0.0
+82,PKYVKQNTLKLAT,True,True,0,0.654320987654321,0,0,102,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+83,PKYVKQNTLKLAT,False,True,0,0.7037037037037037,155,557,110,0,"Random Forest (Seperate chains, nan in train)",0.18856447688564476,0.6776155717761557,0.13381995133819952,0.0
+84,PKYVKQNTLKLAT,True,False,1,0.5946745562130178,0,0,103,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+85,PKYVKQNTLKLAT,False,False,1,0.5857988165680473,153,558,111,0,"Random Forest (Both chains, nan in train)",0.18613138686131386,0.6788321167883211,0.13503649635036497,0.0
+86,PKYVKQNTLKLAT,True,True,1,0.742603550295858,0,0,103,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+87,PKYVKQNTLKLAT,False,True,1,0.6745562130177515,153,558,111,0,"Random Forest (Seperate chains, nan in train)",0.18613138686131386,0.6788321167883211,0.13503649635036497,0.0
+88,PKYVKQNTLKLAT,True,False,2,0.43315508021390375,0,0,101,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+89,PKYVKQNTLKLAT,False,False,2,0.5989304812834224,146,568,108,0,"Random Forest (Both chains, nan in train)",0.17761557177615572,0.6909975669099757,0.13138686131386862,0.0
+90,PKYVKQNTLKLAT,True,True,2,0.5481283422459893,0,0,101,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+91,PKYVKQNTLKLAT,False,True,2,0.6737967914438503,146,568,108,0,"Random Forest (Seperate chains, nan in train)",0.17761557177615572,0.6909975669099757,0.13138686131386862,0.0
+92,PKYVKQNTLKLAT,True,False,3,0.6822222222222222,0,0,99,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+93,PKYVKQNTLKLAT,False,False,3,0.5333333333333333,156,560,106,0,"Random Forest (Both chains, nan in train)",0.1897810218978102,0.681265206812652,0.12895377128953772,0.0
+94,PKYVKQNTLKLAT,True,True,3,0.6688888888888889,0,0,99,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+95,PKYVKQNTLKLAT,False,True,3,0.4955555555555556,156,560,106,0,"Random Forest (Seperate chains, nan in train)",0.1897810218978102,0.681265206812652,0.12895377128953772,0.0
+96,PKYVKQNTLKLAT,True,False,4,0.6121212121212121,0,0,103,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+97,PKYVKQNTLKLAT,False,False,4,0.6666666666666666,157,552,113,0,"Random Forest (Both chains, nan in train)",0.19099756690997566,0.6715328467153284,0.13746958637469586,0.0
+98,PKYVKQNTLKLAT,True,True,4,0.6151515151515152,0,0,103,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+99,PKYVKQNTLKLAT,False,True,4,0.6818181818181819,157,552,113,0,"Random Forest (Seperate chains, nan in train)",0.19099756690997566,0.6715328467153284,0.13746958637469586,0.0
+100,GILGFVFTL,True,False,0,0.9023960535588442,0,0,321,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+101,GILGFVFTL,False,False,0,0.8960535588442566,417,455,328,0,"Random Forest (Both chains, nan in train)",0.3475,0.37916666666666665,0.2733333333333333,0.0
+102,GILGFVFTL,True,True,0,0.9045102184637068,0,0,321,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+103,GILGFVFTL,False,True,0,0.8928823114869627,417,455,328,0,"Random Forest (Seperate chains, nan in train)",0.3475,0.37916666666666665,0.2733333333333333,0.0
+104,GILGFVFTL,True,False,1,0.9034598214285715,0,0,319,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+105,GILGFVFTL,False,False,1,0.8911830357142857,427,448,325,0,"Random Forest (Both chains, nan in train)",0.35583333333333333,0.37333333333333335,0.2708333333333333,0.0
+106,GILGFVFTL,True,True,1,0.9213169642857145,0,0,319,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+107,GILGFVFTL,False,True,1,0.9185267857142856,427,448,325,0,"Random Forest (Seperate chains, nan in train)",0.35583333333333333,0.37333333333333335,0.2708333333333333,0.0
+108,GILGFVFTL,True,False,2,0.9102631578947368,0,0,348,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+109,GILGFVFTL,False,False,2,0.9144736842105262,391,451,358,0,"Random Forest (Both chains, nan in train)",0.3258333333333333,0.37583333333333335,0.29833333333333334,0.0
+110,GILGFVFTL,True,True,2,0.9168421052631578,0,0,348,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+111,GILGFVFTL,False,True,2,0.9310526315789474,391,451,358,0,"Random Forest (Seperate chains, nan in train)",0.3258333333333333,0.37583333333333335,0.29833333333333334,0.0
+112,GILGFVFTL,True,False,3,0.9130434782608697,0,0,318,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+113,GILGFVFTL,False,False,3,0.9128303495311169,400,476,324,0,"Random Forest (Both chains, nan in train)",0.3333333333333333,0.39666666666666667,0.27,0.0
+114,GILGFVFTL,True,True,3,0.9232736572890026,0,0,318,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+115,GILGFVFTL,False,True,3,0.9328644501278773,400,476,324,0,"Random Forest (Seperate chains, nan in train)",0.3333333333333333,0.39666666666666667,0.27,0.0
+116,GILGFVFTL,True,False,4,0.8891774891774892,0,0,327,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+117,GILGFVFTL,False,False,4,0.9077922077922077,416,451,333,0,"Random Forest (Both chains, nan in train)",0.3466666666666667,0.37583333333333335,0.2775,0.0
+118,GILGFVFTL,True,True,4,0.925974025974026,0,0,327,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+119,GILGFVFTL,False,True,4,0.9484848484848485,416,451,333,0,"Random Forest (Seperate chains, nan in train)",0.3466666666666667,0.37583333333333335,0.2775,0.0
+120,GLCTLVAML,True,False,0,0.9182209469153515,0,0,326,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+121,GLCTLVAML,False,False,0,0.8891678622668578,44,825,331,0,"Random Forest (Both chains, nan in train)",0.03666666666666667,0.6875,0.2758333333333333,0.0
+122,GLCTLVAML,True,True,0,0.9512195121951219,0,0,326,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+123,GLCTLVAML,False,True,0,0.9418938307030129,44,825,331,0,"Random Forest (Seperate chains, nan in train)",0.03666666666666667,0.6875,0.2758333333333333,0.0
+124,GLCTLVAML,True,False,1,0.890926640926641,0,0,296,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+125,GLCTLVAML,False,False,1,0.9475546975546976,32,866,302,0,"Random Forest (Both chains, nan in train)",0.02666666666666667,0.7216666666666667,0.25166666666666665,0.0
+126,GLCTLVAML,True,True,1,0.9099099099099098,0,0,296,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+127,GLCTLVAML,False,True,1,0.9247104247104247,32,866,302,0,"Random Forest (Seperate chains, nan in train)",0.02666666666666667,0.7216666666666667,0.25166666666666665,0.0
+128,GLCTLVAML,True,False,2,0.9174465240641712,0,0,287,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+129,GLCTLVAML,False,False,2,0.8910427807486632,38,870,292,0,"Random Forest (Both chains, nan in train)",0.03166666666666667,0.725,0.24333333333333335,0.0
+130,GLCTLVAML,True,True,2,0.9512032085561497,0,0,287,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+131,GLCTLVAML,False,True,2,0.9515374331550803,38,870,292,0,"Random Forest (Seperate chains, nan in train)",0.03166666666666667,0.725,0.24333333333333335,0.0
+132,GLCTLVAML,True,False,3,0.8555555555555555,0,0,301,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+133,GLCTLVAML,False,False,3,0.8614197530864198,34,859,307,0,"Random Forest (Both chains, nan in train)",0.028333333333333332,0.7158333333333333,0.25583333333333336,0.0
+134,GLCTLVAML,True,True,3,0.8774691358024691,0,0,301,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+135,GLCTLVAML,False,True,3,0.8904320987654322,34,859,307,0,"Random Forest (Seperate chains, nan in train)",0.028333333333333332,0.7158333333333333,0.25583333333333336,0.0
+136,GLCTLVAML,True,False,4,0.8830532212885154,0,0,293,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+137,GLCTLVAML,False,False,4,0.9107142857142858,34,867,299,0,"Random Forest (Both chains, nan in train)",0.028333333333333332,0.7225,0.24916666666666668,0.0
+138,GLCTLVAML,True,True,4,0.9418767507002801,0,0,293,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+139,GLCTLVAML,False,True,4,0.9492296918767505,34,867,299,0,"Random Forest (Seperate chains, nan in train)",0.028333333333333332,0.7225,0.24916666666666668,0.0
+140,YLQPRTFLL,True,False,0,0.8742498636115659,0,0,301,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+141,YLQPRTFLL,False,False,0,0.8617021276595744,385,505,310,0,"Random Forest (Both chains, nan in train)",0.32083333333333336,0.42083333333333334,0.25833333333333336,0.0
+142,YLQPRTFLL,True,True,0,0.8420621931260229,0,0,301,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+143,YLQPRTFLL,False,True,0,0.8671576650300055,385,505,310,0,"Random Forest (Seperate chains, nan in train)",0.32083333333333336,0.42083333333333334,0.25833333333333336,0.0
+144,YLQPRTFLL,True,False,1,0.8435975609756098,0,0,313,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+145,YLQPRTFLL,False,False,1,0.8378048780487805,404,476,320,0,"Random Forest (Both chains, nan in train)",0.33666666666666667,0.39666666666666667,0.26666666666666666,0.0
+146,YLQPRTFLL,True,True,1,0.8679878048780488,0,0,313,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+147,YLQPRTFLL,False,True,1,0.8798780487804878,404,476,320,0,"Random Forest (Seperate chains, nan in train)",0.33666666666666667,0.39666666666666667,0.26666666666666666,0.0
+148,YLQPRTFLL,True,False,2,0.8679245283018868,0,0,297,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+149,YLQPRTFLL,False,False,2,0.8692722371967655,384,514,302,0,"Random Forest (Both chains, nan in train)",0.32,0.42833333333333334,0.25166666666666665,0.0
+150,YLQPRTFLL,True,True,2,0.8955525606469001,0,0,297,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+151,YLQPRTFLL,False,True,2,0.8836477987421384,384,514,302,0,"Random Forest (Seperate chains, nan in train)",0.32,0.42833333333333334,0.25166666666666665,0.0
+152,YLQPRTFLL,True,False,3,0.8332236842105263,0,0,312,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+153,YLQPRTFLL,False,False,3,0.8203947368421053,402,479,319,0,"Random Forest (Both chains, nan in train)",0.335,0.39916666666666667,0.2658333333333333,0.0
+154,YLQPRTFLL,True,True,3,0.831578947368421,0,0,312,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+155,YLQPRTFLL,False,True,3,0.8164473684210527,402,479,319,0,"Random Forest (Seperate chains, nan in train)",0.335,0.39916666666666667,0.2658333333333333,0.0
+156,YLQPRTFLL,True,False,4,0.814375,0,0,331,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+157,YLQPRTFLL,False,False,4,0.824375,374,492,334,0,"Random Forest (Both chains, nan in train)",0.31166666666666665,0.41,0.2783333333333333,0.0
+158,YLQPRTFLL,True,True,4,0.818125,0,0,331,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+159,YLQPRTFLL,False,True,4,0.7909375000000001,374,492,334,0,"Random Forest (Seperate chains, nan in train)",0.31166666666666665,0.41,0.2783333333333333,0.0
+160,LLWNGPMAV,True,False,0,0.8412393162393162,0,0,381,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+161,LLWNGPMAV,False,False,0,0.861965811965812,134,337,396,0,"Random Forest (Both chains, nan in train)",0.15455594002306805,0.3886966551326413,0.45674740484429066,0.0
+162,LLWNGPMAV,True,True,0,0.8777777777777779,0,0,381,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+163,LLWNGPMAV,False,True,0,0.8767094017094017,134,337,396,0,"Random Forest (Seperate chains, nan in train)",0.15455594002306805,0.3886966551326413,0.45674740484429066,0.0
+164,LLWNGPMAV,True,False,1,0.8616352201257861,0,0,383,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+165,LLWNGPMAV,False,False,1,0.8492812219227313,129,341,397,0,"Random Forest (Both chains, nan in train)",0.14878892733564014,0.3933102652825836,0.45790080738177624,0.0
+166,LLWNGPMAV,True,True,1,0.8769092542677448,0,0,383,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+167,LLWNGPMAV,False,True,1,0.874438454627134,129,341,397,0,"Random Forest (Seperate chains, nan in train)",0.14878892733564014,0.3933102652825836,0.45790080738177624,0.0
+168,LLWNGPMAV,True,False,2,0.8778420835055807,0,0,378,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+169,LLWNGPMAV,False,False,2,0.8840429929723024,132,344,391,0,"Random Forest (Both chains, nan in train)",0.1522491349480969,0.39677047289504036,0.45098039215686275,0.0
+170,LLWNGPMAV,True,True,2,0.8856965688300952,0,0,378,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+171,LLWNGPMAV,False,True,2,0.8875568416701116,132,344,391,0,"Random Forest (Seperate chains, nan in train)",0.1522491349480969,0.39677047289504036,0.45098039215686275,0.0
+172,LLWNGPMAV,True,False,3,0.8106060606060607,0,0,389,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+173,LLWNGPMAV,False,False,3,0.817929292929293,142,323,402,0,"Random Forest (Both chains, nan in train)",0.1637831603229527,0.37254901960784315,0.46366782006920415,0.0
+174,LLWNGPMAV,True,True,3,0.8244949494949494,0,0,389,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+175,LLWNGPMAV,False,True,3,0.8434343434343434,142,323,402,0,"Random Forest (Seperate chains, nan in train)",0.1637831603229527,0.37254901960784315,0.46366782006920415,0.0
+176,LLWNGPMAV,True,False,4,0.8671328671328671,0,0,371,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+177,LLWNGPMAV,False,False,4,0.8562937062937063,146,337,384,0,"Random Forest (Both chains, nan in train)",0.16839677047289503,0.3886966551326413,0.4429065743944637,0.0
+178,LLWNGPMAV,True,True,4,0.9048951048951049,0,0,371,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+179,LLWNGPMAV,False,True,4,0.9117132867132867,146,337,384,0,"Random Forest (Seperate chains, nan in train)",0.16839677047289503,0.3886966551326413,0.4429065743944637,0.0
+180,CINGVCWTV,True,False,0,0.9056639159789948,0,0,364,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+181,CINGVCWTV,False,False,0,0.9009752438109528,11,303,380,0,"Random Forest (Both chains, nan in train)",0.01585014409221902,0.4365994236311239,0.547550432276657,0.0
+182,CINGVCWTV,True,True,0,0.9407351837959491,0,0,364,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+183,CINGVCWTV,False,True,0,0.9367966991747937,11,303,380,0,"Random Forest (Seperate chains, nan in train)",0.01585014409221902,0.4365994236311239,0.547550432276657,0.0
+184,CINGVCWTV,True,False,1,0.8747596153846154,0,0,377,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+185,CINGVCWTV,False,False,1,0.8932692307692308,11,287,396,0,"Random Forest (Both chains, nan in train)",0.01585014409221902,0.41354466858789624,0.5706051873198847,0.0
+186,CINGVCWTV,True,True,1,0.8786057692307692,0,0,377,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+187,CINGVCWTV,False,True,1,0.904326923076923,11,287,396,0,"Random Forest (Seperate chains, nan in train)",0.01585014409221902,0.41354466858789624,0.5706051873198847,0.0
+188,CINGVCWTV,True,False,2,0.8439625850340136,0,0,372,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+189,CINGVCWTV,False,False,2,0.8322704081632651,16,289,389,0,"Random Forest (Both chains, nan in train)",0.023054755043227664,0.4164265129682997,0.5605187319884726,0.0
+190,CINGVCWTV,True,True,2,0.859268707482993,0,0,372,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+191,CINGVCWTV,False,True,2,0.8707482993197279,16,289,389,0,"Random Forest (Seperate chains, nan in train)",0.023054755043227664,0.4164265129682997,0.5605187319884726,0.0
+192,CINGVCWTV,True,False,3,0.9079166666666666,0,0,371,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+193,CINGVCWTV,False,False,3,0.896875,13,295,386,0,"Random Forest (Both chains, nan in train)",0.018731988472622477,0.4250720461095101,0.5561959654178674,0.0
+194,CINGVCWTV,True,True,3,0.934375,0,0,371,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+195,CINGVCWTV,False,True,3,0.9381250000000001,13,295,386,0,"Random Forest (Seperate chains, nan in train)",0.018731988472622477,0.4250720461095101,0.5561959654178674,0.0
+196,CINGVCWTV,True,False,4,0.8549528301886793,0,0,368,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+197,CINGVCWTV,False,False,4,0.8575078616352202,13,296,385,0,"Random Forest (Both chains, nan in train)",0.018731988472622477,0.4265129682997118,0.5547550432276657,0.0
+198,CINGVCWTV,True,True,4,0.8616352201257862,0,0,368,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+199,CINGVCWTV,False,True,4,0.8691037735849055,13,296,385,0,"Random Forest (Seperate chains, nan in train)",0.018731988472622477,0.4265129682997118,0.5547550432276657,0.0
+200,RAKFKQLL,True,False,0,0.854091956967213,0,0,973,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+201,RAKFKQLL,False,False,0,0.8535796618852459,0,211,989,0,"Random Forest (Both chains, nan in train)",0.0,0.17583333333333334,0.8241666666666667,0.0
+202,RAKFKQLL,True,True,0,0.888671875,0,0,973,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+203,RAKFKQLL,False,True,0,0.8799948770491802,0,211,989,0,"Random Forest (Seperate chains, nan in train)",0.0,0.17583333333333334,0.8241666666666667,0.0
+204,RAKFKQLL,True,False,1,0.8919667590027701,0,0,957,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+205,RAKFKQLL,False,False,1,0.8863606384382009,0,224,976,0,"Random Forest (Both chains, nan in train)",0.0,0.18666666666666668,0.8133333333333334,0.0
+206,RAKFKQLL,True,True,1,0.9256364595699775,0,0,957,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+207,RAKFKQLL,False,True,1,0.9180846853977048,0,224,976,0,"Random Forest (Seperate chains, nan in train)",0.0,0.18666666666666668,0.8133333333333334,0.0
+208,RAKFKQLL,True,False,2,0.9102431275037989,0,0,989,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+209,RAKFKQLL,False,False,2,0.8917668186213565,0,192,1008,0,"Random Forest (Both chains, nan in train)",0.0,0.16,0.84,0.0
+210,RAKFKQLL,True,True,2,0.9113827876778561,0,0,989,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+211,RAKFKQLL,False,True,2,0.9216742644011603,0,192,1008,0,"Random Forest (Seperate chains, nan in train)",0.0,0.16,0.84,0.0
+212,RAKFKQLL,True,False,3,0.8510451739618405,0,0,967,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+213,RAKFKQLL,False,False,3,0.8753507295173962,0,215,985,0,"Random Forest (Both chains, nan in train)",0.0,0.17916666666666667,0.8208333333333333,0.0
+214,RAKFKQLL,True,True,3,0.8863636363636364,0,0,967,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+215,RAKFKQLL,False,True,3,0.8913089225589227,0,215,985,0,"Random Forest (Seperate chains, nan in train)",0.0,0.17916666666666667,0.8208333333333333,0.0
+216,RAKFKQLL,True,False,4,0.855434039644566,0,0,952,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+217,RAKFKQLL,False,False,4,0.8485987696514011,0,231,969,0,"Random Forest (Both chains, nan in train)",0.0,0.1925,0.8075,0.0
+218,RAKFKQLL,True,True,4,0.898462064251538,0,0,952,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+219,RAKFKQLL,False,True,4,0.9029733424470267,0,231,969,0,"Random Forest (Seperate chains, nan in train)",0.0,0.1925,0.8075,0.0
+220,AVFDRKSDAK,True,False,0,0.5511220162942494,0,0,1160,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+221,AVFDRKSDAK,False,False,0,0.5828052789556434,0,7,1193,0,"Random Forest (Both chains, nan in train)",0.0,0.005833333333333334,0.9941666666666666,0.0
+222,AVFDRKSDAK,True,True,0,0.5762304064033541,0,0,1160,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+223,AVFDRKSDAK,False,True,0,0.6110105293248845,0,7,1193,0,"Random Forest (Seperate chains, nan in train)",0.0,0.005833333333333334,0.9941666666666666,0.0
+224,AVFDRKSDAK,True,False,1,0.5886944181646169,0,0,1155,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+225,AVFDRKSDAK,False,False,1,0.5668401135288553,0,9,1191,0,"Random Forest (Both chains, nan in train)",0.0,0.0075,0.9925,0.0
+226,AVFDRKSDAK,True,True,1,0.5661305581835383,0,0,1155,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+227,AVFDRKSDAK,False,True,1,0.5673131504257333,0,9,1191,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0075,0.9925,0.0
+228,AVFDRKSDAK,True,False,2,0.6053449493760301,0,0,1148,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+229,AVFDRKSDAK,False,False,2,0.6243936896632918,0,16,1184,0,"Random Forest (Both chains, nan in train)",0.0,0.013333333333333334,0.9866666666666667,0.0
+230,AVFDRKSDAK,True,True,2,0.6572404049917588,0,0,1148,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+231,AVFDRKSDAK,False,True,2,0.6437014363079822,0,16,1184,0,"Random Forest (Seperate chains, nan in train)",0.0,0.013333333333333334,0.9866666666666667,0.0
+232,AVFDRKSDAK,True,False,3,0.6006362201617675,0,0,1163,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+233,AVFDRKSDAK,False,False,3,0.60628329058986,0,9,1191,0,"Random Forest (Both chains, nan in train)",0.0,0.0075,0.9925,0.0
+234,AVFDRKSDAK,True,True,3,0.6060120339317419,0,0,1163,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+235,AVFDRKSDAK,False,True,3,0.5967893075557309,0,9,1191,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0075,0.9925,0.0
+236,AVFDRKSDAK,True,False,4,0.56554936611602,0,0,1152,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+237,AVFDRKSDAK,False,False,4,0.5824049174029966,0,11,1189,0,"Random Forest (Both chains, nan in train)",0.0,0.009166666666666667,0.9908333333333333,0.0
+238,AVFDRKSDAK,True,True,4,0.6143872454859778,0,0,1152,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+239,AVFDRKSDAK,False,True,4,0.6034623511333078,0,11,1189,0,"Random Forest (Seperate chains, nan in train)",0.0,0.009166666666666667,0.9908333333333333,0.0
+240,IVTDFSVIK,True,False,0,0.73222109016811,0,0,1145,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+241,IVTDFSVIK,False,False,0,0.7400407539480387,0,41,1159,0,"Random Forest (Both chains, nan in train)",0.0,0.034166666666666665,0.9658333333333333,0.0
+242,IVTDFSVIK,True,True,0,0.7685685175751401,0,0,1145,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+243,IVTDFSVIK,False,True,0,0.7529801324503311,0,41,1159,0,"Random Forest (Seperate chains, nan in train)",0.0,0.034166666666666665,0.9658333333333333,0.0
+244,IVTDFSVIK,True,False,1,0.7612545018007203,0,0,1145,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+245,IVTDFSVIK,False,False,1,0.7487745098039217,0,40,1160,0,"Random Forest (Both chains, nan in train)",0.0,0.03333333333333333,0.9666666666666667,0.0
+246,IVTDFSVIK,True,True,1,0.7940926370548219,0,0,1145,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+247,IVTDFSVIK,False,True,1,0.7889155662264907,0,40,1160,0,"Random Forest (Seperate chains, nan in train)",0.0,0.03333333333333333,0.9666666666666667,0.0
+248,IVTDFSVIK,True,False,2,0.7740889285006933,0,0,1140,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+249,IVTDFSVIK,False,False,2,0.7657456922162804,0,46,1154,0,"Random Forest (Both chains, nan in train)",0.0,0.03833333333333333,0.9616666666666667,0.0
+250,IVTDFSVIK,True,True,2,0.763492770845712,0,0,1140,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+251,IVTDFSVIK,False,True,2,0.7498514557338087,0,46,1154,0,"Random Forest (Seperate chains, nan in train)",0.0,0.03833333333333333,0.9616666666666667,0.0
+252,IVTDFSVIK,True,False,3,0.746550704641766,0,0,1140,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+253,IVTDFSVIK,False,False,3,0.7623435498176803,0,45,1155,0,"Random Forest (Both chains, nan in train)",0.0,0.0375,0.9625,0.0
+254,IVTDFSVIK,True,True,3,0.7605203508426136,0,0,1140,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+255,IVTDFSVIK,False,True,3,0.7646102296245196,0,45,1155,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0375,0.9625,0.0
+256,IVTDFSVIK,True,False,4,0.7569617775167621,0,0,1140,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+257,IVTDFSVIK,False,False,4,0.762638868497039,0,43,1157,0,"Random Forest (Both chains, nan in train)",0.0,0.035833333333333335,0.9641666666666666,0.0
+258,IVTDFSVIK,True,True,4,0.7752899721039495,0,0,1140,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+259,IVTDFSVIK,False,True,4,0.7718396711202467,0,43,1157,0,"Random Forest (Seperate chains, nan in train)",0.0,0.035833333333333335,0.9641666666666666,0.0
+260,KSKRTPMGF,True,False,0,0.9201183431952663,0,0,193,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+261,KSKRTPMGF,False,False,0,0.9068047337278107,7,72,199,0,"Random Forest (Both chains, nan in train)",0.025179856115107913,0.2589928057553957,0.7158273381294964,0.0
+262,KSKRTPMGF,True,True,0,0.9215976331360947,0,0,193,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+263,KSKRTPMGF,False,True,0,0.9460059171597633,7,72,199,0,"Random Forest (Seperate chains, nan in train)",0.025179856115107913,0.2589928057553957,0.7158273381294964,0.0
+264,KSKRTPMGF,True,False,1,0.8483245149911818,0,0,197,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+265,KSKRTPMGF,False,False,1,0.9047619047619048,7,69,202,0,"Random Forest (Both chains, nan in train)",0.025179856115107913,0.24820143884892087,0.7266187050359713,0.0
+266,KSKRTPMGF,True,True,1,0.8765432098765432,0,0,197,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+267,KSKRTPMGF,False,True,1,0.9365079365079365,7,69,202,0,"Random Forest (Seperate chains, nan in train)",0.025179856115107913,0.24820143884892087,0.7266187050359713,0.0
+268,KSKRTPMGF,True,False,2,0.8444816053511706,0,0,196,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+269,KSKRTPMGF,False,False,2,0.8319397993311035,6,69,203,0,"Random Forest (Both chains, nan in train)",0.02158273381294964,0.24820143884892087,0.7302158273381295,0.0
+270,KSKRTPMGF,True,True,2,0.8645484949832776,0,0,196,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+271,KSKRTPMGF,False,True,2,0.8754180602006689,6,69,203,0,"Random Forest (Seperate chains, nan in train)",0.02158273381294964,0.24820143884892087,0.7302158273381295,0.0
+272,KSKRTPMGF,True,False,3,0.8628787878787879,0,0,193,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+273,KSKRTPMGF,False,False,3,0.893939393939394,6,73,199,0,"Random Forest (Both chains, nan in train)",0.02158273381294964,0.26258992805755393,0.7158273381294964,0.0
+274,KSKRTPMGF,True,True,3,0.9151515151515152,0,0,193,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+275,KSKRTPMGF,False,True,3,0.9212121212121211,6,73,199,0,"Random Forest (Seperate chains, nan in train)",0.02158273381294964,0.26258992805755393,0.7158273381294964,0.0
+276,KSKRTPMGF,True,False,4,0.8208333333333333,0,0,198,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+277,KSKRTPMGF,False,False,4,0.84375,6,67,205,0,"Random Forest (Both chains, nan in train)",0.02158273381294964,0.24100719424460432,0.737410071942446,0.0
+278,KSKRTPMGF,True,True,4,0.8645833333333334,0,0,198,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+279,KSKRTPMGF,False,True,4,0.9052083333333334,6,67,205,0,"Random Forest (Seperate chains, nan in train)",0.02158273381294964,0.24100719424460432,0.737410071942446,0.0
+280,ATDALMTGF,True,False,0,0.8365217391304347,0,0,212,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+281,ATDALMTGF,False,False,0,0.8695652173913043,17,49,217,0,"Random Forest (Both chains, nan in train)",0.06007067137809187,0.17314487632508835,0.7667844522968198,0.0
+282,ATDALMTGF,True,True,0,0.9,0,0,212,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+283,ATDALMTGF,False,True,0,0.951304347826087,17,49,217,0,"Random Forest (Seperate chains, nan in train)",0.06007067137809187,0.17314487632508835,0.7667844522968198,0.0
+284,ATDALMTGF,True,False,1,0.8105263157894737,0,0,211,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+285,ATDALMTGF,False,False,1,0.8236842105263158,21,45,217,0,"Random Forest (Both chains, nan in train)",0.07420494699646643,0.15901060070671377,0.7667844522968198,0.0
+286,ATDALMTGF,True,True,1,0.8649122807017543,0,0,211,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+287,ATDALMTGF,False,True,1,0.8780701754385966,21,45,217,0,"Random Forest (Seperate chains, nan in train)",0.07420494699646643,0.15901060070671377,0.7667844522968198,0.0
+288,ATDALMTGF,True,False,2,0.9069602272727273,0,0,206,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+289,ATDALMTGF,False,False,2,0.9190340909090908,20,52,211,0,"Random Forest (Both chains, nan in train)",0.0706713780918728,0.18374558303886926,0.7455830388692579,0.0
+290,ATDALMTGF,True,True,2,0.9126420454545454,0,0,206,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+291,ATDALMTGF,False,True,2,0.9161931818181819,20,52,211,0,"Random Forest (Seperate chains, nan in train)",0.0706713780918728,0.18374558303886926,0.7455830388692579,0.0
+292,ATDALMTGF,True,False,3,0.8947772657450077,0,0,208,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+293,ATDALMTGF,False,False,3,0.9400921658986175,23,48,212,0,"Random Forest (Both chains, nan in train)",0.0812720848056537,0.1696113074204947,0.7491166077738516,0.0
+294,ATDALMTGF,True,True,3,0.9247311827956989,0,0,208,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+295,ATDALMTGF,False,True,3,0.9784946236559139,23,48,212,0,"Random Forest (Seperate chains, nan in train)",0.0812720848056537,0.1696113074204947,0.7491166077738516,0.0
+296,ATDALMTGF,True,False,4,0.8856332703213611,0,0,214,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+297,ATDALMTGF,False,False,4,0.9045368620037808,20,43,220,0,"Random Forest (Both chains, nan in train)",0.0706713780918728,0.1519434628975265,0.7773851590106007,0.0
+298,ATDALMTGF,True,True,4,0.8960302457466919,0,0,214,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+299,ATDALMTGF,False,True,4,0.9035916824196597,20,43,220,0,"Random Forest (Seperate chains, nan in train)",0.0706713780918728,0.1519434628975265,0.7773851590106007,0.0
+300,RLRAEAQVK,True,False,0,0.590870786516854,0,0,675,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+301,RLRAEAQVK,False,False,0,0.532935393258427,0,0,689,0,"Random Forest (Both chains, nan in train)",0.0,0.0,1.0,0.0
+302,RLRAEAQVK,True,True,0,0.5770365168539326,0,0,675,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+303,RLRAEAQVK,False,True,0,0.5857443820224719,0,0,689,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0,1.0,0.0
+304,RLRAEAQVK,True,False,1,0.6177777777777778,0,0,676,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+305,RLRAEAQVK,False,False,1,0.6237275985663082,0,0,689,0,"Random Forest (Both chains, nan in train)",0.0,0.0,1.0,0.0
+306,RLRAEAQVK,True,True,1,0.6162007168458782,0,0,676,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+307,RLRAEAQVK,False,True,1,0.6139068100358421,0,0,689,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0,1.0,0.0
+308,RLRAEAQVK,True,False,2,0.5319792566983579,0,0,677,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+309,RLRAEAQVK,False,False,2,0.5664073753961395,0,0,689,0,"Random Forest (Both chains, nan in train)",0.0,0.0,1.0,0.0
+310,RLRAEAQVK,True,True,2,0.6197781619129935,0,0,677,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+311,RLRAEAQVK,False,True,2,0.622154998559493,0,0,689,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0,1.0,0.0
+312,RLRAEAQVK,True,False,3,0.6079317269076305,0,0,677,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+313,RLRAEAQVK,False,False,3,0.6390562248995983,0,0,689,0,"Random Forest (Both chains, nan in train)",0.0,0.0,1.0,0.0
+314,RLRAEAQVK,True,True,3,0.6628657487091222,0,0,677,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+315,RLRAEAQVK,False,True,3,0.6737664945496271,0,0,689,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0,1.0,0.0
+316,RLRAEAQVK,True,False,4,0.5806630600638092,0,0,674,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+317,RLRAEAQVK,False,False,4,0.6457899847412956,0,0,689,0,"Random Forest (Both chains, nan in train)",0.0,0.0,1.0,0.0
+318,RLRAEAQVK,True,True,4,0.7019004022749341,0,0,674,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+319,RLRAEAQVK,False,True,4,0.6782494104591483,0,0,689,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0,1.0,0.0
+320,DATYQRTRALVR,True,False,0,0.7825484764542936,0,0,165,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+321,DATYQRTRALVR,False,False,0,0.8047091412742382,19,30,178,0,"Random Forest (Both chains, nan in train)",0.08370044052863436,0.13215859030837004,0.7841409691629956,0.0
+322,DATYQRTRALVR,True,True,0,0.8060941828254848,0,0,165,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+323,DATYQRTRALVR,False,True,0,0.8296398891966759,19,30,178,0,"Random Forest (Seperate chains, nan in train)",0.08370044052863436,0.13215859030837004,0.7841409691629956,0.0
+324,DATYQRTRALVR,True,False,1,0.8,0,0,164,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+325,DATYQRTRALVR,False,False,1,0.8105263157894737,18,36,173,0,"Random Forest (Both chains, nan in train)",0.07929515418502203,0.15859030837004406,0.762114537444934,0.0
+326,DATYQRTRALVR,True,True,1,0.8157894736842105,0,0,164,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+327,DATYQRTRALVR,False,True,1,0.8368421052631579,18,36,173,0,"Random Forest (Seperate chains, nan in train)",0.07929515418502203,0.15859030837004406,0.762114537444934,0.0
+328,DATYQRTRALVR,True,False,2,0.8139130434782608,0,0,155,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+329,DATYQRTRALVR,False,False,2,0.7808695652173914,23,35,169,0,"Random Forest (Both chains, nan in train)",0.1013215859030837,0.15418502202643172,0.7444933920704846,0.0
+330,DATYQRTRALVR,True,True,2,0.8060869565217391,0,0,155,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+331,DATYQRTRALVR,False,True,2,0.8347826086956521,23,35,169,0,"Random Forest (Seperate chains, nan in train)",0.1013215859030837,0.15418502202643172,0.7444933920704846,0.0
+332,DATYQRTRALVR,True,False,3,0.863970588235294,0,0,162,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+333,DATYQRTRALVR,False,False,3,0.8480392156862745,23,30,174,0,"Random Forest (Both chains, nan in train)",0.1013215859030837,0.13215859030837004,0.7665198237885462,0.0
+334,DATYQRTRALVR,True,True,3,0.8590686274509803,0,0,162,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+335,DATYQRTRALVR,False,True,3,0.8590686274509806,23,30,174,0,"Random Forest (Seperate chains, nan in train)",0.1013215859030837,0.13215859030837004,0.7665198237885462,0.0
+336,DATYQRTRALVR,True,False,4,0.7968749999999999,0,0,161,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+337,DATYQRTRALVR,False,False,4,0.8413461538461539,20,35,172,0,"Random Forest (Both chains, nan in train)",0.0881057268722467,0.15418502202643172,0.7577092511013216,0.0
+338,DATYQRTRALVR,True,True,4,0.783653846153846,0,0,161,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+339,DATYQRTRALVR,False,True,4,0.8185096153846154,20,35,172,0,"Random Forest (Seperate chains, nan in train)",0.0881057268722467,0.15418502202643172,0.7577092511013216,0.0
+340,LTDEMIAQY,True,False,0,0.7592592592592592,0,0,203,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+341,LTDEMIAQY,False,False,0,0.7492283950617283,0,0,216,0,"Random Forest (Both chains, nan in train)",0.0,0.0,1.0,0.0
+342,LTDEMIAQY,True,True,0,0.7577160493827161,0,0,203,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+343,LTDEMIAQY,False,True,0,0.7631172839506173,0,0,216,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0,1.0,0.0
+344,LTDEMIAQY,True,False,1,0.6564516129032257,0,0,203,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+345,LTDEMIAQY,False,False,1,0.5693548387096774,0,0,216,0,"Random Forest (Both chains, nan in train)",0.0,0.0,1.0,0.0
+346,LTDEMIAQY,True,True,1,0.7040322580645162,0,0,203,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+347,LTDEMIAQY,False,True,1,0.75,0,0,216,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0,1.0,0.0
+348,LTDEMIAQY,True,False,2,0.657190635451505,0,0,205,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+349,LTDEMIAQY,False,False,2,0.7332775919732442,0,0,216,0,"Random Forest (Both chains, nan in train)",0.0,0.0,1.0,0.0
+350,LTDEMIAQY,True,True,2,0.6755852842809364,0,0,205,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+351,LTDEMIAQY,False,True,2,0.6454849498327759,0,0,216,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0,1.0,0.0
+352,LTDEMIAQY,True,False,3,0.7307692307692308,0,0,203,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+353,LTDEMIAQY,False,False,3,0.7661538461538462,0,0,216,0,"Random Forest (Both chains, nan in train)",0.0,0.0,1.0,0.0
+354,LTDEMIAQY,True,True,3,0.73,0,0,203,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+355,LTDEMIAQY,False,True,3,0.74,0,0,216,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0,1.0,0.0
+356,LTDEMIAQY,True,False,4,0.7250000000000001,0,0,202,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+357,LTDEMIAQY,False,False,4,0.7530303030303029,0,0,216,0,"Random Forest (Both chains, nan in train)",0.0,0.0,1.0,0.0
+358,LTDEMIAQY,True,True,4,0.7833333333333333,0,0,202,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+359,LTDEMIAQY,False,True,4,0.7825757575757576,0,0,216,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0,1.0,0.0
+360,TTDPSFLGRY,True,False,0,0.6031583264971287,0,0,390,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+361,TTDPSFLGRY,False,False,0,0.6066447908121411,0,0,406,0,"Random Forest (Both chains, nan in train)",0.0,0.0,1.0,0.0
+362,TTDPSFLGRY,True,True,0,0.663453650533224,0,0,390,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+363,TTDPSFLGRY,False,True,0,0.6882690730106644,0,0,406,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0,1.0,0.0
+364,TTDPSFLGRY,True,False,1,0.7436170212765957,0,0,392,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+365,TTDPSFLGRY,False,False,1,0.6627659574468084,0,0,406,0,"Random Forest (Both chains, nan in train)",0.0,0.0,1.0,0.0
+366,TTDPSFLGRY,True,True,1,0.6902127659574468,0,0,392,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+367,TTDPSFLGRY,False,True,1,0.7131914893617022,0,0,406,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0,1.0,0.0
+368,TTDPSFLGRY,True,False,2,0.6977030352748154,0,0,390,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+369,TTDPSFLGRY,False,False,2,0.7266201804757998,0,0,406,0,"Random Forest (Both chains, nan in train)",0.0,0.0,1.0,0.0
+370,TTDPSFLGRY,True,True,2,0.735233798195242,0,0,390,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+371,TTDPSFLGRY,False,True,2,0.7645611156685809,0,0,406,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0,1.0,0.0
+372,TTDPSFLGRY,True,False,3,0.6176726009552758,0,0,393,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+373,TTDPSFLGRY,False,False,3,0.6812852800694745,0,0,406,0,"Random Forest (Both chains, nan in train)",0.0,0.0,1.0,0.0
+374,TTDPSFLGRY,True,True,3,0.6830221450282241,0,0,393,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+375,TTDPSFLGRY,False,True,3,0.6982197134172817,0,0,406,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0,1.0,0.0
+376,TTDPSFLGRY,True,False,4,0.6741666666666667,0,0,391,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+377,TTDPSFLGRY,False,False,4,0.6735416666666667,0,0,406,0,"Random Forest (Both chains, nan in train)",0.0,0.0,1.0,0.0
+378,TTDPSFLGRY,True,True,4,0.703125,0,0,391,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+379,TTDPSFLGRY,False,True,4,0.7420833333333333,0,0,406,0,"Random Forest (Seperate chains, nan in train)",0.0,0.0,1.0,0.0
+380,SPRWYFYYL,True,False,0,0.8524305555555556,0,0,302,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+381,SPRWYFYYL,False,False,0,0.8098958333333333,31,145,318,0,"Random Forest (Both chains, nan in train)",0.06275303643724696,0.2935222672064777,0.6437246963562753,0.0
+382,SPRWYFYYL,True,True,0,0.8984375,0,0,302,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+383,SPRWYFYYL,False,True,0,0.8650173611111112,31,145,318,0,"Random Forest (Seperate chains, nan in train)",0.06275303643724696,0.2935222672064777,0.6437246963562753,0.0
+384,SPRWYFYYL,True,False,1,0.7693877551020408,0,0,293,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+385,SPRWYFYYL,False,False,1,0.7731292517006803,29,158,307,0,"Random Forest (Both chains, nan in train)",0.058704453441295545,0.31983805668016196,0.6214574898785425,0.0
+386,SPRWYFYYL,True,True,1,0.7877551020408163,0,0,293,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+387,SPRWYFYYL,False,True,1,0.8289115646258503,29,158,307,0,"Random Forest (Seperate chains, nan in train)",0.058704453441295545,0.31983805668016196,0.6214574898785425,0.0
+388,SPRWYFYYL,True,False,2,0.8271692745376956,0,0,295,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+389,SPRWYFYYL,False,False,2,0.8104551920341394,25,159,310,0,"Random Forest (Both chains, nan in train)",0.05060728744939271,0.32186234817813764,0.6275303643724697,0.0
+390,SPRWYFYYL,True,True,2,0.8502844950213372,0,0,295,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+391,SPRWYFYYL,False,True,2,0.8520625889046942,25,159,310,0,"Random Forest (Seperate chains, nan in train)",0.05060728744939271,0.32186234817813764,0.6275303643724697,0.0
+392,SPRWYFYYL,True,False,3,0.7517094017094017,0,0,301,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+393,SPRWYFYYL,False,False,3,0.8038461538461539,25,153,316,0,"Random Forest (Both chains, nan in train)",0.05060728744939271,0.3097165991902834,0.6396761133603239,0.0
+394,SPRWYFYYL,True,True,3,0.8722222222222222,0,0,301,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+395,SPRWYFYYL,False,True,3,0.8948717948717948,25,153,316,0,"Random Forest (Seperate chains, nan in train)",0.05060728744939271,0.3097165991902834,0.6396761133603239,0.0
+396,SPRWYFYYL,True,False,4,0.8181089743589745,0,0,299,0,"Random Forest (Both chains, no nan in train)",0.0,0.0,1.0,0.0
+397,SPRWYFYYL,False,False,4,0.8485576923076923,27,154,313,0,"Random Forest (Both chains, nan in train)",0.05465587044534413,0.3117408906882591,0.6336032388663968,0.0
+398,SPRWYFYYL,True,True,4,0.8329326923076923,0,0,299,0,"Random Forest (Seperate chains, no nan in train)",0.0,0.0,1.0,0.0
+399,SPRWYFYYL,False,True,4,0.8766025641025641,27,154,313,0,"Random Forest (Seperate chains, nan in train)",0.05465587044534413,0.3117408906882591,0.6336032388663968,0.0

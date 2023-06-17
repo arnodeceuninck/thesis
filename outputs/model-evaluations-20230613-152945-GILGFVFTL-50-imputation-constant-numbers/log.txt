@@ -1,0 +1,21 @@
+Started at 2023-06-13 15:29:45.821087
+
+Models to evaluate: 3
+
+1/3: Random Forest (0 imputed)
+{'name': 'Random Forest (0 imputed)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(fill_value=0, strategy='constant'), 'group': 'rf_imputations'}
+
+2/3: Random Forest (10 imputed)
+{'name': 'Random Forest (10 imputed)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(fill_value=10, strategy='constant'), 'group': 'rf_imputations'}
+
+3/3: Random Forest (100 imputed)
+{'name': 'Random Forest (100 imputed)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(fill_value=100, strategy='constant'), 'group': 'rf_imputations'}
+
+Finished at 2023-06-13 15:30:01.035025
+Time taken: 0:00:15.213938
+Saved scores to outputs/model-evaluations-20230613-152945-GILGFVFTL-50-imputation-constant-numbers
+Saved all scores to outputs/model-evaluations-20230613-152945-GILGFVFTL-50-imputation-constant-numbers/scores-20230613-153001.csv
+Saved group scores to outputs/model-evaluations-20230613-152945-GILGFVFTL-50-imputation-constant-numbers/groups
+Saved all group scores to outputs/model-evaluations-20230613-152945-GILGFVFTL-50-imputation-constant-numbers/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230613-152945-GILGFVFTL-50-imputation-constant-numbers/all-models.png
+Saved log to outputs/model-evaluations-20230613-152945-GILGFVFTL-50-imputation-constant-numbers/log.txt

@@ -1,0 +1,21 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr
+0,"Random Forest (both chains, no_nan)",0.9098275862068965,False,,both,chain_inputs,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,40.0,0.0,40.0,108.0,200.0,,False,1
+1,"Random Forest (both chains, no_nan)",0.895,False,,both,chain_inputs,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,41.0,0.0,41.0,108.0,200.0,,False,1
+2,"Random Forest (both chains, no_nan)",0.8920689655172414,False,,both,chain_inputs,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,42.0,0.0,42.0,108.0,200.0,,False,1
+3,"Random Forest (both chains, no_nan)",0.8670689655172412,False,,both,chain_inputs,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,37.0,0.0,37.0,108.0,200.0,,False,1
+4,"Random Forest (both chains, no_nan)",0.8844827586206897,False,,both,chain_inputs,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,38.0,0.0,38.0,108.0,200.0,,False,1
+0,"Random Forest (both chains, mean imputed)",0.9131034482758621,True,,both,chain_inputs,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,,False,2
+1,"Random Forest (both chains, mean imputed)",0.9025862068965517,True,,both,chain_inputs,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,,False,2
+2,"Random Forest (both chains, mean imputed)",0.8944827586206897,True,,both,chain_inputs,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,,False,2
+3,"Random Forest (both chains, mean imputed)",0.891551724137931,True,,both,chain_inputs,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,,False,2
+4,"Random Forest (both chains, mean imputed)",0.8955172413793102,True,,both,chain_inputs,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,,False,2
+0,"Random Forest (Seperate chains, no_nan)",0.9048275862068965,False,,seperate,chain_inputs,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,40.0,0.0,40.0,108.0,200.0,,False,3
+1,"Random Forest (Seperate chains, no_nan)",0.9067241379310345,False,,seperate,chain_inputs,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,41.0,0.0,41.0,108.0,200.0,,False,3
+2,"Random Forest (Seperate chains, no_nan)",0.9108620689655172,False,,seperate,chain_inputs,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,42.0,0.0,42.0,108.0,200.0,,False,3
+3,"Random Forest (Seperate chains, no_nan)",0.8774137931034482,False,,seperate,chain_inputs,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,37.0,0.0,37.0,108.0,200.0,,False,3
+4,"Random Forest (Seperate chains, no_nan)",0.8981034482758621,False,,seperate,chain_inputs,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,38.0,0.0,38.0,108.0,200.0,,False,3
+0,Random Forest (Seperate chains),0.9143103448275861,True,SimpleImputer,seperate,chain_inputs,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,,False,4
+1,Random Forest (Seperate chains),0.908103448275862,True,SimpleImputer,seperate,chain_inputs,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,,False,4
+2,Random Forest (Seperate chains),0.9356896551724139,True,SimpleImputer,seperate,chain_inputs,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,,False,4
+3,Random Forest (Seperate chains),0.9168965517241379,True,SimpleImputer,seperate,chain_inputs,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,,False,4
+4,Random Forest (Seperate chains),0.9148275862068965,True,SimpleImputer,seperate,chain_inputs,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,,False,4

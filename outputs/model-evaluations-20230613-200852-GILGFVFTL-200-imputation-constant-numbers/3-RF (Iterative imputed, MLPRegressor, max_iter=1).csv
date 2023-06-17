@@ -1,0 +1,6 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr
+0,"RF (Iterative imputed, MLPRegressor, max_iter=1)",0.9210344827586207,True,,both,rf_iterative_imputations,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,,False,3
+1,"RF (Iterative imputed, MLPRegressor, max_iter=1)",0.8755172413793103,True,,both,rf_iterative_imputations,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,,False,3
+2,"RF (Iterative imputed, MLPRegressor, max_iter=1)",0.910344827586207,True,,both,rf_iterative_imputations,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,,False,3
+3,"RF (Iterative imputed, MLPRegressor, max_iter=1)",0.9208620689655173,True,,both,rf_iterative_imputations,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,,False,3
+4,"RF (Iterative imputed, MLPRegressor, max_iter=1)",0.9079310344827586,True,,both,rf_iterative_imputations,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,,False,3

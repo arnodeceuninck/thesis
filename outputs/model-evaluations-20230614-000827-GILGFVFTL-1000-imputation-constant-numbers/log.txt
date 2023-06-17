@@ -1,0 +1,27 @@
+Started at 2023-06-14 00:08:27.860033
+
+Models to evaluate: 5
+
+1/5: RandomForest (mean imputed)
+{'name': 'RandomForest (mean imputed)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(), 'group': 'mean_impute_models'}
+
+2/5: KNN (mean imputed)
+{'name': 'KNN (mean imputed)', 'model': KNeighborsClassifier(), 'imputer': SimpleImputer(), 'group': 'mean_impute_models'}
+
+3/5: ProximityForest (mean imputed)
+{'name': 'ProximityForest (mean imputed)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x0000020942D74310>, 'imputer': SimpleImputer(), 'group': 'mean_impute_models'}
+
+4/5: MLP (mean imputed)
+{'name': 'MLP (mean imputed)', 'model': MLPClassifier(random_state=0), 'imputer': SimpleImputer(), 'group': 'mean_impute_models'}
+
+5/5: HistGradientBoosting (mean imputed)
+{'name': 'HistGradientBoosting (mean imputed)', 'model': HistGradientBoostingClassifier(random_state=0), 'imputer': SimpleImputer(), 'group': 'mean_impute_models'}
+
+Finished at 2023-06-14 00:22:05.839982
+Time taken: 0:13:37.979949
+Saved scores to outputs/model-evaluations-20230614-000827-GILGFVFTL-1000-imputation-constant-numbers
+Saved all scores to outputs/model-evaluations-20230614-000827-GILGFVFTL-1000-imputation-constant-numbers/scores-20230614-002205.csv
+Saved group scores to outputs/model-evaluations-20230614-000827-GILGFVFTL-1000-imputation-constant-numbers/groups
+Saved all group scores to outputs/model-evaluations-20230614-000827-GILGFVFTL-1000-imputation-constant-numbers/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230614-000827-GILGFVFTL-1000-imputation-constant-numbers/all-models.png
+Saved log to outputs/model-evaluations-20230614-000827-GILGFVFTL-1000-imputation-constant-numbers/log.txt

@@ -1,0 +1,11 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr
+0,"ProximityForest (nan_dist=0, measure=hamming, cdr_only)",0.71,True,,both,proximity_forest,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,,False,1
+1,"ProximityForest (nan_dist=0, measure=hamming, cdr_only)",0.71,True,,both,proximity_forest,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,,False,1
+2,"ProximityForest (nan_dist=0, measure=hamming, cdr_only)",0.7,True,,both,proximity_forest,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,,False,1
+3,"ProximityForest (nan_dist=0, measure=hamming, cdr_only)",0.71,True,,both,proximity_forest,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,,False,1
+4,"ProximityForest (nan_dist=0, measure=hamming, cdr_only)",0.72,True,,both,proximity_forest,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,,False,1
+0,"ProximityForest (no_nan, measure=hamming, cdr_only)",0.66,False,,both,proximity_forest,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,40.0,0.0,40.0,108.0,200.0,,False,2
+1,"ProximityForest (no_nan, measure=hamming, cdr_only)",0.67,False,,both,proximity_forest,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,41.0,0.0,41.0,108.0,200.0,,False,2
+2,"ProximityForest (no_nan, measure=hamming, cdr_only)",0.61,False,,both,proximity_forest,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,42.0,0.0,42.0,108.0,200.0,,False,2
+3,"ProximityForest (no_nan, measure=hamming, cdr_only)",0.64,False,,both,proximity_forest,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,37.0,0.0,37.0,108.0,200.0,,False,2
+4,"ProximityForest (no_nan, measure=hamming, cdr_only)",0.6799999999999999,False,,both,proximity_forest,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,38.0,0.0,38.0,108.0,200.0,,False,2

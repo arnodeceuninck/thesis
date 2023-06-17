@@ -1,0 +1,6 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr
+0,Random Forest (Zero imputed) (with missing indicator),0.9124137931034483,True,,both,rf_imputations_with_missing_indicator,0.0,GILGFVFTL,HomoSapiens,26.0,34.0,20.0,0.0,80.0,108.0,100.0,,True,5
+1,Random Forest (Zero imputed) (with missing indicator),0.8849999999999999,True,,both,rf_imputations_with_missing_indicator,1.0,GILGFVFTL,HomoSapiens,28.0,35.0,17.0,0.0,80.0,108.0,100.0,,True,5
+2,Random Forest (Zero imputed) (with missing indicator),0.9049999999999999,True,,both,rf_imputations_with_missing_indicator,2.0,GILGFVFTL,HomoSapiens,29.0,34.0,17.0,0.0,80.0,108.0,100.0,,True,5
+3,Random Forest (Zero imputed) (with missing indicator),0.8934482758620689,True,,both,rf_imputations_with_missing_indicator,3.0,GILGFVFTL,HomoSapiens,27.0,34.0,19.0,0.0,80.0,108.0,100.0,,True,5
+4,Random Forest (Zero imputed) (with missing indicator),0.908448275862069,True,,both,rf_imputations_with_missing_indicator,4.0,GILGFVFTL,HomoSapiens,24.0,36.0,20.0,0.0,80.0,108.0,100.0,,True,5

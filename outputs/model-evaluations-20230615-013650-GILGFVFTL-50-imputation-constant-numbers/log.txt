@@ -1,0 +1,18 @@
+Started at 2023-06-15 01:36:50.038116
+
+Models to evaluate: 2
+
+1/2: KNN (tcrdist3, no_nan)
+{'name': 'KNN (tcrdist3, no_nan)', 'model': <util.knnstring.KNNString object at 0x0000028CCC9A1A60>, 'group': 'knn', 'extract_features': False, 'drop_train_na': True}
+
+2/2: KNN (tcrdist3, nan_dist=200)
+{'name': 'KNN (tcrdist3, nan_dist=200)', 'model': <util.knnstring.KNNString object at 0x0000028CCC9A1A00>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+Finished at 2023-06-15 01:39:36.753819
+Time taken: 0:02:46.715703
+Saved scores to outputs/model-evaluations-20230615-013650-GILGFVFTL-50-imputation-constant-numbers
+Saved all scores to outputs/model-evaluations-20230615-013650-GILGFVFTL-50-imputation-constant-numbers/scores-20230615-013936.csv
+Saved group scores to outputs/model-evaluations-20230615-013650-GILGFVFTL-50-imputation-constant-numbers/groups
+Saved all group scores to outputs/model-evaluations-20230615-013650-GILGFVFTL-50-imputation-constant-numbers/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230615-013650-GILGFVFTL-50-imputation-constant-numbers/all-models.png
+Saved log to outputs/model-evaluations-20230615-013650-GILGFVFTL-50-imputation-constant-numbers/log.txt

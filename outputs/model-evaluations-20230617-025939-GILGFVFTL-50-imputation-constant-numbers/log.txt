@@ -1,0 +1,27 @@
+Started at 2023-06-17 02:59:39.412439
+
+Models to evaluate: 5
+
+1/5: Random Forest (FV)
+{'name': 'Random Forest (FV)', 'model': RandomForestClassifier(random_state=0), 'gene_features': 'FV', 'group': 'gene_features', 'imputer': SimpleImputer()}
+
+2/5: Random Forest (F)
+{'name': 'Random Forest (F)', 'model': RandomForestClassifier(random_state=0), 'gene_features': 'F', 'group': 'gene_features', 'imputer': SimpleImputer()}
+
+3/5: Random Forest (V)
+{'name': 'Random Forest (V)', 'model': RandomForestClassifier(random_state=0), 'gene_features': 'V', 'group': 'gene_features', 'imputer': SimpleImputer()}
+
+4/5: Random Forest (F+V)
+{'name': 'Random Forest (F+V)', 'model': RandomForestClassifier(random_state=0), 'gene_features': 'F+V', 'group': 'gene_features', 'imputer': SimpleImputer()}
+
+5/5: Random Forest (FV+F+V)
+{'name': 'Random Forest (FV+F+V)', 'model': RandomForestClassifier(random_state=0), 'gene_features': 'FV+F+V', 'group': 'gene_features', 'imputer': SimpleImputer()}
+
+Finished at 2023-06-17 02:59:48.346514
+Time taken: 0:00:08.934075
+Saved scores to outputs/model-evaluations-20230617-025939-GILGFVFTL-50-imputation-constant-numbers
+Saved all scores to outputs/model-evaluations-20230617-025939-GILGFVFTL-50-imputation-constant-numbers/scores-20230617-025948.csv
+Saved group scores to outputs/model-evaluations-20230617-025939-GILGFVFTL-50-imputation-constant-numbers/groups
+Saved all group scores to outputs/model-evaluations-20230617-025939-GILGFVFTL-50-imputation-constant-numbers/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230617-025939-GILGFVFTL-50-imputation-constant-numbers/all-models.png
+Saved log to outputs/model-evaluations-20230617-025939-GILGFVFTL-50-imputation-constant-numbers/log.txt

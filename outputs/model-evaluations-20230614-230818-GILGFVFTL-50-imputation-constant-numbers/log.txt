@@ -1,0 +1,22 @@
+Started at 2023-06-14 23:08:18.033778
+
+Models to evaluate: 6
+
+1/6: KNN (tcrdist3, no_nan)
+{'name': 'KNN (tcrdist3, no_nan)', 'model': <util.knnstring.KNNString object at 0x000001F8B7E177F0>, 'group': 'knn', 'extract_features': False, 'drop_train_na': True}
+
+2/6: KNN (tcrdist3, no_nan)
+{'name': 'KNN (tcrdist3, no_nan)', 'model': <util.knnstring.KNNString object at 0x000001F881E5E400>, 'group': 'knn', 'extract_features': False, 'drop_train_na': True}
+
+3/6: KNN (tcrdist3, nan_dist=0)
+{'name': 'KNN (tcrdist3, nan_dist=0)', 'model': <util.knnstring.KNNString object at 0x000001F881E5E6D0>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+4/6: KNN (tcrdist3, nan_dist=100)
+{'name': 'KNN (tcrdist3, nan_dist=100)', 'model': <util.knnstring.KNNString object at 0x000001F881E5EFD0>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+5/6: KNN (tcrdist3, nan_dist=200)
+{'name': 'KNN (tcrdist3, nan_dist=200)', 'model': <util.knnstring.KNNString object at 0x000001F881E5E550>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+6/6: KNN (tcrdist3, nan_dist=400)
+{'name': 'KNN (tcrdist3, nan_dist=400)', 'model': <util.knnstring.KNNString object at 0x000001F881E5E1C0>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+

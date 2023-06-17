@@ -1,0 +1,11 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr,improvement
+0,"KNN (tcrdist3, no_nan)",0.8051724137931033,False,,both,knn,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,9.0,0.0,9.0,108.0,50.0,,False,1,0.04113793103448282
+1,"KNN (tcrdist3, no_nan)",0.7525862068965516,False,,both,knn,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,1,-0.011448275862068868
+2,"KNN (tcrdist3, no_nan)",0.7708620689655172,False,,both,knn,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,1,0.006827586206896719
+3,"KNN (tcrdist3, no_nan)",0.715,False,,both,knn,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,1,-0.049034482758620546
+4,"KNN (tcrdist3, no_nan)",0.7765517241379309,False,,both,knn,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,8.0,0.0,8.0,108.0,50.0,,False,1,0.012517241379310429
+0,"KNN (tcrdist3, nan_dist=200)",0.8951724137931034,True,,both,knn,0.0,GILGFVFTL,HomoSapiens,8.0,23.0,9.0,0.0,40.0,108.0,50.0,,False,2,0.1311379310344829
+1,"KNN (tcrdist3, nan_dist=200)",0.7658620689655171,True,,both,knn,1.0,GILGFVFTL,HomoSapiens,12.0,21.0,7.0,0.0,40.0,108.0,50.0,,False,2,0.0018275862068966031
+2,"KNN (tcrdist3, nan_dist=200)",0.7953448275862068,True,,both,knn,2.0,GILGFVFTL,HomoSapiens,13.0,20.0,7.0,0.0,40.0,108.0,50.0,,False,2,0.03131034482758632
+3,"KNN (tcrdist3, nan_dist=200)",0.7906896551724137,True,,both,knn,3.0,GILGFVFTL,HomoSapiens,11.0,22.0,7.0,0.0,40.0,108.0,50.0,,False,2,0.026655172413793227
+4,"KNN (tcrdist3, nan_dist=200)",0.8841379310344827,True,,both,knn,4.0,GILGFVFTL,HomoSapiens,10.0,22.0,8.0,0.0,40.0,108.0,50.0,,False,2,0.12010344827586217

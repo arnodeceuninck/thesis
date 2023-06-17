@@ -1,0 +1,15 @@
+Started at 2023-06-13 23:47:49.924778
+
+Models to evaluate: 1
+
+1/1: RandomForest (only CDR3, no_nan)
+{'name': 'RandomForest (only CDR3, no_nan)', 'model': RandomForestClassifier(random_state=0), 'group': 'cdr_only', 'columns_to_use': ['CDR3'], 'drop_train_na': True}
+
+Finished at 2023-06-13 23:47:54.001242
+Time taken: 0:00:04.076464
+Saved scores to outputs/model-evaluations-20230613-234749-GILGFVFTL-200-imputation-constant-numbers
+Saved all scores to outputs/model-evaluations-20230613-234749-GILGFVFTL-200-imputation-constant-numbers/scores-20230613-234754.csv
+Saved group scores to outputs/model-evaluations-20230613-234749-GILGFVFTL-200-imputation-constant-numbers/groups
+Saved all group scores to outputs/model-evaluations-20230613-234749-GILGFVFTL-200-imputation-constant-numbers/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230613-234749-GILGFVFTL-200-imputation-constant-numbers/all-models.png
+Saved log to outputs/model-evaluations-20230613-234749-GILGFVFTL-200-imputation-constant-numbers/log.txt

@@ -1,0 +1,27 @@
+Started at 2023-06-14 23:46:22.521487
+
+Models to evaluate: 5
+
+1/5: KNN (levenstein, no_nan)
+{'name': 'KNN (levenstein, no_nan)', 'model': <util.knnstring.KNNString object at 0x0000014DF5D3CF40>, 'group': 'knn', 'extract_features': False, 'drop_train_na': True}
+
+2/5: KNN (levenstein, nan_dist=0)
+{'name': 'KNN (levenstein, nan_dist=0)', 'model': <util.knnstring.KNNString object at 0x0000014DF65218B0>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+3/5: KNN (levenstein, nan_dist=2)
+{'name': 'KNN (levenstein, nan_dist=2)', 'model': <util.knnstring.KNNString object at 0x0000014DF6521640>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+4/5: KNN (levenstein, nan_dist=7)
+{'name': 'KNN (levenstein, nan_dist=7)', 'model': <util.knnstring.KNNString object at 0x0000014DF65215B0>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+5/5: KNN (levenstein, nan_dist=12)
+{'name': 'KNN (levenstein, nan_dist=12)', 'model': <util.knnstring.KNNString object at 0x0000014DF6521D90>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+Finished at 2023-06-14 23:46:45.891047
+Time taken: 0:00:23.369560
+Saved scores to outputs/model-evaluations-20230614-234622-GILGFVFTL-50-imputation-constant-numbers
+Saved all scores to outputs/model-evaluations-20230614-234622-GILGFVFTL-50-imputation-constant-numbers/scores-20230614-234645.csv
+Saved group scores to outputs/model-evaluations-20230614-234622-GILGFVFTL-50-imputation-constant-numbers/groups
+Saved all group scores to outputs/model-evaluations-20230614-234622-GILGFVFTL-50-imputation-constant-numbers/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230614-234622-GILGFVFTL-50-imputation-constant-numbers/all-models.png
+Saved log to outputs/model-evaluations-20230614-234622-GILGFVFTL-50-imputation-constant-numbers/log.txt

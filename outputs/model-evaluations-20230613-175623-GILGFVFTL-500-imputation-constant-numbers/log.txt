@@ -1,0 +1,36 @@
+Started at 2023-06-13 17:56:23.483448
+
+Models to evaluate: 8
+
+1/8: Random Forest (Zero imputed)
+{'name': 'Random Forest (Zero imputed)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(fill_value=0, strategy='constant'), 'group': 'rf_imputations'}
+
+2/8: Random Forest (Mean imputed)
+{'name': 'Random Forest (Mean imputed)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(), 'group': 'rf_imputations'}
+
+3/8: Random Forest (Most frequent imputed)
+{'name': 'Random Forest (Most frequent imputed)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(strategy='most_frequent'), 'group': 'rf_imputations'}
+
+4/8: Random Forest (Median imputed)
+{'name': 'Random Forest (Median imputed)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(strategy='median'), 'group': 'rf_imputations'}
+
+5/8: Random Forest (Zero imputed) (with missing indicator)
+{'name': 'Random Forest (Zero imputed) (with missing indicator)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(fill_value=0, strategy='constant'), 'group': 'rf_imputations_with_missing_indicator', 'missing_indicator': True}
+
+6/8: Random Forest (Mean imputed) (with missing indicator)
+{'name': 'Random Forest (Mean imputed) (with missing indicator)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(), 'group': 'rf_imputations_with_missing_indicator', 'missing_indicator': True}
+
+7/8: Random Forest (Most frequent imputed) (with missing indicator)
+{'name': 'Random Forest (Most frequent imputed) (with missing indicator)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(strategy='most_frequent'), 'group': 'rf_imputations_with_missing_indicator', 'missing_indicator': True}
+
+8/8: Random Forest (Median imputed) (with missing indicator)
+{'name': 'Random Forest (Median imputed) (with missing indicator)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(strategy='median'), 'group': 'rf_imputations_with_missing_indicator', 'missing_indicator': True}
+
+Finished at 2023-06-13 17:57:28.657574
+Time taken: 0:01:05.174126
+Saved scores to outputs/model-evaluations-20230613-175623-GILGFVFTL-500-imputation-constant-numbers
+Saved all scores to outputs/model-evaluations-20230613-175623-GILGFVFTL-500-imputation-constant-numbers/scores-20230613-175728.csv
+Saved group scores to outputs/model-evaluations-20230613-175623-GILGFVFTL-500-imputation-constant-numbers/groups
+Saved all group scores to outputs/model-evaluations-20230613-175623-GILGFVFTL-500-imputation-constant-numbers/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230613-175623-GILGFVFTL-500-imputation-constant-numbers/all-models.png
+Saved log to outputs/model-evaluations-20230613-175623-GILGFVFTL-500-imputation-constant-numbers/log.txt

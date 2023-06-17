@@ -1,0 +1,19 @@
+Started at 2023-06-14 23:26:59.278275
+
+Models to evaluate: 5
+
+1/5: KNN (tcrdist approx, no_nan)
+{'name': 'KNN (tcrdist approx, no_nan)', 'model': <util.knnstring.KNNString object at 0x0000017879C72640>, 'group': 'knn', 'extract_features': False, 'drop_train_na': True}
+
+2/5: KNN (tcrdist approx, nan_dist=0)
+{'name': 'KNN (tcrdist approx, nan_dist=0)', 'model': <util.knnstring.KNNString object at 0x0000017879C72EE0>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+3/5: KNN (tcrdist approx, nan_dist=100)
+{'name': 'KNN (tcrdist approx, nan_dist=100)', 'model': <util.knnstring.KNNString object at 0x0000017879C72850>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+4/5: KNN (tcrdist approx, nan_dist=200)
+{'name': 'KNN (tcrdist approx, nan_dist=200)', 'model': <util.knnstring.KNNString object at 0x0000017879C727C0>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+5/5: KNN (tcrdist approx, nan_dist=400)
+{'name': 'KNN (tcrdist approx, nan_dist=400)', 'model': <util.knnstring.KNNString object at 0x0000017879C72820>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+

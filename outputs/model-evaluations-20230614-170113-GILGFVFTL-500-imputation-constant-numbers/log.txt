@@ -1,0 +1,27 @@
+Started at 2023-06-14 17:01:13.521513
+
+Models to evaluate: 5
+
+1/5: RandomForest (no nan)
+{'name': 'RandomForest (no nan)', 'model': RandomForestClassifier(random_state=0), 'group': 'mean_impute_models', 'drop_train_na': True}
+
+2/5: KNN (no nan)
+{'name': 'KNN (no nan)', 'model': KNeighborsClassifier(), 'group': 'mean_impute_models', 'drop_train_na': True}
+
+3/5: ProximityForest (no nan)
+{'name': 'ProximityForest (no nan)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x000001A1EA87B340>, 'group': 'mean_impute_models', 'drop_train_na': True}
+
+4/5: MLP (no nan)
+{'name': 'MLP (no nan)', 'model': MLPClassifier(random_state=0), 'group': 'mean_impute_models', 'drop_train_na': True}
+
+5/5: HistGradientBoosting (no nan)
+{'name': 'HistGradientBoosting (no nan)', 'model': HistGradientBoostingClassifier(random_state=0), 'group': 'mean_impute_models', 'drop_train_na': True}
+
+Finished at 2023-06-14 17:02:18.572280
+Time taken: 0:01:05.050767
+Saved scores to outputs/model-evaluations-20230614-170113-GILGFVFTL-500-imputation-constant-numbers
+Saved all scores to outputs/model-evaluations-20230614-170113-GILGFVFTL-500-imputation-constant-numbers/scores-20230614-170218.csv
+Saved group scores to outputs/model-evaluations-20230614-170113-GILGFVFTL-500-imputation-constant-numbers/groups
+Saved all group scores to outputs/model-evaluations-20230614-170113-GILGFVFTL-500-imputation-constant-numbers/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230614-170113-GILGFVFTL-500-imputation-constant-numbers/all-models.png
+Saved log to outputs/model-evaluations-20230614-170113-GILGFVFTL-500-imputation-constant-numbers/log.txt

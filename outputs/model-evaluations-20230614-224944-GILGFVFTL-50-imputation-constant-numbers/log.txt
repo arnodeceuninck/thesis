@@ -1,0 +1,10 @@
+Started at 2023-06-14 22:49:44.763169
+
+Models to evaluate: 2
+
+1/2: KNN (tcrdist3)
+{'name': 'KNN (tcrdist3)', 'model': KNeighborsClassifier(metric=<function calculate_tcr_dist2 at 0x000002A7C4213F70>), 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+
+2/2: KNN (tcrdist3)
+{'name': 'KNN (tcrdist3)', 'model': <util.knnstring.KNNString object at 0x000002A7C61D96A0>, 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+

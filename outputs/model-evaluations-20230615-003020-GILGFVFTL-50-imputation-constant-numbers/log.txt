@@ -1,0 +1,18 @@
+Started at 2023-06-15 00:30:20.753261
+
+Models to evaluate: 2
+
+1/2: RandomForest (No NaNs)
+{'name': 'RandomForest (No NaNs)', 'model': RandomForestClassifier(random_state=0), 'group': 'different_epitopes', 'drop_train_na': True}
+
+2/2: RandomForest (Mean imputed)
+{'name': 'RandomForest (Mean imputed)', 'model': RandomForestClassifier(random_state=0), 'imputer': SimpleImputer(), 'group': 'different_epitopes', 'drop_train_na': False}
+
+Finished at 2023-06-15 00:30:21.722262
+Time taken: 0:00:00.969001
+Saved scores to outputs/model-evaluations-20230615-003020-GILGFVFTL-50-imputation-constant-numbers
+Saved all scores to outputs/model-evaluations-20230615-003020-GILGFVFTL-50-imputation-constant-numbers/scores-20230615-003021.csv
+Saved group scores to outputs/model-evaluations-20230615-003020-GILGFVFTL-50-imputation-constant-numbers/groups
+Saved all group scores to outputs/model-evaluations-20230615-003020-GILGFVFTL-50-imputation-constant-numbers/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230615-003020-GILGFVFTL-50-imputation-constant-numbers/all-models.png
+Saved log to outputs/model-evaluations-20230615-003020-GILGFVFTL-50-imputation-constant-numbers/log.txt

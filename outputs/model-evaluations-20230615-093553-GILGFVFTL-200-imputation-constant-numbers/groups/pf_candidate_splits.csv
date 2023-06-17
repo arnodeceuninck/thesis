@@ -1,0 +1,16 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr,improvement
+0,"ProximityForest (sqrt, lev, nd=7)",0.9308620689655172,True,,both,pf_candidate_splits,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,,False,1,0.008758620689655161
+1,"ProximityForest (sqrt, lev, nd=7)",0.9167241379310345,True,,both,pf_candidate_splits,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,,False,1,-0.005379310344827526
+2,"ProximityForest (sqrt, lev, nd=7)",0.923103448275862,True,,both,pf_candidate_splits,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,,False,1,0.0010000000000000009
+3,"ProximityForest (sqrt, lev, nd=7)",0.9198275862068964,True,,both,pf_candidate_splits,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,,False,1,-0.002275862068965573
+4,"ProximityForest (sqrt, lev, nd=7)",0.92,True,,both,pf_candidate_splits,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,,False,1,-0.002103448275861952
+0,"ProximityForest (half, lev, nd=7)",0.9146551724137931,True,,both,pf_candidate_splits,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,,False,2,-0.007448275862068865
+1,"ProximityForest (half, lev, nd=7)",0.8965517241379309,True,,both,pf_candidate_splits,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,,False,2,-0.025551724137931053
+2,"ProximityForest (half, lev, nd=7)",0.923448275862069,True,,both,pf_candidate_splits,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,,False,2,0.0013448275862070203
+3,"ProximityForest (half, lev, nd=7)",0.921206896551724,True,,both,pf_candidate_splits,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,,False,2,-0.0008965517241379395
+4,"ProximityForest (half, lev, nd=7)",0.9179310344827587,True,,both,pf_candidate_splits,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,,False,2,-0.004172413793103291
+0,"ProximityForest (all, lev, nd=7)",0.9191379310344827,True,,both,pf_candidate_splits,0.0,GILGFVFTL,HomoSapiens,61.0,56.0,43.0,0.0,160.0,108.0,200.0,,False,3,-0.0029655172413792785
+1,"ProximityForest (all, lev, nd=7)",0.9127586206896551,True,,both,pf_candidate_splits,1.0,GILGFVFTL,HomoSapiens,55.0,62.0,43.0,0.0,160.0,108.0,200.0,,False,3,-0.009344827586206916
+2,"ProximityForest (all, lev, nd=7)",0.9329310344827587,True,,both,pf_candidate_splits,2.0,GILGFVFTL,HomoSapiens,54.0,61.0,45.0,0.0,160.0,108.0,200.0,,False,3,0.010827586206896722
+3,"ProximityForest (all, lev, nd=7)",0.9265517241379311,True,,both,pf_candidate_splits,3.0,GILGFVFTL,HomoSapiens,56.0,65.0,39.0,0.0,160.0,108.0,200.0,,False,3,0.004448275862069084
+4,"ProximityForest (all, lev, nd=7)",0.9287931034482759,True,,both,pf_candidate_splits,4.0,GILGFVFTL,HomoSapiens,53.0,67.0,40.0,0.0,160.0,108.0,200.0,,False,3,0.006689655172413933

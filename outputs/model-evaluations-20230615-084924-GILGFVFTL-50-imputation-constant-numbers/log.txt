@@ -1,0 +1,21 @@
+Started at 2023-06-15 08:49:24.612092
+
+Models to evaluate: 3
+
+1/3: ProximityForest (sqrt, lev, nd=7)
+{'name': 'ProximityForest (sqrt, lev, nd=7)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x0000028CCD6E87C0>, 'group': 'pf_candidate_splits', 'extract_features': False, 'drop_train_na': False}
+
+2/3: ProximityForest (half, lev, nd=7)
+{'name': 'ProximityForest (half, lev, nd=7)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x0000028CCD6E8B50>, 'group': 'pf_candidate_splits', 'extract_features': False, 'drop_train_na': False}
+
+3/3: ProximityForest (all, lev, nd=7)
+{'name': 'ProximityForest (all, lev, nd=7)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x0000028CCD6E8280>, 'group': 'pf_candidate_splits', 'extract_features': False, 'drop_train_na': False}
+
+Finished at 2023-06-15 09:03:46.985990
+Time taken: 0:14:22.373898
+Saved scores to outputs/model-evaluations-20230615-084924-GILGFVFTL-50-imputation-constant-numbers
+Saved all scores to outputs/model-evaluations-20230615-084924-GILGFVFTL-50-imputation-constant-numbers/scores-20230615-090346.csv
+Saved group scores to outputs/model-evaluations-20230615-084924-GILGFVFTL-50-imputation-constant-numbers/groups
+Saved all group scores to outputs/model-evaluations-20230615-084924-GILGFVFTL-50-imputation-constant-numbers/groups/all-models.png
+Saved all models to outputs/model-evaluations-20230615-084924-GILGFVFTL-50-imputation-constant-numbers/all-models.png
+Saved log to outputs/model-evaluations-20230615-084924-GILGFVFTL-50-imputation-constant-numbers/log.txt

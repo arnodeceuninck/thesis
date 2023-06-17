@@ -1,0 +1,26 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr,improvement
+0,RandomForest (no nan),0.9098275862068965,False,,both,mean_impute_models,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,40.0,0.0,40.0,108.0,200.0,,False,1,0.020137931034482692
+1,RandomForest (no nan),0.895,False,,both,mean_impute_models,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,41.0,0.0,41.0,108.0,200.0,,False,1,0.005310344827586189
+2,RandomForest (no nan),0.8920689655172414,False,,both,mean_impute_models,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,42.0,0.0,42.0,108.0,200.0,,False,1,0.0023793103448275232
+3,RandomForest (no nan),0.8670689655172412,False,,both,mean_impute_models,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,37.0,0.0,37.0,108.0,200.0,,False,1,-0.02262068965517261
+4,RandomForest (no nan),0.8844827586206897,False,,both,mean_impute_models,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,38.0,0.0,38.0,108.0,200.0,,False,1,-0.005206896551724127
+0,KNN (no nan),0.8122413793103447,False,,both,mean_impute_models,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,40.0,0.0,40.0,108.0,200.0,,False,2,-0.07744827586206915
+1,KNN (no nan),0.8362068965517241,False,,both,mean_impute_models,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,41.0,0.0,41.0,108.0,200.0,,False,2,-0.05348275862068974
+2,KNN (no nan),0.8267241379310345,False,,both,mean_impute_models,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,42.0,0.0,42.0,108.0,200.0,,False,2,-0.06296551724137933
+3,KNN (no nan),0.8196551724137933,False,,both,mean_impute_models,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,37.0,0.0,37.0,108.0,200.0,,False,2,-0.07003448275862056
+4,KNN (no nan),0.8322413793103447,False,,both,mean_impute_models,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,38.0,0.0,38.0,108.0,200.0,,False,2,-0.05744827586206913
+0,ProximityForest (no nan),0.7762068965517241,False,,both,mean_impute_models,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,40.0,0.0,40.0,108.0,200.0,,False,3,-0.11348275862068968
+1,ProximityForest (no nan),0.8512068965517241,False,,both,mean_impute_models,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,41.0,0.0,41.0,108.0,200.0,,False,3,-0.03848275862068973
+2,ProximityForest (no nan),0.7836206896551724,False,,both,mean_impute_models,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,42.0,0.0,42.0,108.0,200.0,,False,3,-0.10606896551724143
+3,ProximityForest (no nan),0.7998275862068965,False,,both,mean_impute_models,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,37.0,0.0,37.0,108.0,200.0,,False,3,-0.0898620689655173
+4,ProximityForest (no nan),0.8518965517241379,False,,both,mean_impute_models,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,38.0,0.0,38.0,108.0,200.0,,False,3,-0.03779310344827591
+0,MLP (no nan),0.8210344827586207,False,,both,mean_impute_models,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,40.0,0.0,40.0,108.0,200.0,,False,4,-0.06865517241379315
+1,MLP (no nan),0.7993103448275862,False,,both,mean_impute_models,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,41.0,0.0,41.0,108.0,200.0,,False,4,-0.0903793103448276
+2,MLP (no nan),0.7855172413793103,False,,both,mean_impute_models,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,42.0,0.0,42.0,108.0,200.0,,False,4,-0.10417241379310349
+3,MLP (no nan),0.8148275862068965,False,,both,mean_impute_models,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,37.0,0.0,37.0,108.0,200.0,,False,4,-0.07486206896551728
+4,MLP (no nan),0.7589655172413793,False,,both,mean_impute_models,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,38.0,0.0,38.0,108.0,200.0,,False,4,-0.13072413793103455
+0,HistGradientBoosting (no nan),0.8760344827586207,False,,both,mean_impute_models,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,40.0,0.0,40.0,108.0,200.0,,False,5,-0.013655172413793104
+1,HistGradientBoosting (no nan),0.7955172413793105,False,,both,mean_impute_models,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,41.0,0.0,41.0,108.0,200.0,,False,5,-0.09417241379310337
+2,HistGradientBoosting (no nan),0.8510344827586207,False,,both,mean_impute_models,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,42.0,0.0,42.0,108.0,200.0,,False,5,-0.038655172413793126
+3,HistGradientBoosting (no nan),0.5,False,,both,mean_impute_models,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,37.0,0.0,37.0,108.0,200.0,,False,5,-0.38968965517241383
+4,HistGradientBoosting (no nan),0.5,False,,both,mean_impute_models,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,38.0,0.0,38.0,108.0,200.0,,False,5,-0.38968965517241383

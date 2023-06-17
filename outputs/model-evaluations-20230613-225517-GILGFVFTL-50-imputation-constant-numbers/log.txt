@@ -1,0 +1,28 @@
+Started at 2023-06-13 22:55:17.780044
+
+Models to evaluate: 8
+
+1/8: RF (Iterative imputed, RandomForestRegressor, max_iter=1)
+{'name': 'RF (Iterative imputed, RandomForestRegressor, max_iter=1)', 'model': RandomForestClassifier(random_state=0), 'imputer': IterativeImputer(estimator=RandomForestRegressor(random_state=0), max_iter=1), 'group': 'rf_iterative_imputations'}
+
+2/8: RF (Iterative imputed, KNeighborsRegressor, max_iter=1)
+{'name': 'RF (Iterative imputed, KNeighborsRegressor, max_iter=1)', 'model': RandomForestClassifier(random_state=0), 'imputer': IterativeImputer(estimator=KNeighborsRegressor(), max_iter=1), 'group': 'rf_iterative_imputations'}
+
+3/8: RF (Iterative imputed, MLPRegressor, max_iter=1)
+{'name': 'RF (Iterative imputed, MLPRegressor, max_iter=1)', 'model': RandomForestClassifier(random_state=0), 'imputer': IterativeImputer(estimator=MLPRegressor(random_state=0), max_iter=1), 'group': 'rf_iterative_imputations'}
+
+4/8: RandomForest (mean imputed)
+{'name': 'RandomForest (mean imputed)', 'model': RandomForestClassifier(random_state=0), 'group': 'mean_impute_models'}
+
+5/8: KNN (mean imputed)
+{'name': 'KNN (mean imputed)', 'model': KNeighborsClassifier(metric=<function levenstein_distance at 0x000002A931866790>), 'group': 'mean_impute_models'}
+
+6/8: ProximityForest (mean imputed)
+{'name': 'ProximityForest (mean imputed)', 'model': <util.proximityforest.ProximityForestClassifier object at 0x000002A93154D820>, 'group': 'mean_impute_models'}
+
+7/8: MLP (mean imputed)
+{'name': 'MLP (mean imputed)', 'model': MLPClassifier(random_state=0), 'group': 'mean_impute_models'}
+
+8/8: HistGradientBoosting (mean imputed)
+{'name': 'HistGradientBoosting (mean imputed)', 'model': HistGradientBoostingClassifier(random_state=0), 'group': 'mean_impute_models'}
+

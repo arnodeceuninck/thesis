@@ -1,0 +1,21 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr,improvement
+0,"KNN (tcr_dist, no_nan, CDR3 only)",0.7958620689655173,False,,both,knn_metrics,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,18.0,0.0,18.0,108.0,100.0,,False,1,0.023931034482758684
+1,"KNN (tcr_dist, no_nan, CDR3 only)",0.8205172413793103,False,,both,knn_metrics,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,16.0,0.0,16.0,108.0,100.0,,False,1,0.04858620689655169
+2,"KNN (tcr_dist, no_nan, CDR3 only)",0.7410344827586206,False,,both,knn_metrics,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,15.0,0.0,15.0,108.0,100.0,,False,1,-0.030896551724137966
+3,"KNN (tcr_dist, no_nan, CDR3 only)",0.7332758620689656,False,,both,knn_metrics,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,17.0,0.0,17.0,108.0,100.0,,False,1,-0.038655172413793015
+4,"KNN (tcr_dist, no_nan, CDR3 only)",0.7689655172413793,False,,both,knn_metrics,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,18.0,0.0,18.0,108.0,100.0,,False,1,-0.0029655172413792785
+0,"KNN (lev, no_nan, CDR3 only)",0.8382758620689654,False,,both,knn_metrics,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,18.0,0.0,18.0,108.0,100.0,,False,2,0.06634482758620686
+1,"KNN (lev, no_nan, CDR3 only)",0.8031034482758622,False,,both,knn_metrics,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,16.0,0.0,16.0,108.0,100.0,,False,2,0.031172413793103648
+2,"KNN (lev, no_nan, CDR3 only)",0.791551724137931,False,,both,knn_metrics,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,15.0,0.0,15.0,108.0,100.0,,False,2,0.019620689655172385
+3,"KNN (lev, no_nan, CDR3 only)",0.7179310344827586,False,,both,knn_metrics,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,17.0,0.0,17.0,108.0,100.0,,False,2,-0.05399999999999994
+4,"KNN (lev, no_nan, CDR3 only)",0.766551724137931,False,,both,knn_metrics,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,18.0,0.0,18.0,108.0,100.0,,False,2,-0.005379310344827526
+0,"KNN (hamming, no_nan, CDR3 only)",0.64,False,,both,knn_metrics,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,18.0,0.0,18.0,108.0,100.0,,False,3,-0.13193103448275856
+1,"KNN (hamming, no_nan, CDR3 only)",0.5,False,,both,knn_metrics,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,16.0,0.0,16.0,108.0,100.0,,False,3,-0.27193103448275857
+2,"KNN (hamming, no_nan, CDR3 only)",0.5700000000000001,False,,both,knn_metrics,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,15.0,0.0,15.0,108.0,100.0,,False,3,-0.2019310344827585
+3,"KNN (hamming, no_nan, CDR3 only)",0.63,False,,both,knn_metrics,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,17.0,0.0,17.0,108.0,100.0,,False,3,-0.14193103448275857
+4,"KNN (hamming, no_nan, CDR3 only)",0.62,False,,both,knn_metrics,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,18.0,0.0,18.0,108.0,100.0,,False,3,-0.15193103448275858
+0,"KNN (tcrdist3, no_nan, CDR3 only)",0.5,False,,both,knn_metrics,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,18.0,0.0,18.0,108.0,100.0,,False,4,-0.27193103448275857
+1,"KNN (tcrdist3, no_nan, CDR3 only)",0.5,False,,both,knn_metrics,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,16.0,0.0,16.0,108.0,100.0,,False,4,-0.27193103448275857
+2,"KNN (tcrdist3, no_nan, CDR3 only)",0.5,False,,both,knn_metrics,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,15.0,0.0,15.0,108.0,100.0,,False,4,-0.27193103448275857
+3,"KNN (tcrdist3, no_nan, CDR3 only)",0.5,False,,both,knn_metrics,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,17.0,0.0,17.0,108.0,100.0,,False,4,-0.27193103448275857
+4,"KNN (tcrdist3, no_nan, CDR3 only)",0.5,False,,both,knn_metrics,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,18.0,0.0,18.0,108.0,100.0,,False,4,-0.27193103448275857

@@ -1,0 +1,26 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr,improvement
+0,RandomForest (mean imputed),0.8901724137931034,True,,both,mean_impute_models,0.0,GILGFVFTL,HomoSapiens,135.0,161.0,104.0,0.0,400.0,108.0,500.0,,False,1,-0.008068965517241344
+1,RandomForest (mean imputed),0.9074137931034483,True,,both,mean_impute_models,1.0,GILGFVFTL,HomoSapiens,136.0,157.0,107.0,0.0,400.0,108.0,500.0,,False,1,0.009172413793103518
+2,RandomForest (mean imputed),0.9079310344827586,True,,both,mean_impute_models,2.0,GILGFVFTL,HomoSapiens,137.0,158.0,105.0,0.0,400.0,108.0,500.0,,False,1,0.009689655172413825
+3,RandomForest (mean imputed),0.9005172413793102,True,,both,mean_impute_models,3.0,GILGFVFTL,HomoSapiens,136.0,156.0,108.0,0.0,400.0,108.0,500.0,,False,1,0.002275862068965462
+4,RandomForest (mean imputed),0.8851724137931035,True,,both,mean_impute_models,4.0,GILGFVFTL,HomoSapiens,133.0,162.0,105.0,0.0,400.0,108.0,500.0,,False,1,-0.013068965517241238
+0,KNN (mean imputed),0.8317241379310345,True,,both,mean_impute_models,0.0,GILGFVFTL,HomoSapiens,135.0,161.0,104.0,0.0,400.0,108.0,500.0,,False,2,-0.06651724137931025
+1,KNN (mean imputed),0.7724137931034483,True,,both,mean_impute_models,1.0,GILGFVFTL,HomoSapiens,136.0,157.0,107.0,0.0,400.0,108.0,500.0,,False,2,-0.1258275862068965
+2,KNN (mean imputed),0.8132758620689655,True,,both,mean_impute_models,2.0,GILGFVFTL,HomoSapiens,137.0,158.0,105.0,0.0,400.0,108.0,500.0,,False,2,-0.08496551724137924
+3,KNN (mean imputed),0.804655172413793,True,,both,mean_impute_models,3.0,GILGFVFTL,HomoSapiens,136.0,156.0,108.0,0.0,400.0,108.0,500.0,,False,2,-0.09358620689655173
+4,KNN (mean imputed),0.7613793103448275,True,,both,mean_impute_models,4.0,GILGFVFTL,HomoSapiens,133.0,162.0,105.0,0.0,400.0,108.0,500.0,,False,2,-0.13686206896551723
+0,ProximityForest (mean imputed),0.8841379310344827,True,,both,mean_impute_models,0.0,GILGFVFTL,HomoSapiens,135.0,161.0,104.0,0.0,400.0,108.0,500.0,,False,3,-0.014103448275862074
+1,ProximityForest (mean imputed),0.8753448275862069,True,,both,mean_impute_models,1.0,GILGFVFTL,HomoSapiens,136.0,157.0,107.0,0.0,400.0,108.0,500.0,,False,3,-0.022896551724137848
+2,ProximityForest (mean imputed),0.8874137931034484,True,,both,mean_impute_models,2.0,GILGFVFTL,HomoSapiens,137.0,158.0,105.0,0.0,400.0,108.0,500.0,,False,3,-0.010827586206896389
+3,ProximityForest (mean imputed),0.8627586206896551,True,,both,mean_impute_models,3.0,GILGFVFTL,HomoSapiens,136.0,156.0,108.0,0.0,400.0,108.0,500.0,,False,3,-0.035482758620689614
+4,ProximityForest (mean imputed),0.873448275862069,True,,both,mean_impute_models,4.0,GILGFVFTL,HomoSapiens,133.0,162.0,105.0,0.0,400.0,108.0,500.0,,False,3,-0.02479310344827579
+0,MLP (mean imputed),0.8637931034482759,True,,both,mean_impute_models,0.0,GILGFVFTL,HomoSapiens,135.0,161.0,104.0,0.0,400.0,108.0,500.0,,False,4,-0.03444827586206889
+1,MLP (mean imputed),0.8658620689655172,True,,both,mean_impute_models,1.0,GILGFVFTL,HomoSapiens,136.0,157.0,107.0,0.0,400.0,108.0,500.0,,False,4,-0.03237931034482755
+2,MLP (mean imputed),0.8558620689655172,True,,both,mean_impute_models,2.0,GILGFVFTL,HomoSapiens,137.0,158.0,105.0,0.0,400.0,108.0,500.0,,False,4,-0.04237931034482756
+3,MLP (mean imputed),0.8082758620689655,True,,both,mean_impute_models,3.0,GILGFVFTL,HomoSapiens,136.0,156.0,108.0,0.0,400.0,108.0,500.0,,False,4,-0.08996551724137924
+4,MLP (mean imputed),0.8279310344827586,True,,both,mean_impute_models,4.0,GILGFVFTL,HomoSapiens,133.0,162.0,105.0,0.0,400.0,108.0,500.0,,False,4,-0.07031034482758614
+0,HistGradientBoosting (mean imputed),0.8972413793103448,True,,both,mean_impute_models,0.0,GILGFVFTL,HomoSapiens,135.0,161.0,104.0,0.0,400.0,108.0,500.0,,False,5,-0.0010000000000000009
+1,HistGradientBoosting (mean imputed),0.9210344827586208,True,,both,mean_impute_models,1.0,GILGFVFTL,HomoSapiens,136.0,157.0,107.0,0.0,400.0,108.0,500.0,,False,5,0.02279310344827601
+2,HistGradientBoosting (mean imputed),0.9103448275862069,True,,both,mean_impute_models,2.0,GILGFVFTL,HomoSapiens,137.0,158.0,105.0,0.0,400.0,108.0,500.0,,False,5,0.012103448275862183
+3,HistGradientBoosting (mean imputed),0.9196551724137931,True,,both,mean_impute_models,3.0,GILGFVFTL,HomoSapiens,136.0,156.0,108.0,0.0,400.0,108.0,500.0,,False,5,0.021413793103448375
+4,HistGradientBoosting (mean imputed),0.9293103448275861,True,,both,mean_impute_models,4.0,GILGFVFTL,HomoSapiens,133.0,162.0,105.0,0.0,400.0,108.0,500.0,,False,5,0.031068965517241365

@@ -123,8 +123,19 @@ def plot_scores(scores, plot_title, baseline_name="Random Forest (NaNs dropped i
 
     if improvement_config is not None:
         improvement_variable = improvement_config['value']
-        df_true = scores[scores[improvement_variable] == True].copy()
+        # create a model_only column, which is the model without the part between brackets
+        scores['model_only'] = scores['model'].apply(lambda x: x.split("(")[0].strip())
+
+        df_true = scores[scores[improvement_variable] == True].copy().reset_index(drop=True)
+        # get the 'model' order of the df_true
+        model_order = df_true['model_only'].unique()
+
+
         df_false = scores[scores[improvement_variable] == False].copy()
+        # place the rows of df_false in the same order as df_true
+        df_false = sort_df(df_false, {'model_only': model_order}).reset_index(drop=True)
+
+        # hue_order = df_true.groupby(['model', 'df_size']).mean().index
 
         plot = sns.barplot(x=x, y=y, data=df_true, ci="sd", hue=hue, alpha=0.4)
         plot = sns.barplot(x=x, y=y, data=df_false, ci="sd", hue=hue, alpha=0.7)

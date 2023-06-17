@@ -276,6 +276,10 @@ def get_features(df, test=False, columns=None, cdr_only=False, extract_features=
 
         renamed = df[rename_map.keys()].rename(columns=rename_map)
 
+        # if renamed is empty, skip this chain
+        if renamed.shape[0] == 0:
+            continue
+
         # only keep the columns that are in columns
         renamed = renamed[columns]
 
@@ -294,7 +298,7 @@ def get_features(df, test=False, columns=None, cdr_only=False, extract_features=
 
     ALPHA_OR_BETA = None
 
-    return pd.concat(all_chains_features, axis=1)
+    return pd.concat(all_chains_features, axis=1) if len(all_chains_features) > 0 else pd.DataFrame()
 
 
 def get_features_old_deprecated(df, test=False, cdr_only=False):

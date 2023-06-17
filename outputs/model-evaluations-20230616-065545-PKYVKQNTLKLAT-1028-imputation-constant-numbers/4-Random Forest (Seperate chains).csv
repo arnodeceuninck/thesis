@@ -1,0 +1,6 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr
+0,Random Forest (Seperate chains),0.7006172839506173,True,SimpleImputer,seperate,chain_inputs,0.0,PKYVKQNTLKLAT,HomoSapiens,155.0,557.0,110.0,0.0,822.0,27.0,1028.0,,False,4
+1,Random Forest (Seperate chains),0.6775147928994083,True,SimpleImputer,seperate,chain_inputs,1.0,PKYVKQNTLKLAT,HomoSapiens,153.0,558.0,111.0,0.0,822.0,26.0,1028.0,,False,4
+2,Random Forest (Seperate chains),0.7058823529411765,True,SimpleImputer,seperate,chain_inputs,2.0,PKYVKQNTLKLAT,HomoSapiens,146.0,568.0,108.0,0.0,822.0,28.0,1028.0,,False,4
+3,Random Forest (Seperate chains),0.5177777777777778,True,SimpleImputer,seperate,chain_inputs,3.0,PKYVKQNTLKLAT,HomoSapiens,156.0,560.0,106.0,0.0,822.0,30.0,1028.0,,False,4
+4,Random Forest (Seperate chains),0.7303030303030303,True,SimpleImputer,seperate,chain_inputs,4.0,PKYVKQNTLKLAT,HomoSapiens,157.0,552.0,113.0,0.0,822.0,26.0,1028.0,,False,4

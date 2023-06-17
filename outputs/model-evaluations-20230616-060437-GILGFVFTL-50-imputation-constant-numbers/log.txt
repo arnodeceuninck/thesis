@@ -1,0 +1,16 @@
+Started at 2023-06-16 06:04:37.740098
+
+Models to evaluate: 4
+
+1/4: Random Forest (both chains, no_nan)
+{'name': 'Random Forest (both chains, no_nan)', 'model': RandomForestClassifier(random_state=0), 'chain': 'both', 'group': 'chain_inputs', 'drop_train_na': True}
+
+2/4: Random Forest (both chains, mean imputed)
+{'name': 'Random Forest (both chains, mean imputed)', 'model': RandomForestClassifier(random_state=0), 'chain': 'both', 'group': 'chain_inputs', 'imputer': SimpleImputer()}
+
+3/4: Random Forest (Seperate chains, no_nan)
+{'name': 'Random Forest (Seperate chains, no_nan)', 'model_alpha': RandomForestClassifier(random_state=0), 'model_beta': RandomForestClassifier(random_state=0), 'chain': 'seperate', 'group': 'chain_inputs', 'drop_train_na': True}
+
+4/4: Random Forest (Seperate chains)
+{'name': 'Random Forest (Seperate chains)', 'model_alpha': RandomForestClassifier(random_state=0), 'model_beta': RandomForestClassifier(random_state=0), 'chain': 'seperate', 'group': 'chain_inputs', 'imputer': SimpleImputer()}
+

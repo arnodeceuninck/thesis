@@ -1,0 +1,7 @@
+Started at 2023-06-14 22:49:09.135399
+
+Models to evaluate: 1
+
+1/1: KNN (tcrdist3)
+{'name': 'KNN (tcrdist3)', 'model': KNeighborsClassifier(metric=<function calculate_tcr_dist2 at 0x000002A7C4213F70>), 'group': 'knn', 'extract_features': False, 'drop_train_na': False}
+

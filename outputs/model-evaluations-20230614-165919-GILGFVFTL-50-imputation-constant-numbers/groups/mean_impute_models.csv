@@ -1,0 +1,26 @@
+,model,auc,model_train_nan,imputer,chain,group,seed,epitope,species,train_alpha_only,train_beta_only,train_both,train_non,train_total,test_total,df_size,gene_features,missing_indicator,test_nr,improvement
+0,RandomForest (no nan),0.8567241379310344,False,,both,mean_impute_models,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,9.0,0.0,9.0,108.0,50.0,,False,1,0.004310344827586299
+1,RandomForest (no nan),0.815862068965517,False,,both,mean_impute_models,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,1,-0.03655172413793106
+2,RandomForest (no nan),0.8737931034482759,False,,both,mean_impute_models,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,1,0.021379310344827762
+3,RandomForest (no nan),0.8539655172413793,False,,both,mean_impute_models,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,1,0.001551724137931143
+4,RandomForest (no nan),0.8617241379310344,False,,both,mean_impute_models,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,8.0,0.0,8.0,108.0,50.0,,False,1,0.009310344827586303
+0,KNN (no nan),0.6513793103448275,False,,both,mean_impute_models,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,9.0,0.0,9.0,108.0,50.0,,False,2,-0.20103448275862057
+1,KNN (no nan),0.4889655172413794,False,,both,mean_impute_models,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,2,-0.36344827586206874
+2,KNN (no nan),0.6613793103448277,False,,both,mean_impute_models,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,2,-0.19103448275862045
+3,KNN (no nan),0.4889655172413794,False,,both,mean_impute_models,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,2,-0.36344827586206874
+4,KNN (no nan),0.6413793103448275,False,,both,mean_impute_models,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,8.0,0.0,8.0,108.0,50.0,,False,2,-0.21103448275862058
+0,ProximityForest (no nan),0.7770689655172415,False,,both,mean_impute_models,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,9.0,0.0,9.0,108.0,50.0,,False,3,-0.07534482758620664
+1,ProximityForest (no nan),0.6768965517241379,False,,both,mean_impute_models,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,3,-0.17551724137931024
+2,ProximityForest (no nan),0.7839655172413792,False,,both,mean_impute_models,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,3,-0.06844827586206892
+3,ProximityForest (no nan),0.7577586206896552,False,,both,mean_impute_models,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,3,-0.09465517241379295
+4,ProximityForest (no nan),0.7760344827586206,False,,both,mean_impute_models,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,8.0,0.0,8.0,108.0,50.0,,False,3,-0.07637931034482748
+0,MLP (no nan),0.7396551724137931,False,,both,mean_impute_models,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,9.0,0.0,9.0,108.0,50.0,,False,4,-0.11275862068965503
+1,MLP (no nan),0.598448275862069,False,,both,mean_impute_models,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,4,-0.25396551724137917
+2,MLP (no nan),0.586551724137931,False,,both,mean_impute_models,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,4,-0.2658620689655171
+3,MLP (no nan),0.47913793103448277,False,,both,mean_impute_models,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,4,-0.37327586206896535
+4,MLP (no nan),0.6770689655172414,False,,both,mean_impute_models,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,8.0,0.0,8.0,108.0,50.0,,False,4,-0.17534482758620673
+0,HistGradientBoosting (no nan),0.5,False,,both,mean_impute_models,0.0,GILGFVFTL,HomoSapiens,0.0,0.0,9.0,0.0,9.0,108.0,50.0,,False,5,-0.3524137931034481
+1,HistGradientBoosting (no nan),0.5,False,,both,mean_impute_models,1.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,5,-0.3524137931034481
+2,HistGradientBoosting (no nan),0.5,False,,both,mean_impute_models,2.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,5,-0.3524137931034481
+3,HistGradientBoosting (no nan),0.5,False,,both,mean_impute_models,3.0,GILGFVFTL,HomoSapiens,0.0,0.0,7.0,0.0,7.0,108.0,50.0,,False,5,-0.3524137931034481
+4,HistGradientBoosting (no nan),0.5,False,,both,mean_impute_models,4.0,GILGFVFTL,HomoSapiens,0.0,0.0,8.0,0.0,8.0,108.0,50.0,,False,5,-0.3524137931034481
